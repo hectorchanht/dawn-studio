@@ -16,7 +16,7 @@
     * { box-sizing: border-box; }
     body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Manrope", "Noto Sans TC", sans-serif; font-size: 16px; line-height: 1.55; }
     main { width: min(100% - 32px, 720px); margin-inline: auto; padding-block: 64px 80px; }
-    h1 { font-size: 3rem; line-height: 1; letter-spacing: -.05em; margin: 0 0 16px; text-wrap: balance; }
+    h1 { font-size: 3rem; line-height: 1; letter-spacing: -.04em; margin: 0 0 16px; text-wrap: balance; }
     h2 { font-size: 1.25rem; margin: 32px 0 8px; }
     p { color: var(--muted); margin: 0 0 16px; text-wrap: pretty; }
     a { color: var(--ink); transition: color .3s var(--ease); }
@@ -24,11 +24,22 @@
     :focus-visible { outline: 2px solid var(--theme); outline-offset: 3px; border-radius: 4px; }
     .back { display: inline-block; margin-bottom: 40px; font-weight: 600; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
     .updated { font-size: .875rem; }
+    p { max-width: 58ch; }
+    .lang-switch { display: inline-flex; float: right; padding: 3px; border: 1px solid var(--line); border-radius: 999px; }
+    .lang-switch button { min-width: 48px; min-height: 34px; padding: 5px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--muted); font: inherit; cursor: pointer; }
+    .lang-switch button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+    [data-lang-block][hidden] { display: none; }
+    ::selection { background: color-mix(in srgb, var(--theme) 28%, transparent); color: var(--ink); }
   </style>
 </head>
 <body>
   <main>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="zh" aria-pressed="false">繁中</button>
+    </div>
     <a class="back" href="/">← Dawn Studio</a>
+    <div data-lang-block="en" lang="en">
     <h1>Privacy</h1>
     <p class="updated">Last updated 29 October 2026.</p>
     <h2>This site</h2>
@@ -39,6 +50,40 @@
     <p>Each Dawn Studio app handles data its own way. Most are local-first: your data stays in your browser or on your device unless a feature you use needs a server. Check the app itself for its details.</p>
     <h2>Questions</h2>
     <p>Dawn Studio is run by Hector Chan. You can reach him through <a href="https://hectorchan.com">hectorchan.com</a>.</p>
+    </div>
+    <div data-lang-block="zh" lang="zh-Hant" hidden>
+    <h1>私隱</h1>
+    <p class="updated">最後更新：2026 年 10 月 29 日。</p>
+    <h2>本網站</h2>
+    <p>dawnstudio.app 是靜態網站，沒有帳戶、登記、留言或表格，亦不會收集訪客的個人資料。</p>
+    <h2>流量分析</h2>
+    <p>我們使用 Cloudflare Web Analytics 統計瀏覽次數，了解哪些頁面和 app 較多人使用。它不使用 cookie，不會跨網站追蹤你，也不會建立你的個人檔案。我們只看到總體數字。</p>
+    <h2>各個 app</h2>
+    <p>每個 Dawn Studio app 各自處理資料。大部分以本機為先：除非你使用的功能需要伺服器，否則資料只會留在你的瀏覽器或裝置上。詳情請查看各 app 本身的說明。</p>
+    <h2>查詢</h2>
+    <p>Dawn Studio 由 Hector Chan 營運，你可以經 <a href="https://hectorchan.com">hectorchan.com</a> 聯絡他。</p>
+    </div>
   </main>
+  <script>
+    (function () {
+      var titles = { en: "Privacy · Dawn Studio", zh: "私隱 · Dawn Studio" };
+      function setLanguage(lang) {
+        document.documentElement.lang = lang === "zh" ? "zh-Hant" : "en";
+        document.title = titles[lang];
+        document.querySelectorAll("[data-lang-block]").forEach(function (el) { el.hidden = el.getAttribute("data-lang-block") !== lang; });
+        document.querySelectorAll("[data-lang]").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-lang") === lang ? "true" : "false"); });
+      }
+      document.querySelectorAll("[data-lang]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          var lang = b.getAttribute("data-lang");
+          try { localStorage.setItem("dawn-lang", lang); } catch (e) {}
+          setLanguage(lang);
+        });
+      });
+      var saved = null;
+      try { saved = localStorage.getItem("dawn-lang"); } catch (e) {}
+      setLanguage(saved || (/^zh/i.test(navigator.language || "") ? "zh" : "en"));
+    }());
+  </script>
 </body>
 </html>

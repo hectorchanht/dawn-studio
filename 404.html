@@ -11,26 +11,63 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root { color-scheme: light dark; --bg: #f7f8f5; --ink: #111214; --muted: #555b62; --theme: #E8590C; --ease: cubic-bezier(0.22, 1, 0.36, 1); }
-    @media (prefers-color-scheme: dark) { :root { --bg: #0d0e10; --ink: #f4f5ef; --muted: #b5bac0; } }
+    :root { color-scheme: light dark; --bg: #f7f8f5; --ink: #111214; --muted: #555b62; --line: #c9cdd0; --theme: #E8590C; --ease: cubic-bezier(0.22, 1, 0.36, 1); }
+    @media (prefers-color-scheme: dark) { :root { --bg: #0d0e10; --ink: #f4f5ef; --muted: #b5bac0; --line: #383c40; } }
     * { box-sizing: border-box; }
     body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Manrope", "Noto Sans TC", sans-serif; font-size: 16px; line-height: 1.55; }
     main { width: min(100% - 32px, 720px); margin-inline: auto; padding-block: 64px 80px; text-align: left; }
     img { width: 64px; height: 64px; border-radius: 12px; }
-    h1 { font-size: 3rem; line-height: 1; letter-spacing: -.05em; margin: 24px 0 16px; text-wrap: balance; }
+    h1 { font-size: 3rem; line-height: 1; letter-spacing: -.04em; margin: 24px 0 16px; text-wrap: balance; }
     p { color: var(--muted); margin: 0 0 32px; max-width: 480px; text-wrap: pretty; }
     .button { display: inline-flex; align-items: center; min-height: 48px; padding: 8px 12px; border: 1px solid var(--ink); border-radius: 6px; background: var(--ink); color: var(--bg); text-decoration: none; font-weight: 600; transition: background-color .3s var(--ease), color .3s var(--ease), transform .5s var(--ease); }
     .button:hover { transform: translateY(-2px); }
     .button:active { transform: scale(.98); }
+    .lang-switch { display: inline-flex; float: right; padding: 3px; border: 1px solid var(--line); border-radius: 999px; }
+    .lang-switch button { min-width: 48px; min-height: 34px; padding: 5px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--muted); font: inherit; cursor: pointer; }
+    .lang-switch button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+    [data-lang-block][hidden] { display: none; }
+    ::selection { background: color-mix(in srgb, var(--theme) 28%, transparent); color: var(--ink); }
     :focus-visible { outline: 2px solid var(--theme); outline-offset: 3px; border-radius: 4px; }
   </style>
 </head>
 <body>
   <main>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="zh" aria-pressed="false">繁中</button>
+    </div>
     <img src="/logo.png" alt="Dawn Studio logo" width="64" height="64" />
+    <div data-lang-block="en" lang="en">
     <h1>This page is not here.</h1>
     <p>The link may be old, or the page may have moved. Everything Dawn Studio makes lives on the app shelf.</p>
     <a class="button" href="/">Back to the app shelf</a>
+    </div>
+    <div data-lang-block="zh" lang="zh-Hant" hidden>
+    <h1>找不到這一頁。</h1>
+    <p>連結可能已過時，或頁面已經搬走。Dawn Studio 所有作品都在 App 一覽。</p>
+    <a class="button" href="/">返回 App 一覽</a>
+    </div>
   </main>
+  <script>
+    (function () {
+      var titles = { en: "Page not found · Dawn Studio", zh: "找不到頁面 · Dawn Studio" };
+      function setLanguage(lang) {
+        document.documentElement.lang = lang === "zh" ? "zh-Hant" : "en";
+        document.title = titles[lang];
+        document.querySelectorAll("[data-lang-block]").forEach(function (el) { el.hidden = el.getAttribute("data-lang-block") !== lang; });
+        document.querySelectorAll("[data-lang]").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-lang") === lang ? "true" : "false"); });
+      }
+      document.querySelectorAll("[data-lang]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          var lang = b.getAttribute("data-lang");
+          try { localStorage.setItem("dawn-lang", lang); } catch (e) {}
+          setLanguage(lang);
+        });
+      });
+      var saved = null;
+      try { saved = localStorage.getItem("dawn-lang"); } catch (e) {}
+      setLanguage(saved || (/^zh/i.test(navigator.language || "") ? "zh" : "en"));
+    }());
+  </script>
 </body>
 </html>

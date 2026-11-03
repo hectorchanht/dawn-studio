@@ -1,0 +1,568 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-03T09:56:48.229076+00:00",
+  "title": "Design System: Dawn Studio",
+  "extensions": {
+    "colorMeta": {
+      "dawn-ember": {
+        "role": "primary",
+        "displayName": "Dawn Ember",
+        "canonical": "#E8590C",
+        "tonalRamp": [
+          "oklch(15% 0.048 42)",
+          "oklch(26% 0.084 42)",
+          "oklch(38% 0.121 42)",
+          "oklch(49% 0.157 42)",
+          "oklch(61% 0.189 42)",
+          "oklch(72% 0.153 42)",
+          "oklch(84% 0.116 42)",
+          "oklch(95% 0.080 42)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#f7f8f5",
+        "tonalRamp": [
+          "oklch(15% 0.001 122)",
+          "oklch(26% 0.002 122)",
+          "oklch(38% 0.003 122)",
+          "oklch(49% 0.003 122)",
+          "oklch(61% 0.004 122)",
+          "oklch(72% 0.003 122)",
+          "oklch(84% 0.002 122)",
+          "oklch(95% 0.002 122)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "oklch(15% 0.000 90)",
+          "oklch(26% 0.000 90)",
+          "oklch(38% 0.000 90)",
+          "oklch(49% 0.000 90)",
+          "oklch(61% 0.000 90)",
+          "oklch(72% 0.000 90)",
+          "oklch(84% 0.000 90)",
+          "oklch(95% 0.000 90)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#111214",
+        "tonalRamp": [
+          "oklch(15% 0.001 264)",
+          "oklch(26% 0.002 264)",
+          "oklch(38% 0.003 264)",
+          "oklch(49% 0.004 264)",
+          "oklch(61% 0.004 264)",
+          "oklch(72% 0.003 264)",
+          "oklch(84% 0.003 264)",
+          "oklch(95% 0.002 264)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "canonical": "#555b62",
+        "tonalRamp": [
+          "oklch(15% 0.003 252)",
+          "oklch(26% 0.006 252)",
+          "oklch(38% 0.009 252)",
+          "oklch(49% 0.011 252)",
+          "oklch(61% 0.013 252)",
+          "oklch(72% 0.011 252)",
+          "oklch(84% 0.008 252)",
+          "oklch(95% 0.006 252)"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#c9cdd0",
+        "tonalRamp": [
+          "oklch(15% 0.002 240)",
+          "oklch(26% 0.003 240)",
+          "oklch(38% 0.004 240)",
+          "oklch(49% 0.005 240)",
+          "oklch(61% 0.006 240)",
+          "oklch(72% 0.005 240)",
+          "oklch(84% 0.004 240)",
+          "oklch(95% 0.003 240)"
+        ]
+      },
+      "paper-dark": {
+        "role": "neutral",
+        "displayName": "Paper Dark",
+        "canonical": "#0d0e10",
+        "tonalRamp": [
+          "oklch(15% 0.001 264)",
+          "oklch(26% 0.002 264)",
+          "oklch(38% 0.003 264)",
+          "oklch(49% 0.004 264)",
+          "oklch(61% 0.004 264)",
+          "oklch(72% 0.004 264)",
+          "oklch(84% 0.003 264)",
+          "oklch(95% 0.002 264)"
+        ]
+      },
+      "surface-dark": {
+        "role": "neutral",
+        "displayName": "Surface Dark",
+        "canonical": "#15171a",
+        "tonalRamp": [
+          "oklch(15% 0.002 258)",
+          "oklch(26% 0.003 258)",
+          "oklch(38% 0.004 258)",
+          "oklch(49% 0.006 258)",
+          "oklch(61% 0.007 258)",
+          "oklch(72% 0.005 258)",
+          "oklch(84% 0.004 258)",
+          "oklch(95% 0.003 258)"
+        ]
+      },
+      "ink-dark": {
+        "role": "neutral",
+        "displayName": "Ink Dark",
+        "canonical": "#f4f5ef",
+        "tonalRamp": [
+          "oklch(15% 0.002 114)",
+          "oklch(26% 0.004 114)",
+          "oklch(38% 0.005 114)",
+          "oklch(49% 0.007 114)",
+          "oklch(61% 0.008 114)",
+          "oklch(72% 0.006 114)",
+          "oklch(84% 0.005 114)",
+          "oklch(95% 0.003 114)"
+        ]
+      },
+      "muted-dark": {
+        "role": "neutral",
+        "displayName": "Muted Dark",
+        "canonical": "#b5bac0",
+        "tonalRamp": [
+          "oklch(15% 0.003 253)",
+          "oklch(26% 0.004 253)",
+          "oklch(38% 0.006 253)",
+          "oklch(49% 0.008 253)",
+          "oklch(61% 0.010 253)",
+          "oklch(72% 0.008 253)",
+          "oklch(84% 0.006 253)",
+          "oklch(95% 0.004 253)"
+        ]
+      },
+      "hairline-dark": {
+        "role": "neutral",
+        "displayName": "Hairline Dark",
+        "canonical": "#383c40",
+        "tonalRamp": [
+          "oklch(15% 0.002 248)",
+          "oklch(26% 0.004 248)",
+          "oklch(38% 0.006 248)",
+          "oklch(49% 0.007 248)",
+          "oklch(61% 0.009 248)",
+          "oklch(72% 0.007 248)",
+          "oklch(84% 0.005 248)",
+          "oklch(95% 0.004 248)"
+        ]
+      },
+      "shelf-amber": {
+        "role": "secondary",
+        "displayName": "Shelf Amber",
+        "canonical": "#f3a23b",
+        "tonalRamp": [
+          "oklch(15% 0.037 68)",
+          "oklch(26% 0.065 68)",
+          "oklch(38% 0.093 68)",
+          "oklch(49% 0.122 68)",
+          "oklch(61% 0.146 68)",
+          "oklch(72% 0.118 68)",
+          "oklch(84% 0.090 68)",
+          "oklch(95% 0.062 68)"
+        ]
+      },
+      "shelf-coral": {
+        "role": "secondary",
+        "displayName": "Shelf Coral",
+        "canonical": "#eb6048",
+        "tonalRamp": [
+          "oklch(15% 0.044 32)",
+          "oklch(26% 0.078 32)",
+          "oklch(38% 0.112 32)",
+          "oklch(49% 0.145 32)",
+          "oklch(61% 0.175 32)",
+          "oklch(72% 0.141 32)",
+          "oklch(84% 0.108 32)",
+          "oklch(95% 0.074 32)"
+        ]
+      },
+      "shelf-blue": {
+        "role": "secondary",
+        "displayName": "Shelf Blue",
+        "canonical": "#3d7df2",
+        "tonalRamp": [
+          "oklch(15% 0.047 261)",
+          "oklch(26% 0.083 261)",
+          "oklch(38% 0.119 261)",
+          "oklch(49% 0.154 261)",
+          "oklch(61% 0.186 261)",
+          "oklch(72% 0.150 261)",
+          "oklch(84% 0.114 261)",
+          "oklch(95% 0.078 261)"
+        ]
+      },
+      "shelf-green": {
+        "role": "secondary",
+        "displayName": "Shelf Green",
+        "canonical": "#35a66f",
+        "tonalRamp": [
+          "oklch(15% 0.033 158)",
+          "oklch(26% 0.058 158)",
+          "oklch(38% 0.083 158)",
+          "oklch(49% 0.108 158)",
+          "oklch(61% 0.129 158)",
+          "oklch(72% 0.104 158)",
+          "oklch(84% 0.079 158)",
+          "oklch(95% 0.055 158)"
+        ]
+      },
+      "shelf-violet": {
+        "role": "secondary",
+        "displayName": "Shelf Violet",
+        "canonical": "#8458d8",
+        "tonalRamp": [
+          "oklch(15% 0.047 296)",
+          "oklch(26% 0.083 296)",
+          "oklch(38% 0.119 296)",
+          "oklch(49% 0.154 296)",
+          "oklch(61% 0.186 296)",
+          "oklch(72% 0.150 296)",
+          "oklch(84% 0.114 296)",
+          "oklch(95% 0.078 296)"
+        ]
+      },
+      "shelf-teal": {
+        "role": "secondary",
+        "displayName": "Shelf Teal",
+        "canonical": "#2e9c95",
+        "tonalRamp": [
+          "oklch(15% 0.024 189)",
+          "oklch(26% 0.043 189)",
+          "oklch(38% 0.061 189)",
+          "oklch(49% 0.080 189)",
+          "oklch(61% 0.096 189)",
+          "oklch(72% 0.077 189)",
+          "oklch(84% 0.059 189)",
+          "oklch(95% 0.040 189)"
+        ]
+      },
+      "ray-red": {
+        "role": "tertiary",
+        "displayName": "Ray Red",
+        "canonical": "#E5484D",
+        "tonalRamp": [
+          "oklch(15% 0.048 23)",
+          "oklch(26% 0.085 23)",
+          "oklch(38% 0.122 23)",
+          "oklch(49% 0.159 23)",
+          "oklch(61% 0.191 23)",
+          "oklch(72% 0.154 23)",
+          "oklch(84% 0.117 23)",
+          "oklch(95% 0.081 23)"
+        ]
+      },
+      "ray-yellow": {
+        "role": "tertiary",
+        "displayName": "Ray Yellow",
+        "canonical": "#FFD23F",
+        "tonalRamp": [
+          "oklch(15% 0.040 91)",
+          "oklch(26% 0.071 91)",
+          "oklch(38% 0.102 91)",
+          "oklch(49% 0.133 91)",
+          "oklch(61% 0.160 91)",
+          "oklch(72% 0.129 91)",
+          "oklch(84% 0.098 91)",
+          "oklch(95% 0.067 91)"
+        ]
+      },
+      "ray-green": {
+        "role": "tertiary",
+        "displayName": "Ray Green",
+        "canonical": "#46A758",
+        "tonalRamp": [
+          "oklch(15% 0.037 147)",
+          "oklch(26% 0.065 147)",
+          "oklch(38% 0.093 147)",
+          "oklch(49% 0.121 147)",
+          "oklch(61% 0.145 147)",
+          "oklch(72% 0.117 147)",
+          "oklch(84% 0.089 147)",
+          "oklch(95% 0.061 147)"
+        ]
+      },
+      "ray-blue": {
+        "role": "tertiary",
+        "displayName": "Ray Blue",
+        "canonical": "#3E8EDE",
+        "tonalRamp": [
+          "oklch(15% 0.036 251)",
+          "oklch(26% 0.063 251)",
+          "oklch(38% 0.091 251)",
+          "oklch(49% 0.118 251)",
+          "oklch(61% 0.142 251)",
+          "oklch(72% 0.115 251)",
+          "oklch(84% 0.087 251)",
+          "oklch(95% 0.060 251)"
+        ]
+      },
+      "ray-violet": {
+        "role": "tertiary",
+        "displayName": "Ray Violet",
+        "canonical": "#8E4EC6",
+        "tonalRamp": [
+          "oklch(15% 0.046 306)",
+          "oklch(26% 0.081 306)",
+          "oklch(38% 0.115 306)",
+          "oklch(49% 0.150 306)",
+          "oklch(61% 0.181 306)",
+          "oklch(72% 0.146 306)",
+          "oklch(84% 0.111 306)",
+          "oklch(95% 0.076 306)"
+        ]
+      },
+      "illustration-ink": {
+        "role": "neutral",
+        "displayName": "Illustration Ink",
+        "canonical": "#101113",
+        "tonalRamp": [
+          "oklch(15% 0.001 264)",
+          "oklch(26% 0.002 264)",
+          "oklch(38% 0.003 264)",
+          "oklch(49% 0.004 264)",
+          "oklch(61% 0.004 264)",
+          "oklch(72% 0.004 264)",
+          "oklch(84% 0.003 264)",
+          "oklch(95% 0.002 264)"
+        ]
+      },
+      "illustration-paper": {
+        "role": "neutral",
+        "displayName": "Illustration Paper",
+        "canonical": "#f8f8f4",
+        "tonalRamp": [
+          "oklch(15% 0.001 106)",
+          "oklch(26% 0.002 106)",
+          "oklch(38% 0.003 106)",
+          "oklch(49% 0.004 106)",
+          "oklch(61% 0.005 106)",
+          "oklch(72% 0.004 106)",
+          "oklch(84% 0.003 106)",
+          "oklch(95% 0.002 106)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero and product-page h1; one accent phrase may be Dawn Ember."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section heads."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "App names beside their logo."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Hero and product pitch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "App and library descriptions."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase mono meta lines, kickers, notes."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Package names and install commands."
+      }
+    },
+    "shadows": [
+      {
+        "name": "plate-offset",
+        "value": "8px 8px 0 color-mix(in srgb, var(--ink) 22%, transparent)",
+        "purpose": "App illustration plates."
+      },
+      {
+        "name": "object-offset",
+        "value": "6px 6px 0 rgba(17,18,20,.15)",
+        "purpose": "Paper objects inside illustrations."
+      },
+      {
+        "name": "object-offset-sm",
+        "value": "3px 3px 0 rgba(17,18,20,.13)",
+        "purpose": "Queue rows inside illustrations."
+      },
+      {
+        "name": "object-lift",
+        "value": "0 14px 28px rgba(17,18,20,.16)",
+        "purpose": "Mock windows inside illustrations."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "All transitions."
+      },
+      {
+        "name": "state",
+        "value": ".3s",
+        "purpose": "Color/border state changes."
+      },
+      {
+        "name": "lift",
+        "value": ".5s",
+        "purpose": "Hover lift transforms."
+      },
+      {
+        "name": "reveal",
+        "value": ".7s, translateY(16px)",
+        "purpose": "Scroll-in reveal of sections."
+      },
+      {
+        "name": "ray-cycle",
+        "value": "7s linear infinite",
+        "purpose": "Logo ray color cycle; runs under reduced motion (color only)."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "900px"
+      },
+      {
+        "name": "phone",
+        "value": "620px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ink-filled main action, e.g. Explore the apps.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\">Explore the apps</a>",
+      "css": ".ds-btn { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:8px 12px; border:1px solid var(--ink,#111214); border-radius:6px; text-decoration:none; font-family: Manrope, 'Noto Sans TC', sans-serif; font-weight:600; transition: background-color .3s cubic-bezier(0.22,1,0.36,1), transform .5s cubic-bezier(0.22,1,0.36,1); } .ds-btn-primary { background: var(--ink,#111214); color: var(--bg,#f7f8f5); } .ds-btn:hover { transform: translateY(-2px); } .ds-btn:active { transform: scale(.98); } .ds-btn:focus-visible { outline:2px solid var(--theme,#E8590C); outline-offset:3px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Outlined companion action, e.g. Our principles.",
+      "html": "<a class=\"ds-btn2\" href=\"#\">Our principles</a>",
+      "css": ".ds-btn2 { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:8px 12px; border:1px solid var(--ink,#111214); border-radius:6px; background:transparent; color:var(--ink,#111214); text-decoration:none; font-family: Manrope, 'Noto Sans TC', sans-serif; font-weight:600; transition: background-color .3s cubic-bezier(0.22,1,0.36,1), transform .5s cubic-bezier(0.22,1,0.36,1); } .ds-btn2:hover { background: var(--surface,#fff); transform: translateY(-2px); } .ds-btn2:active { transform: scale(.98); } .ds-btn2:focus-visible { outline:2px solid var(--theme,#E8590C); outline-offset:3px; }"
+    },
+    {
+      "name": "Language Switch",
+      "kind": "nav",
+      "refersTo": "lang-switch-active",
+      "description": "EN / 繁中 pill toggle in the utility bar.",
+      "html": "<div class=\"ds-lang\"><button aria-pressed=\"true\">EN</button><button aria-pressed=\"false\">繁中</button></div>",
+      "css": ".ds-lang { display:inline-flex; padding:3px; border:1px solid var(--line,#c9cdd0); border-radius:999px; background:var(--surface,#fff); } .ds-lang button { min-width:48px; min-height:34px; padding:5px 12px; border:0; border-radius:999px; background:transparent; color:var(--muted,#555b62); font-family: Manrope, 'Noto Sans TC', sans-serif; cursor:pointer; } .ds-lang button[aria-pressed=\"true\"] { background:var(--ink,#111214); color:var(--bg,#f7f8f5); } .ds-lang button:focus-visible { outline:2px solid var(--theme,#E8590C); outline-offset:3px; }"
+    },
+    {
+      "name": "Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Static feature label under each app.",
+      "html": "<ul class=\"ds-tags\"><li>Multi-source search</li><li>15 languages</li><li>Background play</li></ul>",
+      "css": ".ds-tags { display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none; } .ds-tags li { padding:8px 12px; border:1px solid var(--line,#c9cdd0); border-radius:999px; background:var(--surface,#fff); color:var(--ink,#111214); font-family: Manrope, 'Noto Sans TC', sans-serif; font-size:.75rem; font-weight:600; }"
+    },
+    {
+      "name": "Library Card",
+      "kind": "card",
+      "refersTo": "library-card",
+      "description": "npm package card with ink install bar and copy button.",
+      "html": "<div class=\"ds-lib\"><code class=\"ds-lib-name\">@dawn-studio/theme</code><p>Dark / light theme: localStorage, theme-color sync, no-flash head script.</p><div class=\"ds-install\"><code>npm i @dawn-studio/theme</code><button class=\"ds-copy\" aria-label=\"Copy install command\"><svg viewBox=\"0 0 24 24\" width=\"15\" height=\"15\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"9\" y=\"9\" width=\"12\" height=\"12\" rx=\"2\"/><path d=\"M5 15V5a2 2 0 0 1 2-2h10\"/></svg></button></div></div>",
+      "css": ".ds-lib { display:flex; flex-direction:column; gap:12px; max-width:340px; padding:22px; border:1px solid var(--line,#c9cdd0); border-radius:16px; background:var(--surface,#fff); transition: border-color .3s cubic-bezier(0.22,1,0.36,1), transform .5s cubic-bezier(0.22,1,0.36,1); } .ds-lib:hover { border-color:var(--ink,#111214); transform:translateY(-2px); } .ds-lib-name { font:600 .95rem/1.3 'IBM Plex Mono', monospace; color:var(--ink,#111214); } .ds-lib p { margin:0; font-family: Manrope, 'Noto Sans TC', sans-serif; color:var(--muted,#555b62); font-size:.95rem; line-height:1.55; } .ds-install { display:flex; align-items:center; gap:8px; padding:8px 8px 8px 12px; border-radius:8px; background:var(--ink,#111214); } .ds-install code { flex:1; font:500 .82rem/1.4 'IBM Plex Mono', monospace; color:var(--bg,#f7f8f5); white-space:nowrap; overflow-x:auto; } .ds-copy { width:32px; height:32px; display:grid; place-items:center; border:0; border-radius:6px; background:transparent; color:var(--bg,#f7f8f5); opacity:.55; cursor:pointer; padding:0; } .ds-copy:hover { opacity:1; background:rgba(128,128,128,.22); } .ds-copy:focus-visible { outline:2px solid var(--theme,#E8590C); outline-offset:3px; }"
+    },
+    {
+      "name": "App Illustration Plate",
+      "kind": "custom",
+      "refersTo": "project-visual",
+      "description": "Shelf-hue plate with hard offset shadow holding a flat CSS illustration (Lo Shu grid shown).",
+      "html": "<div class=\"ds-plate\"><div class=\"ds-grid\"><span>4</span><span>9</span><span>2</span><span>3</span><span>5</span><span>7</span><span>8</span><span>1</span><span>6</span></div></div>",
+      "css": ".ds-plate { --project-color: #8458d8; display:grid; place-items:center; min-height:276px; max-width:420px; padding:24px; border:1px solid var(--ink,#111214); border-radius:12px; background:var(--project-color); box-shadow: 8px 8px 0 rgba(17,18,20,.22); } .ds-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; width:min(100%,230px); } .ds-grid span { aspect-ratio:1; display:grid; place-items:center; font:700 1.5rem Manrope, sans-serif; color:#f3a23b; background:#161719; border:1px solid #36383c; border-radius:12px; text-shadow:0 0 14px rgba(227,168,87,.55); }"
+    },
+    {
+      "name": "Mono Meta Label",
+      "kind": "custom",
+      "refersTo": "label",
+      "description": "Uppercase mono category line with the app's color dot.",
+      "html": "<div class=\"ds-meta\"><i></i>Music player · Web + Android</div>",
+      "css": ".ds-meta { display:flex; align-items:center; gap:10px; color:var(--muted,#555b62); font:500 .72rem/1.3 'IBM Plex Mono', monospace; text-transform:uppercase; letter-spacing:.08em; } .ds-meta i { width:8px; height:8px; border-radius:50%; background:#3ddc84; }"
+    },
+    {
+      "name": "Text Link",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Underlined-by-rule link; turns Dawn Ember on hover, arrow nudges up-right.",
+      "html": "<a class=\"ds-link\" href=\"#\">Open OpenMusic <svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M7 17 17 7M8 7h9v9\"/></svg></a>",
+      "css": ".ds-link { display:inline-flex; align-items:center; gap:9px; padding-bottom:4px; border-bottom:1px solid currentColor; color:var(--ink,#111214); text-decoration:none; font-family: Manrope, 'Noto Sans TC', sans-serif; font-weight:700; transition: color .3s cubic-bezier(0.22,1,0.36,1); } .ds-link svg { transition: transform .3s cubic-bezier(0.22,1,0.36,1); } .ds-link:hover { color:var(--theme,#E8590C); } .ds-link:hover svg { transform:translate(3px,-3px); } .ds-link:focus-visible { outline:2px solid var(--theme,#E8590C); outline-offset:3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "First Light",
+    "overview": "The whole system hangs off the logo: a Dawn Ember sun sitting on a horizon, with rays that cycle through a spectrum. Everything else is the quiet morning around it: a cool off-white paper, near-black ink, hairline rules and monospace labels. Color is not spread across the chrome; it arrives the way light does, from one source, and lands on each app as its own hue on the shelf.\n\nThe mood is clean, direct and playful. The page itself is plain, ruled and typographic: huge tightly-tracked Manrope headlines, a mono meta line under each app name, and thin dividers that turn sections into a list. The play is concentrated in the per-app illustration cards (a spinning-feeling vinyl, a UFO over a green night sky, a Lo Shu number grid, stacked clipboard cards), each drawn in flat CSS shapes on that app's color. Components stay quiet and precise so those cards can carry the personality.\n\nLight and dark are both first-class and follow `prefers-color-scheme`. EN and 繁中 share the same layout; Chinese gets looser line-height on display type.",
+    "keyCharacteristics": [
+      "One warm sun (Dawn Ember) as the only chrome accent; app hues live only on the shelf.",
+      "Oversized, negative-tracked sans headlines over uppercase mono labels.",
+      "Hairline-ruled sections; the page reads as a catalogue, not a grid of cards.",
+      "Flat-shape CSS illustrations, one per app, each on its own color plate.",
+      "Quiet, precise components: ink-filled or outlined, small radius, short eased transitions."
+    ],
+    "rules": [
+      {
+        "name": "The One Sun Rule",
+        "body": "Dawn Ember is the only accent in the page chrome. App hues stay on the shelf and never color navigation, buttons or section headings.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tight Display Rule",
+        "body": "Headlines track at −0.04em (the floor; never tighter) with line-height under 1 in English. In 繁中, display line-height opens to 1.08 and headlines to 1.15 so characters do not collide.",
+        "section": "typography"
+      },
+      {
+        "name": "The Mono Labels Rule",
+        "body": "Anything that labels, counts or categorises (meta lines under titles, numbers in illustrations) is IBM Plex Mono uppercase with wide tracking. Prose is never mono.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "Do keep Dawn Ember as the single chrome accent: the headline accent word, the focus ring, link hover.",
+      "Do give every new app a shelf hue, a mono meta line with a matching dot, and a flat CSS illustration plate.",
+      "Do separate sections with rules (strong ink under section heads, hairline between items) instead of wrapping them in boxes.",
+      "Do ship every string in EN and 繁中, and check the 繁中 line-heights on display type.",
+      "Do define colors as tokens with dark-mode counterparts; illustration internals use the fixed illustration ink and paper.",
+      "Do honor `prefers-reduced-motion`: scroll reveals and transitions turn off, and only the color-only ray cycle keeps running."
+    ],
+    "donts": [
+      "Don't put a label or eyebrow above a heading; category and platform lines go under the title.",
+      "Don't number list items (01, 02…) unless the order carries meaning.",
+      "Don't use app shelf hues on navigation, buttons or section headings.",
+      "Don't set prose in IBM Plex Mono or set labels in Manrope.",
+      "Don't draw the sun's rays as alternating red-and-white bands radiating to the edges. Keep them as short spectrum strokes above the horizon.",
+      "Don't add soft blurred shadows to page chrome; depth stays in the illustrations."
+    ]
+  }
+}
