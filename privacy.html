@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Privacy · Dawn Studio</title>
+  <meta name="description" content="How dawnstudio.app handles your data: no accounts, no cookies, cookieless analytics only." />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { color-scheme: light dark; --bg: #f7f8f5; --ink: #111214; --muted: #555b62; --line: #c9cdd0; --theme: #E8590C; --ease: cubic-bezier(0.22, 1, 0.36, 1); }
+    @media (prefers-color-scheme: dark) { :root { --bg: #0d0e10; --ink: #f4f5ef; --muted: #b5bac0; --line: #383c40; } }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Manrope", "Noto Sans TC", sans-serif; font-size: 16px; line-height: 1.55; }
+    main { width: min(100% - 32px, 720px); margin-inline: auto; padding-block: 64px 80px; }
+    h1 { font-size: 3rem; line-height: 1; letter-spacing: -.05em; margin: 0 0 16px; text-wrap: balance; }
+    h2 { font-size: 1.25rem; margin: 32px 0 8px; }
+    p { color: var(--muted); margin: 0 0 16px; text-wrap: pretty; }
+    a { color: var(--ink); transition: color .3s var(--ease); }
+    a:hover { color: var(--theme); }
+    :focus-visible { outline: 2px solid var(--theme); outline-offset: 3px; border-radius: 4px; }
+    .back { display: inline-block; margin-bottom: 40px; font-weight: 600; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+    .updated { font-size: .875rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="/">← Dawn Studio</a>
+    <h1>Privacy</h1>
+    <p class="updated">Last updated 29 October 2026.</p>
+    <h2>This site</h2>
+    <p>dawnstudio.app is a static site. It has no accounts, no sign-up, no comments and no forms, and it does not collect personal information from visitors.</p>
+    <h2>Analytics</h2>
+    <p>We use Cloudflare Web Analytics to count visits and see which pages and apps get used. It is cookieless, does not track you across sites, and does not build a profile of you. We see aggregate numbers only.</p>
+    <h2>The apps</h2>
+    <p>Each Dawn Studio app handles data its own way. Most are local-first: your data stays in your browser or on your device unless a feature you use needs a server. Check the app itself for its details.</p>
+    <h2>Questions</h2>
+    <p>Dawn Studio is run by Hector Chan. You can reach him through <a href="https://hectorchan.com">hectorchan.com</a>.</p>
+  </main>
+</body>
+</html>

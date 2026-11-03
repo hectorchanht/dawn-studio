@@ -1,0 +1,1490 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#f7f8f5" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0d0e10" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <title>Dawn Studio</title>
+  <meta name="description" content="Dawn Studio builds free tools for everyone — no ads, no paywalls, no sign-up walls. OpenMusic, Numerology, ZhConvert, RealUFO and more, free by design." />
+  <link rel="canonical" href="https://dawnstudio.app/" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dawn Studio" />
+  <meta property="og:title" content="Dawn Studio" />
+  <meta property="og:description" content="Free tools for everyone — no ads, no paywalls, no sign-up walls. OpenMusic, Numerology, ZhConvert, RealUFO and more." />
+  <meta property="og:url" content="https://dawnstudio.app/" />
+  <meta property="og:image" content="https://dawnstudio.app/logo.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Dawn Studio" />
+  <meta name="twitter:description" content="Free tools for everyone — no ads, no paywalls, no sign-up walls." />
+  <meta name="twitter:image" content="https://dawnstudio.app/logo.png" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Dawn Studio","url":"https://dawnstudio.app/","logo":"https://dawnstudio.app/logo.png","description":"Dawn Studio builds free tools for everyone — no ads, no paywalls, no sign-up walls."}
+  </script>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f8f5;
+      --surface: #ffffff;
+      --ink: #111214;
+      --muted: #555b62;
+      --line: #c9cdd0;
+      --line-strong: #111214;
+      --theme: #E8590C;
+      --amber: #f3a23b;
+      --coral: #eb6048;
+      --blue: #3d7df2;
+      --green: #35a66f;
+      --violet: #8458d8;
+      --teal: #2e9c95;
+      --shadow: 0 18px 50px rgba(17, 18, 20, .10);
+      --max: 1180px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0d0e10;
+        --surface: #15171a;
+        --ink: #f4f5ef;
+        --muted: #b5bac0;
+        --line: #383c40;
+        --line-strong: #f4f5ef;
+        --amber: #ffb34d;
+        --coral: #ff715b;
+        --blue: #6b9cff;
+        --green: #52c28c;
+        --violet: #aa84f2;
+        --teal: #55bdb5;
+        --shadow: 0 20px 60px rgba(0, 0, 0, .34);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    html { overflow-x: clip; }
+    body {
+      margin: 0;
+      min-width: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Manrope", "Noto Sans TC", sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+    button, a { font: inherit; }
+    a { color: inherit; }
+    svg { display: block; }
+
+    .page {
+      width: min(100% - 32px, var(--max));
+      margin-inline: auto;
+    }
+
+    .utility {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .utility-note {
+      margin: 0;
+      color: var(--muted);
+      font: 500 .72rem/1.2 "IBM Plex Mono", monospace;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .brand img {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: block;
+    }
+    .brand span {
+      font: 600 .875rem/1 "Manrope", "Noto Sans TC", sans-serif;
+      letter-spacing: .01em;
+    }
+    .lang-switch {
+      display: inline-flex;
+      padding: 3px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+    }
+    .lang-switch button {
+      min-width: 48px;
+      min-height: 34px;
+      padding: 5px 12px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+    }
+    .lang-switch button[aria-pressed="true"] {
+      background: var(--ink);
+      color: var(--bg);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 610px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+      align-items: center;
+      gap: 44px;
+      padding-block: 80px 64px;
+      border-bottom: 1px solid var(--line-strong);
+      overflow: hidden;
+    }
+    .hero-copy { position: relative; z-index: 2; }
+    .hero h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(3rem, 8.2vw, 6rem);
+      line-height: .88;
+      letter-spacing: -.072em;
+      font-weight: 700;
+    }
+    .hero h1 .accent { color: var(--theme); }
+    .hero p {
+      max-width: 610px;
+      margin: 32px 0 0;
+      font-size: clamp(1.125rem, 1.8vw, 1.25rem);
+      line-height: 1.55;
+      color: var(--muted);
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 8px 12px;
+      border: 1px solid var(--ink);
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color .3s var(--ease), color .3s var(--ease), transform .5s var(--ease);
+    }
+    .button.primary { background: var(--ink); color: var(--bg); }
+    .button.secondary { background: transparent; }
+    .button:hover { transform: translateY(-2px); }
+    .button.secondary:hover { background: var(--surface); }
+
+    .sun-stage {
+      position: relative;
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      overflow: hidden;
+    }
+    /* Enlarged logo as hero art: static Hermes-orange sun on horizon,
+       rays cycle colours clockwise in rainbow order (spinning effect) */
+    .hero-logo {
+      width: min(560px, 100%);
+      height: auto;
+      display: block;
+    }
+    .hero-ray {
+      animation: ray-spin 7s linear infinite;
+    }
+    /* Marquee: every ray starts at its logo colour (--s0) and steps
+       through the rainbow one colour per second; the wave travels clockwise */
+    @keyframes ray-spin {
+      0% { stroke: var(--s0); }
+      14.285% { stroke: var(--s1); }
+      28.571% { stroke: var(--s2); }
+      42.857% { stroke: var(--s3); }
+      57.142% { stroke: var(--s4); }
+      71.428% { stroke: var(--s5); }
+      85.714%, 100% { stroke: var(--s6); }
+    }
+    .sun-label {
+      width: 230px;
+      margin: 0;
+      font: 500 .72rem/1.6 "IBM Plex Mono", monospace;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--ink);
+      text-align: center;
+    }
+
+    .catalog-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      align-items: end;
+      gap: 28px;
+      padding-block: 64px 32px;
+      border-bottom: 1px solid var(--line-strong);
+    }
+    .catalog-head h2 {
+      margin: 0;
+      font-size: clamp(2.25rem, 5vw, 4.5rem);
+      line-height: .95;
+      letter-spacing: -.055em;
+    }
+    .catalog-head p {
+      margin: 10px 0 0;
+      max-width: 620px;
+      color: var(--muted);
+    }
+    .count {
+      font: 500 .75rem/1 "IBM Plex Mono", monospace;
+      letter-spacing: .1em;
+      white-space: nowrap;
+    }
+
+    .project {
+      --project-color: var(--amber);
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(340px, .92fr);
+      gap: 32px;
+      align-items: center;
+      min-height: 360px;
+      padding-block: 40px;
+      border-bottom: 1px solid var(--line);
+    }
+    .project-copy { grid-column: 1; grid-row: 1; }
+    .project-visual { grid-column: 2; grid-row: 1; }
+    .project:nth-of-type(even) .project-visual { order: -1; grid-column: 1; }
+    .project:nth-of-type(even) .project-copy { grid-column: 2; }
+    .project-copy { min-width: 0; }
+    .project-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      color: var(--muted);
+      font: 500 .72rem/1.3 "IBM Plex Mono", monospace;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .project-meta .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--project-color);
+    }
+    .project h3 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1;
+      letter-spacing: -.05em;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .project-title-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+    .project-copy > p {
+      max-width: 580px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 24px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .tags li {
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      font-size: .75rem;
+      font-weight: 600;
+    }
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 28px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid currentColor;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .project-link svg { transition: transform .3s var(--ease); }
+    .project-link:hover svg { transform: translate(3px, -3px); }
+
+    .lib-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+      gap: 18px;
+      margin-top: 34px;
+      padding-bottom: 56px;
+    }
+    .lib {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--surface);
+    }
+    .lib-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .lib-head > code {
+      font: 600 .95rem/1.3 "IBM Plex Mono", monospace;
+      color: var(--ink);
+      word-break: break-all;
+    }
+    .lib > p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.55;
+    }
+    .lib-install {
+      margin-top: auto;
+      padding: 8px 8px 8px 12px;
+      border-radius: 8px;
+      background: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .lib-install code {
+      flex: 1;
+      min-width: 0;
+      font: 500 .82rem/1.4 "IBM Plex Mono", monospace;
+      color: var(--bg);
+      white-space: nowrap;
+      overflow-x: auto;
+    }
+    .copy-btn {
+      flex: none;
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
+      color: var(--bg);
+      opacity: .55;
+      cursor: pointer;
+      padding: 0;
+    }
+    .copy-btn:hover { opacity: 1; background: rgba(128, 128, 128, .22); }
+    .copy-btn svg { width: 15px; height: 15px; display: block; }
+    .copy-btn.copied { opacity: 1; color: #3ddc84; }
+    .lib-links {
+      display: flex;
+      gap: 18px;
+    }
+    .lib-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--ink);
+      font-size: .875rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 2px;
+    }
+    .lib-links a:hover { opacity: .65; }
+    .product-links { display: inline-flex; gap: 10px; flex-wrap: wrap; }
+    .product-extra-link {
+      font-size: .875rem;
+      border-color: var(--line);
+      color: var(--ink);
+    }
+    .product-extra-link:hover { background: color-mix(in srgb, var(--theme) 12%, transparent); }
+
+    .project-visual {
+      min-width: 0;
+      min-height: 276px;
+      padding: 24px;
+      position: relative;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      border-radius: 12px;
+      background: var(--project-color);
+      color: #101113;
+      box-shadow: 8px 8px 0 color-mix(in srgb, var(--ink) 22%, transparent);
+    }
+    .ufo {
+      position: relative;
+      z-index: 2;
+      width: 210px;
+    }
+    .ufo-dome {
+      width: 92px;
+      height: 46px;
+      margin: 0 auto;
+      border-radius: 92px 92px 0 0;
+      background: linear-gradient(180deg, color-mix(in srgb, var(--project-color) 75%, white), color-mix(in srgb, var(--project-color) 35%, transparent));
+      border: 1px solid var(--project-color);
+      border-bottom: none;
+    }
+    .ufo-disc {
+      position: relative;
+      height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #3c4249, #20242a);
+      border: 1px solid var(--project-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+    }
+    .ufo-disc i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--project-color);
+      box-shadow: 0 0 10px var(--project-color);
+      animation: ufo-blink 1.8s ease-in-out infinite;
+    }
+    .ufo-disc i:nth-child(2) { animation-delay: .25s; }
+    .ufo-disc i:nth-child(3) { animation-delay: .5s; }
+    .ufo-disc i:nth-child(4) { animation-delay: .75s; }
+    .ufo-disc i:nth-child(5) { animation-delay: 1s; }
+    @keyframes ufo-blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .2; }
+    }
+    .visual-window {
+      width: min(100%, 390px);
+      border: 1.5px solid #101113;
+      border-radius: 9px;
+      background: #f8f8f4;
+      box-shadow: 0 14px 28px rgba(17, 18, 20, .16);
+      overflow: hidden;
+    }
+    .window-top {
+      height: 28px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 0 10px;
+      border-bottom: 1px solid #101113;
+    }
+    .window-top i { width: 6px; height: 6px; border: 1px solid #101113; border-radius: 50%; }
+    .window-body { padding: 16px; }
+
+    .rate-row {
+      display: grid;
+      grid-template-columns: 46px 1fr auto;
+      align-items: center;
+      gap: 11px;
+      padding: 10px 0;
+      border-bottom: 1px solid #c5c6c0;
+      font: 600 .82rem/1.2 "IBM Plex Mono", monospace;
+    }
+    .rate-row:last-child { border-bottom: 0; }
+    .rate-code {
+      display: grid;
+      place-items: center;
+      height: 30px;
+      border: 1px solid #101113;
+      border-radius: 4px;
+      background: var(--amber);
+    }
+    .rate-line { height: 8px; border-radius: 2px; background: #d6d7d2; }
+    .rate-arrow { width: 20px; height: 20px; }
+
+    /* ---- OpenMusic: vinyl player ---- */
+    .vinyl-scene { position: relative; width: 100%; height: 100%; min-height: 228px; display: grid; place-items: center; }
+    .vinyl {
+      width: 190px; aspect-ratio: 1; border-radius: 50%; position: relative;
+      background: repeating-radial-gradient(circle at 50% 50%, #17181a 0 3px, #26272b 3px 6px);
+      border: 1px solid #0c0d0e; box-shadow: 0 14px 32px rgba(0,0,0,.4);
+    }
+    .vinyl::after {
+      content: ""; position: absolute; inset: 0; border-radius: 50%;
+      background: conic-gradient(from 210deg, transparent 0deg, rgba(255,255,255,.13) 18deg, transparent 55deg, transparent 180deg, rgba(255,255,255,.07) 205deg, transparent 245deg);
+    }
+    .vinyl-label { position: absolute; inset: 33%; border-radius: 50%; background: var(--project-color); border: 3px solid #f4f4ef; }
+    .vinyl-label::after { content: ""; position: absolute; inset: 42%; border-radius: 50%; background: #101113; }
+    .tonearm {
+      position: absolute; top: 13%; right: 15%; width: 96px; height: 9px; border-radius: 5px;
+      background: linear-gradient(180deg, #d7dbde, #a9aeb3);
+      transform: rotate(32deg); transform-origin: calc(100% - 8px) 50%;
+      box-shadow: 0 3px 8px rgba(0,0,0,.35);
+    }
+    .tonearm::after {
+      content: ""; position: absolute; right: -6px; top: 50%; width: 18px; height: 18px;
+      border-radius: 50%; background: #3a3d40; transform: translateY(-50%);
+    }
+    /* ---- RealUFO: green night sky ---- */
+    .night-visual { background: linear-gradient(180deg, #0b2117 0%, #0e2c1e 60%, #123826 100%) !important; }
+    .night-scene { position: absolute; inset: 0; }
+    .night-scene .star { position: absolute; width: 3px; height: 3px; border-radius: 50%; background: #fff; opacity: .75; }
+    .night-scene .ufo {
+      position: absolute; left: 50%; top: 46%; transform: translate(-50%, -50%);
+      width: 235px;
+      filter: drop-shadow(0 0 26px color-mix(in srgb, var(--project-color) 60%, transparent));
+    }
+    /* ---- ZhConvert: document transform ---- */
+    .swap-scene { display: flex; align-items: center; justify-content: center; gap: 18px; width: 100%; min-height: 228px; flex-wrap: wrap; }
+    .doc {
+      position: relative; width: 118px; max-width: 100%; flex: 0 1 118px; min-width: 0;
+      height: 152px; border-radius: 8px; overflow: hidden;
+      background: #f7f5ef; border: 1px solid #101113;
+      box-shadow: 5px 5px 0 rgba(0,0,0,.25); padding: 16px 14px;
+    }
+    .doc i { display: block; height: 7px; border-radius: 4px; background: #c9cdd0; margin-bottom: 9px; }
+    .doc i:nth-of-type(2) { width: 82%; }
+    .doc i:nth-of-type(3) { width: 68%; }
+    .doc-han {
+      position: absolute; right: 4px; bottom: -16px; line-height: 1;
+      font-size: 66px; font-weight: 700; color: var(--project-color); opacity: .92;
+    }
+    .swap-arrow-big { font-size: 2.1rem; font-weight: 700; color: #101113; }
+    /* ---- Numerology: number grid ---- */
+    .num-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      width: min(100%, 230px);
+      margin: 0 auto;
+    }
+    .num-grid span {
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--amber);
+      background: #161719;
+      border: 1px solid #36383c;
+      border-radius: 12px;
+      text-shadow: 0 0 14px rgba(227, 168, 87, .55);
+    }
+
+    .clip-stack { position: relative; width: min(100%, 300px); height: 210px; }
+    .clip-card {
+      position: absolute;
+      width: 215px;
+      min-height: 116px;
+      padding: 16px;
+      border: 1.5px solid #101113;
+      border-radius: 7px;
+      background: #f8f8f4;
+      box-shadow: 6px 6px 0 rgba(17, 18, 20, .15);
+    }
+    .clip-card:nth-child(1) { left: 4%; top: 56px; transform: rotate(-6deg); }
+    .clip-card:nth-child(2) { right: 1%; top: 12px; transform: rotate(5deg); }
+    .clip-card:nth-child(3) { left: 19%; bottom: 0; transform: rotate(1deg); }
+    .paperclip {
+      width: 24px;
+      height: 45px;
+      position: absolute;
+      right: 16px;
+      top: -16px;
+      border: 3px solid #101113;
+      border-radius: 14px 14px 8px 8px;
+      border-bottom-color: transparent;
+    }
+    .scribble { height: 7px; margin: 9px 0; border-radius: 3px; background: #c6c7c3; }
+    .scribble.short { width: 62%; }
+
+    .holdr-chart { width: min(100%, 400px); }
+    .holdr-top { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .coin-stack { display: flex; }
+    .coin-stack i {
+      width: 38px; height: 38px; margin-left: -7px;
+      display: grid; place-items: center;
+      border: 1px solid #101113; border-radius: 50%;
+      background: #f8f8f4;
+      font: 600 .7rem/1 "IBM Plex Mono", monospace;
+    }
+    .coin-stack i:first-child { margin-left: 0; }
+    .graph { margin-top: 20px; border-top: 1px solid #c8c9c4; border-bottom: 1px solid #c8c9c4; }
+    .graph svg { width: 100%; height: 115px; }
+    .legend { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 14px; }
+    .legend span { display: flex; align-items: center; gap: 5px; font: 500 .64rem/1.2 "IBM Plex Mono", monospace; }
+    .legend i { width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+
+    .queue { width: min(100%, 390px); display: grid; gap: 10px; }
+    .question {
+      display: grid;
+      grid-template-columns: 38px 1fr auto;
+      align-items: center;
+      gap: 10px;
+      padding: 11px;
+      border: 1.5px solid #101113;
+      border-radius: 8px;
+      background: #f8f8f4;
+      box-shadow: 3px 3px 0 rgba(17, 18, 20, .13);
+    }
+    .q-rank { font: 700 .78rem/1 "IBM Plex Mono", monospace; }
+    .q-lines i { display: block; height: 6px; border-radius: 3px; background: #c7c8c3; }
+    .q-lines i + i { width: 65%; margin-top: 6px; }
+    .votes { min-width: 38px; text-align: center; padding: 5px; border: 1px solid #101113; border-radius: 6px; font: 600 .68rem/1 "IBM Plex Mono", monospace; }
+
+    .funds { width: min(100%, 390px); }
+    .fund-ring {
+      width: 122px;
+      height: 122px;
+      margin: 0 auto 18px;
+      padding: 14px;
+      border-radius: 50%;
+      background: conic-gradient(#1c706c 0 25%, #f3a23b 25% 50%, #2f77d0 50% 75%, #d95248 75% 100%);
+      border: 1.5px solid #101113;
+    }
+    .fund-ring::after { content: ""; display: block; width: 100%; height: 100%; border: 1.5px solid #101113; border-radius: 50%; background: #f8f8f4; }
+    .fund-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .fund-grid span { padding: 9px; border: 1px solid #101113; border-radius: 6px; background: #f8f8f4; font: 600 .66rem/1.25 "IBM Plex Mono", monospace; }
+
+
+    .project[data-product] { cursor: pointer; }
+    .product-home-link { color: inherit; text-decoration: none; }
+    .product-home-link:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
+    .product-page { padding-block: 34px 84px; }
+    .product-back { display: inline-block; margin-bottom: 44px; color: var(--muted); text-decoration: none; border-bottom: 1px solid currentColor; font-weight: 600; }
+    .product-hero { display: grid; grid-template-columns: minmax(0, .9fr) minmax(340px, 1.1fr); gap: 64px; align-items: center; min-height: 570px; border-bottom: 1px solid var(--line-strong); }
+    .product-kicker { margin: 0 0 14px; color: var(--muted); font: 500 .75rem/1.4 "IBM Plex Mono", monospace; letter-spacing: .09em; text-transform: uppercase; }
+    .product-kicker::before {
+      content: "";
+      display: inline-block;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--project-color, var(--theme));
+      margin-right: 8px;
+      vertical-align: 1px;
+    }
+    .product-page h1 { margin: 0; font-size: clamp(3rem, 6.6vw, 6rem); line-height: .88; letter-spacing: -.065em; display: flex; align-items: center; gap: 18px; }
+    .product-page h1 .project-title-logo { width: 64px; height: 64px; border-radius: 16px; }
+    .product-pitch { max-width: 610px; margin: 28px 0 0; color: var(--muted); font-size: clamp(1.125rem, 1.8vw, 1.25rem); }
+    .product-art .project-visual { grid-column: auto; grid-row: auto; min-height: 380px; margin: 0; }
+    .product-features { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, .85fr); gap: 70px; padding-top: 64px; }
+    .product-features h2 { margin: 0; font-size: clamp(2.25rem, 5vw, 4.5rem); line-height: .95; letter-spacing: -.055em; }
+    .product-features p { max-width: 650px; margin: 22px 0 0; color: var(--muted); font-size: 1rem; }
+    .product-features ul { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-strong); }
+    .product-features li { padding: 17px 0; border-bottom: 1px solid var(--line); font-weight: 600; }
+    body.product-route main > .hero, body.product-route #apps, body.product-route #npm, body.product-route #studio { display: none; }
+    body.product-route .product-page { display: block; }
+
+    .studio-note {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+      gap: 72px;
+      align-items: end;
+      padding-block: 88px;
+    }
+    .studio-note h2 {
+      max-width: 830px;
+      margin: 0;
+      font-size: clamp(2.5rem, 6vw, 6rem);
+      line-height: .95;
+      letter-spacing: -.06em;
+    }
+    .studio-note h2 span { color: var(--theme); }
+    .principles {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line-strong);
+    }
+    .principles li {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+      font-weight: 600;
+    }
+    .principles em { color: var(--muted); font: 400 .72rem/1.6 "IBM Plex Mono", monospace; font-style: normal; }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-block: 26px 34px;
+      border-top: 1px solid var(--line-strong);
+      color: var(--muted);
+      font-size: .875rem;
+    }
+    footer p { margin: 0; }
+    .back-top { text-decoration: none; border-bottom: 1px solid currentColor; }
+
+    @media (max-width: 900px) {
+      .hero { min-height: auto; grid-template-columns: 1fr; gap: 20px; padding-top: 56px; }
+      .sun-stage { min-height: 310px; }
+      .sun-label { bottom: 8%; }
+      .project {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding-block: 34px 44px;
+      }
+      .project-copy, .project-visual,
+      .project:nth-of-type(even) .project-copy,
+      .project:nth-of-type(even) .project-visual { grid-column: 1; order: initial; }
+      .project-visual { grid-row: 2; margin-top: 12px; }
+      .product-hero { grid-template-columns: 1fr; gap: 36px; min-height: 0; padding-bottom: 58px; }
+      .product-art .project-visual { min-height: 320px; }
+      .product-features { grid-template-columns: 1fr; gap: 36px; }
+      .studio-note { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 620px) {
+      .page { width: min(100% - 22px, var(--max)); }
+      .utility { min-height: 56px; }
+      .utility-note { max-width: 185px; line-height: 1.45; }
+      .hero { padding-block: 48px 42px; }
+      .hero h1 { font-size: clamp(3rem, 16vw, 4.5rem); }
+      .hero p { margin-top: 24px; font-size: 1rem; }
+      .hero-actions { display: grid; grid-template-columns: 1fr; }
+      .button { width: 100%; }
+      .sun-stage { min-height: 255px; }
+      .sun-label { width: 180px; font-size: .63rem; }
+      .catalog-head { grid-template-columns: 1fr; gap: 18px; padding-top: 48px; }
+      .count { justify-self: start; }
+      .project { grid-template-columns: 1fr; gap: 14px; min-height: 0; }
+      .project-copy, .project-visual,
+      .project:nth-of-type(even) .project-copy,
+      .project:nth-of-type(even) .project-visual { grid-column: 1; grid-row: auto; }
+      .project-visual { min-height: 240px; padding: 16px; }
+      .clip-stack { transform: scale(.88); }
+      .product-page { padding-block: 24px 58px; }
+      .product-back { margin-bottom: 34px; }
+      .product-page h1 { font-size: clamp(3rem, 17vw, 4.5rem); }
+      .product-art .project-visual { min-height: 240px; }
+      .product-features { padding-top: 46px; }
+      .studio-note { padding-block: 64px; }
+      footer { align-items: flex-start; flex-direction: column; }
+    }
+
+    /* Redesign pass 2026-10-29 (adapted Dawn values): states, focus, reveal */
+    .skip-link {
+      position: absolute; left: 16px; top: -64px; z-index: 10;
+      padding: 8px 12px; border-radius: 8px;
+      background: var(--ink); color: var(--bg); text-decoration: none; font-weight: 600;
+      transition: top .3s var(--ease);
+    }
+    .skip-link:focus-visible { top: 12px; }
+    :focus-visible { outline: 2px solid var(--theme); outline-offset: 3px; border-radius: 4px; }
+    .button:active, .lang-switch button:active, .copy-btn:active { transform: scale(.98); }
+    .project-link { transition: color .3s var(--ease); }
+    .project-link:hover { color: var(--theme); }
+    .lib { transition: border-color .3s var(--ease), transform .5s var(--ease); }
+    .lib:hover { border-color: var(--line-strong); transform: translateY(-2px); }
+    .count, .votes, .q-rank { font-variant-numeric: tabular-nums; }
+    h1, h2, h3 { text-wrap: balance; }
+    .project-copy > p, .hero p { text-wrap: pretty; }
+    html[lang^="zh"] .hero h1, html[lang^="zh"] .product-page h1 { line-height: 1.08; }
+    html[lang^="zh"] .catalog-head h2, html[lang^="zh"] .product-features h2, html[lang^="zh"] .studio-note h2 { line-height: 1.15; }
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+    .reveal.visible { opacity: 1; transform: none; }
+    footer .footer-legal { color: var(--muted); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+    footer .footer-legal:hover { color: var(--ink); }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+      /* Frozen animations must show the logo's static rainbow, not a mid-cycle state.
+         Exception: ray colour cycle is colour-only (no positional motion), so it
+         keeps running even under reduced-motion per site design. */
+      .hero-ray { animation-duration: 7s !important; }
+    }
+  </style>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+    <header class="utility">
+      <a class="brand" href="#top" aria-label="Dawn Studio home">
+        <img src="/logo.png" alt="Dawn Studio logo" width="40" height="40" />
+        <span>Dawn Studio</span>
+      </a>
+      <div class="lang-switch" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="zh" aria-pressed="false">繁中</button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title" data-i18n-html="heroTitle">Small tools.<br><span class="accent">Real life.</span></h1>
+          <p data-i18n="heroBody">Dawn Studio builds focused apps for currency conversion, music, clipboard capture, portfolio tracking, live Q&amp;A, investment education and script conversion.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#apps">
+              <span data-i18n="explore">Explore the apps</span>
+              <svg width="17" height="17" viewBox="0 0 17 17" aria-hidden="true"><path d="M8.5 2v12M3.5 9l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="button secondary" href="#studio" data-i18n="principlesButton">Our principles</a>
+          </div>
+        </div>
+        <div class="sun-stage" aria-hidden="true">
+          <svg class="hero-logo" viewBox="0 0 600 340">
+            <g stroke-linecap="round" stroke-width="24">
+              <line class="hero-ray" x1="155" y1="281" x2="73" y2="259" stroke="#E5484D" style="--s0:#E5484D;--s1:#8E4EC6;--s2:#3E8EDE;--s3:#46A758;--s4:#FFD23F;--s5:#E8590C;--s6:#E5484D"/>
+              <line class="hero-ray" x1="185" y1="224" x2="120" y2="169" stroke="#E8590C" style="--s0:#E8590C;--s1:#E5484D;--s2:#8E4EC6;--s3:#3E8EDE;--s4:#46A758;--s5:#FFD23F;--s6:#E8590C"/>
+              <line class="hero-ray" x1="237" y1="184" x2="201" y2="107" stroke="#FFD23F" style="--s0:#FFD23F;--s1:#E8590C;--s2:#E5484D;--s3:#8E4EC6;--s4:#3E8EDE;--s5:#46A758;--s6:#FFD23F"/>
+              <line class="hero-ray" x1="300" y1="170" x2="300" y2="85" stroke="#46A758" style="--s0:#46A758;--s1:#FFD23F;--s2:#E8590C;--s3:#E5484D;--s4:#8E4EC6;--s5:#3E8EDE;--s6:#46A758"/>
+              <line class="hero-ray" x1="363" y1="184" x2="399" y2="107" stroke="#3E8EDE" style="--s0:#3E8EDE;--s1:#46A758;--s2:#FFD23F;--s3:#E8590C;--s4:#E5484D;--s5:#8E4EC6;--s6:#3E8EDE"/>
+              <line class="hero-ray" x1="415" y1="224" x2="480" y2="169" stroke="#8E4EC6" style="--s0:#8E4EC6;--s1:#3E8EDE;--s2:#46A758;--s3:#FFD23F;--s4:#E8590C;--s5:#E5484D;--s6:#8E4EC6"/>
+              <line class="hero-ray" x1="445" y1="281" x2="527" y2="259" stroke="#E5484D" style="--s0:#E5484D;--s1:#8E4EC6;--s2:#3E8EDE;--s3:#46A758;--s4:#FFD23F;--s5:#E8590C;--s6:#E5484D"/>
+            </g>
+            <path d="M 185 320 A 115 115 0 0 1 415 320 Z" fill="#E8590C"/>
+            <rect x="40" y="313" width="520" height="14" rx="7" fill="#274b73"/>
+          </svg>
+          <p class="sun-label" data-i18n-html="sunLabel">One person<br>Useful apps<br>Built with care</p>
+        </div>
+      </section>
+
+      <section id="apps" aria-labelledby="apps-title">
+        <div class="catalog-head">
+          <div>
+            <h2 id="apps-title" data-i18n="appsTitle">The app shelf</h2>
+            <p data-i18n="appsIntro">Each app solves one clear problem. Open any of them in your browser and start using it.</p>
+          </div>
+        </div>
+
+        <article class="project" data-product="openmusic" style="--project-color: var(--coral);">
+          <div class="project-copy">
+            <div class="project-meta"><span class="dot"></span><span data-i18n="musicMeta">Music player · Web + Android</span></div>
+            <h3><img class="project-title-logo" src="/project-logos/openmusic.svg" alt="" loading="lazy"><a class="product-home-link" href="#openmusic" data-product-link="openmusic">OpenMusic</a></h3>
+            <p data-i18n="musicDesc">One mobile-first player for music across Chinese and independent sources. Search once, play instantly, build a library and explore regional charts, artist discographies and ready-made year packs.</p>
+            <ul class="tags">
+              <li data-i18n="musicTag1">Multi-source search</li><li data-i18n="musicTag2">15 languages</li><li data-i18n="musicTag3">Background play</li>
+            </ul>
+            <a class="project-link" href="https://openmusic.dawnstudio.app" target="_blank" rel="noopener">
+              <span data-i18n="openMusic">Open OpenMusic</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="project-visual" aria-hidden="true">
+            <div class="vinyl-scene">
+              <div class="vinyl"><div class="vinyl-label"></div></div>
+              <div class="tonearm"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" data-product="realufo" style="--project-color: #3ddc84;">
+          <div class="project-copy">
+            <div class="project-meta"><span class="dot"></span><span data-i18n="ufoMeta">UFO case archive · Web + API + MCP</span></div>
+            <h3><img class="project-title-logo" src="/project-logos/realufo.png" alt="" loading="lazy"><a class="product-home-link" href="#realufo" data-product-link="realufo">RealUFO</a></h3>
+            <p data-i18n="ufoDesc">A living archive of declassified UFO cases. Browse the timeline, query the API, or ask your AI assistant through the MCP server.</p>
+            <ul class="tags">
+              <li data-i18n="ufoTag1">Case archive</li><li data-i18n="ufoTag2">REST API</li><li data-i18n="ufoTag3">MCP server</li>
+            </ul>
+            <a class="project-link" href="https://realufo.dawnstudio.app" target="_blank" rel="noopener">
+              <span data-i18n="openRealufo">Open RealUFO</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="project-visual night-visual" aria-hidden="true">
+            <div class="night-scene">
+              <span class="star" style="top:14%;left:16%"></span>
+              <span class="star" style="top:24%;left:78%"></span>
+              <span class="star" style="top:38%;left:8%"></span>
+              <span class="star" style="top:12%;left:52%"></span>
+              <span class="star" style="top:30%;left:36%;opacity:.45"></span>
+              <span class="star" style="top:52%;left:88%;opacity:.5"></span>
+              <span class="star" style="top:64%;left:24%;opacity:.4"></span>
+              <span class="star" style="top:20%;left:66%;opacity:.55"></span>
+              <div class="ufo">
+                <div class="ufo-dome"></div>
+                <div class="ufo-disc"><i></i><i></i><i></i><i></i><i></i></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" data-product="numerology" style="--project-color: var(--amber);">
+          <div class="project-copy">
+            <div class="project-meta"><span class="dot"></span><span data-i18n="numerologyMeta">Chinese fortune-telling &middot; Web</span></div>
+            <h3><img class="project-title-logo" src="/project-logos/numerology.png" alt="" loading="lazy"><a class="product-home-link" href="#numerology" data-product-link="numerology">洛書命理</a></h3>
+            <p data-i18n="numerologyDesc">Bazi and Ziwei chart casting with AI-assisted interpretation. Enter a birth moment, get both charts, TL;DR summaries and visual timelines of your decade luck.</p>
+            <ul class="tags">
+              <li data-i18n="numerologyTag1">Bazi + Ziwei</li><li data-i18n="numerologyTag2">TL;DR summaries</li><li data-i18n="numerologyTag3">Luck timelines</li>
+            </ul>
+            <a class="project-link" href="https://numerology.dawnstudio.app" target="_blank" rel="noopener">
+              <span data-i18n="openNumerology">Open Numerology</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="project-visual" aria-hidden="true">
+            <div class="num-grid"><span>4</span><span>9</span><span>2</span><span>3</span><span>5</span><span>7</span><span>8</span><span>1</span><span>6</span></div>
+          </div>
+        </article>
+
+        <article class="project" data-product="zhconvert" style="--project-color: #c9563c;">
+          <div class="project-copy">
+            <div class="project-meta"><span class="dot"></span><span data-i18n="zhconvertMeta">Script converter &middot; Web</span></div>
+            <h3><img class="project-title-logo" src="/project-logos/zhconvert.png" alt="" loading="lazy"><a class="product-home-link" href="#zhconvert" data-product-link="zhconvert">ZhConvert</a></h3>
+            <p data-i18n="zhconvertDesc">Paste text or drop a file to convert between Simplified and Traditional Chinese. Handles plain text, Markdown, subtitles (SRT/VTT/LRC/ASS) and JSON &mdash; dialogue only, timestamps untouched.</p>
+            <ul class="tags">
+              <li data-i18n="zhconvertTag1">Simplified &#8646; Traditional</li><li data-i18n="zhconvertTag2">Subtitle-safe</li><li data-i18n="zhconvertTag3">File upload</li>
+            </ul>
+            <a class="project-link" href="https://zhconvert.dawnstudio.app" target="_blank" rel="noopener">
+              <span data-i18n="openZhconvert">Open ZhConvert</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="project-visual" aria-hidden="true">
+            <div class="swap-scene">
+              <div class="doc"><i></i><i></i><i></i><i></i><span class="doc-han">简</span></div>
+              <div class="swap-arrow-big">&#8646;</div>
+              <div class="doc"><i></i><i></i><i></i><i></i><span class="doc-han">繁</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" data-product="moneyrate" style="--project-color: var(--amber);">
+          <div class="project-copy">
+            <div class="project-meta"><span class="dot"></span><span data-i18n="moneyMeta">Currency toolkit · Web</span></div>
+            <h3><img class="project-title-logo" src="/project-logos/moneyrate.png" alt="" loading="lazy"><a class="product-home-link" href="#moneyrate" data-product-link="moneyrate">MoneyRate</a></h3>
+            <p data-i18n="moneyDesc">A fast converter for people who live across currencies. Compare fiat, crypto and commodities, follow charts, set alerts, plan a trip, check a quote or convert a whole list at once.</p>
+            <ul class="tags">
+              <li data-i18n="moneyTag1">30 languages</li><li data-i18n="moneyTag2">Rate alerts</li><li data-i18n="moneyTag3">Batch + trip tools</li>
+            </ul>
+            <a class="project-link" href="https://moneyrate.dawnstudio.app" target="_blank" rel="noopener">
+              <span data-i18n="openMoney">Open MoneyRate</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="project-visual" aria-hidden="true">
+            <div class="visual-window">
+              <div class="window-top"><i></i><i></i><i></i></div>
+              <div class="window-body">
+                <div class="rate-row"><span class="rate-code">CAD</span><span class="rate-line"></span><svg class="rate-arrow" viewBox="0 0 20 20"><path d="M4 7h12m-3-3 3 3-3 3M16 13H4m3 3-3-3 3-3" fill="none" stroke="#101113" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="rate-row"><span class="rate-code">HKD</span><span class="rate-line"></span><svg class="rate-arrow" viewBox="0 0 20 20"><path d="M4 7h12m-3-3 3 3-3 3M16 13H4m3 3-3-3 3-3" fill="none" stroke="#101113" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="rate-row"><span class="rate-code">USD</span><span class="rate-line"></span><svg class="rate-arrow" viewBox="0 0 20 20"><path d="M4 7h12m-3-3 3 3-3 3M16 13H4m3 3-3-3 3-3" fill="none" stroke="#101113" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" data-product="clipbin" style="--project-color: var(--blue);">
+          <div class="project-copy">
+            <div class="project-meta"><span class="dot"></span><span data-i18n="clipMeta">Clipboard desk · Web</span></div>
+            <h3><img class="project-title-logo" src="/project-logos/clipbin.png" alt="" loading="lazy"><a class="product-home-link" href="#clipbin" data-product-link="clipbin">ClipBin</a></h3>
+            <p data-i18n="clipDesc">A compact home for the text and images you do not want to lose. Type, paste, drop, upload or save what is already on your clipboard, then bring it back in a tap.</p>
+            <ul class="tags">
+              <li data-i18n="clipTag1">Text + images</li><li data-i18n="clipTag2">One-tap capture</li><li data-i18n="clipTag3">Fast retrieval</li>
+            </ul>
+            <a class="project-link" href="https://clipbin.dawnstudio.app" target="_blank" rel="noopener">
+              <span data-i18n="openClip">Open ClipBin</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="project-visual" aria-hidden="true">
+            <div class="clip-stack">
+              <div class="clip-card"><span class="paperclip"></span><div class="scribble"></div><div class="scribble short"></div></div>
+              <div class="clip-card"><span class="paperclip"></span><div class="scribble short"></div><div class="scribble"></div></div>
+              <div class="clip-card"><span class="paperclip"></span><div class="scribble"></div><div class="scribble short"></div></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" data-product="holdr" style="--project-color: var(--green);">
+          <div class="project-copy">
+            <div class="project-meta"><span class="dot"></span><span data-i18n="holdrMeta">Portfolio tracker · Web</span></div>
+            <h3><img class="project-title-logo" src="/project-logos/holdr.png" alt="" loading="lazy"><a class="product-home-link" href="#holdr" data-product-link="holdr">Holdr</a></h3>
+            <p data-i18n="holdrDesc">A clear view of your holdings across manual entries and broker data. See allocation, cost basis, gains and performance history together, with multi-currency display and AI-assisted analysis.</p>
+            <ul class="tags">
+              <li data-i18n="holdrTag1">Broker sync</li><li data-i18n="holdrTag2">Performance history</li><li data-i18n="holdrTag3">Multi-currency</li>
+            </ul>
+            <a class="project-link" href="https://holdr.dawnstudio.app" target="_blank" rel="noopener">
+              <span data-i18n="openHoldr">Open Holdr</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="project-visual" aria-hidden="true">
+            <div class="visual-window"><div class="window-top"><i></i><i></i><i></i></div><div class="window-body holdr-chart">
+              <div class="holdr-top"><div class="coin-stack"><i>STK</i><i>ETF</i><i>FX</i></div><svg width="34" height="34" viewBox="0 0 34 34"><circle cx="17" cy="17" r="13" fill="none" stroke="#c8c9c4" stroke-width="6"/><path d="M17 4a13 13 0 0 1 12 8" fill="none" stroke="#101113" stroke-width="6" stroke-linecap="round"/></svg></div>
+              <div class="graph"><svg viewBox="0 0 340 115" preserveAspectRatio="none"><path d="M0 93 C28 88 40 72 69 78 S111 48 140 57 188 35 220 44 270 17 340 24" fill="none" stroke="#101113" stroke-width="3"/><path d="M0 93 C28 88 40 72 69 78 S111 48 140 57 188 35 220 44 270 17 340 24 V115 H0Z" fill="#35a66f" opacity=".18"/></svg></div>
+              <div class="legend"><span><i></i>stocks</span><span><i></i>funds</span><span><i></i>cash</span></div>
+            </div></div>
+          </div>
+        </article>
+
+        <article class="project" data-product="openq" style="--project-color: var(--violet);">
+          <div class="project-copy">
+            <div class="project-meta"><span class="dot"></span><span data-i18n="openqMeta">Live Q&amp;A · Web</span></div>
+            <h3><img class="project-title-logo" src="/project-logos/openq.png" alt="" loading="lazy"><a class="product-home-link" href="#openq" data-product-link="openq">OpenQ</a></h3>
+            <p data-i18n="openqDesc">A forum in a queue for events, teams and rooms. Open a Q, share the QR code, let people ask and upvote from their phones, then work through the best questions in present mode.</p>
+            <ul class="tags">
+              <li data-i18n="openqTag1">No signup to join</li><li data-i18n="openqTag2">Host controls</li><li data-i18n="openqTag3">Polls + export</li>
+            </ul>
+            <a class="project-link" href="https://openq.dawnstudio.app/" target="_blank" rel="noopener">
+              <span data-i18n="openQ">Open OpenQ</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="project-visual" aria-hidden="true">
+            <div class="queue">
+              <div class="question"><span class="q-rank">01</span><span class="q-lines"><i></i><i></i></span><span class="votes">▲ 8</span></div>
+              <div class="question"><span class="q-rank">02</span><span class="q-lines"><i></i><i></i></span><span class="votes">▲ 5</span></div>
+              <div class="question"><span class="q-rank">03</span><span class="q-lines"><i></i><i></i></span><span class="votes">▲ 3</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" data-product="pennyvest" style="--project-color: var(--teal);">
+          <div class="project-copy">
+            <div class="project-meta"><span class="dot"></span><span data-i18n="pennyMeta">Investment education · Web</span></div>
+            <h3><img class="project-title-logo" src="/project-logos/pennyvest.png" alt="" loading="lazy"><a class="product-home-link" href="#pennyvest" data-product-link="pennyvest">Pennyvest</a></h3>
+            <p data-i18n="pennyDesc">A bilingual place to learn how portfolios are put together. Explore four themed model strategies, compare risk and allocation, follow simulated performance and understand news through AI-assisted context.</p>
+            <ul class="tags">
+              <li data-i18n="pennyTag1">English + 繁中</li><li data-i18n="pennyTag2">4 model strategies</li><li data-i18n="pennyTag3">News context</li>
+            </ul>
+            <a class="project-link" href="https://pennyvest.dawnstudio.app" target="_blank" rel="noopener">
+              <span data-i18n="openPenny">Open Pennyvest</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="project-visual" aria-hidden="true">
+            <div class="visual-window"><div class="window-top"><i></i><i></i><i></i></div><div class="window-body funds">
+              <div class="fund-ring"></div>
+              <div class="fund-grid"><span>FUTURE TECH</span><span>TRADITIONAL</span><span>COMMODITIES</span><span>CRYPTO</span></div>
+            </div></div>
+          </div>
+        </article>
+      </section>
+
+      <section id="npm" aria-labelledby="npm-title">
+        <div class="catalog-head">
+          <div>
+            <h2 id="npm-title" data-i18n="npmTitle">Open-source libraries</h2>
+            <p data-i18n="npmIntro">Small packages extracted from our apps, published for everyone. Install any of them with npm.</p>
+          </div>
+        </div>
+        <div class="lib-grid">
+          <article class="lib">
+            <div class="lib-head"><code>@dawn-studio/auth</code></div>
+            <p data-i18n="libAuthDesc">Passwordless auth: magic link + 6-digit code + Google sign-in. Edge-safe, zero dependencies.</p>
+            <div class="lib-install"><code>npm i @dawn-studio/auth</code><button type="button" class="copy-btn" data-i18n-aria="copyCmd" aria-label="Copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg></button></div>
+            <div class="lib-links">
+              <a href="https://www.npmjs.com/package/@dawn-studio/auth" target="_blank" rel="noopener">npm</a>
+              <a href="https://github.com/hectorchanht/dawn-auth" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+          <article class="lib">
+            <div class="lib-head"><code>@dawn-studio/zh-convert</code></div>
+            <p data-i18n="libZhDesc">Traditional ↔ Simplified Chinese conversion with phrase-level accuracy. Offline, lazy dictionaries.</p>
+            <div class="lib-install"><code>npm i @dawn-studio/zh-convert</code><button type="button" class="copy-btn" data-i18n-aria="copyCmd" aria-label="Copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg></button></div>
+            <div class="lib-links">
+              <a href="https://www.npmjs.com/package/@dawn-studio/zh-convert" target="_blank" rel="noopener">npm</a>
+              <a href="https://github.com/hectorchanht/dawn-zh-convert" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+          <article class="lib">
+            <div class="lib-head"><code>@dawn-studio/pronounce</code></div>
+            <p data-i18n="libPronounceDesc">Cantonese / Mandarin text-to-speech button. Zero-cost, on-device, with markdown cleanup.</p>
+            <div class="lib-install"><code>npm i @dawn-studio/pronounce</code><button type="button" class="copy-btn" data-i18n-aria="copyCmd" aria-label="Copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg></button></div>
+            <div class="lib-links">
+              <a href="https://www.npmjs.com/package/@dawn-studio/pronounce" target="_blank" rel="noopener">npm</a>
+              <a href="https://github.com/hectorchanht/numerology/tree/main/packages/pronounce" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+          <article class="lib">
+            <div class="lib-head"><code>@dawn-studio/ai-cache</code></div>
+            <p data-i18n="libAiCacheDesc">KV-cached AI streaming with a monthly spend guard. Repeated questions cost zero.</p>
+            <div class="lib-install"><code>npm i @dawn-studio/ai-cache</code><button type="button" class="copy-btn" data-i18n-aria="copyCmd" aria-label="Copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg></button></div>
+            <div class="lib-links">
+              <a href="https://www.npmjs.com/package/@dawn-studio/ai-cache" target="_blank" rel="noopener">npm</a>
+              <a href="https://github.com/hectorchanht/dawn-ai-cache" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+          <article class="lib">
+            <div class="lib-head"><code>@dawn-studio/drag-scroll</code></div>
+            <p data-i18n="libDragDesc">Mouse-drag to scroll horizontal chip strips. Vanilla DOM, zero dependencies.</p>
+            <div class="lib-install"><code>npm i @dawn-studio/drag-scroll</code><button type="button" class="copy-btn" data-i18n-aria="copyCmd" aria-label="Copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg></button></div>
+            <div class="lib-links">
+              <a href="https://www.npmjs.com/package/@dawn-studio/drag-scroll" target="_blank" rel="noopener">npm</a>
+              <a href="https://github.com/hectorchanht/dawn-drag-scroll" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+          <article class="lib">
+            <div class="lib-head"><code>@dawn-studio/theme</code></div>
+            <p data-i18n="libThemeDesc">Dark / light theme: localStorage, theme-color sync, no-flash head script. Vanilla, zero dependencies.</p>
+            <div class="lib-install"><code>npm i @dawn-studio/theme</code><button type="button" class="copy-btn" data-i18n-aria="copyCmd" aria-label="Copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg></button></div>
+            <div class="lib-links">
+              <a href="https://www.npmjs.com/package/@dawn-studio/theme" target="_blank" rel="noopener">npm</a>
+              <a href="https://github.com/hectorchanht/dawn-theme" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="studio-note" id="studio" aria-labelledby="studio-title">
+        <h2 id="studio-title" data-i18n-html="studioTitle">One builder.<br>Useful software.<br><span>No theatre.</span></h2>
+        <ul class="principles">
+          <li><span data-i18n="principle1">Useful first</span><em>01</em></li>
+          <li><span data-i18n="principle2">Honest by default</span><em>02</em></li>
+          <li><span data-i18n="principle3">Priced fairly</span><em>03</em></li>
+          <li><span data-i18n="principle4">Built to stay simple</span><em>04</em></li>
+        </ul>
+      </section>
+
+      <section class="product-page" id="product-page" aria-labelledby="product-title" hidden>
+        <a class="product-back" href="#apps" data-i18n="backStudio">← Back to the app shelf</a>
+        <div class="product-hero">
+          <div class="product-hero-copy">
+            <p class="product-kicker" id="product-kicker"></p>
+            <h1 id="product-title"></h1>
+            <p class="product-pitch" id="product-pitch"></p>
+            <div class="hero-actions">
+              <a class="button primary" id="product-open" target="_blank" rel="noopener"></a>
+              <a class="button secondary" id="product-tip" target="_blank" rel="noopener"></a>
+              <span id="product-links" class="product-links"></span>
+            </div>
+          </div>
+          <div class="product-art" id="product-art" aria-hidden="true"></div>
+        </div>
+        <div class="product-features">
+          <div>
+            <h2 data-i18n="featuresTitle">What it does</h2>
+            <p id="product-detail"></p>
+          </div>
+          <ul id="product-feature-list"></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p data-i18n="footer">Dawn Studio · Independent software.</p>
+      <a class="footer-legal" href="/privacy.html" data-i18n="privacy">Privacy</a>
+      <a class="back-top" href="#top" data-i18n="backTop">Back to top ↑</a>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var copy = {
+        en: {
+          utility: "Independent software",
+          heroTitle: "Small tools.<br><span class=\"accent\">Real life.</span>",
+          heroBody: "Dawn Studio builds focused apps for currency conversion, music, clipboard capture, portfolio tracking, live Q&A, investment education, Chinese fortune-telling and script conversion.",
+          explore: "Explore the apps",
+          principlesButton: "Our principles",
+          backStudio: "← Back to the app shelf",
+          featuresTitle: "What it does",
+          sunLabel: "One person<br>Useful apps<br>Built with care",
+          appsTitle: "The app shelf",
+          appsIntro: "Each app solves one clear problem. Open any of them in your browser and start using it.",
+          npmTitle: "Open-source libraries",
+          npmIntro: "Small packages extracted from our apps, published for everyone. Install any of them with npm.",
+          libAuthDesc: "Passwordless auth: magic link + 6-digit code + Google sign-in. Edge-safe, zero dependencies.",
+          libZhDesc: "Traditional ↔ Simplified Chinese conversion with phrase-level accuracy. Offline, lazy dictionaries.",
+          libPronounceDesc: "Cantonese / Mandarin text-to-speech button. Zero-cost, on-device, with markdown cleanup.",
+          libAiCacheDesc: "KV-cached AI streaming with a monthly spend guard. Repeated questions cost zero.",
+          libDragDesc: "Mouse-drag to scroll horizontal chip strips. Vanilla DOM, zero dependencies.",
+          libThemeDesc: "Dark / light theme: localStorage, theme-color sync, no-flash head script. Vanilla, zero dependencies.",
+          copyCmd: "Copy install command",
+          ufoMeta: "UFO case archive · Web + API + MCP",
+          ufoDesc: "A living archive of declassified UFO cases. Browse the timeline, query the API, or ask your AI assistant through the MCP server.",
+          ufoTag1: "Case archive", ufoTag2: "REST API", ufoTag3: "MCP server", openRealufo: "Open RealUFO",
+          moneyMeta: "Currency toolkit · Web",
+          moneyDesc: "A fast converter for people who live across currencies. Compare fiat, crypto and commodities, follow charts, set alerts, plan a trip, check a quote or convert a whole list at once.",
+          moneyTag1: "30 languages", moneyTag2: "Rate alerts", moneyTag3: "Batch + trip tools", openMoney: "Open MoneyRate",
+          musicMeta: "Music player · Web + Android",
+          musicDesc: "One mobile-first player for music across Chinese and independent sources. Search once, play instantly, build a library and explore regional charts, artist discographies and ready-made year packs.",
+          musicTag1: "Multi-source search", musicTag2: "15 languages", musicTag3: "Background play", openMusic: "Open OpenMusic",
+          clipMeta: "Clipboard desk · Web",
+          clipDesc: "A compact home for the text and images you do not want to lose. Type, paste, drop, upload or save what is already on your clipboard, then bring it back in a tap.",
+          clipTag1: "Text + images", clipTag2: "One-tap capture", clipTag3: "Fast retrieval", openClip: "Open ClipBin",
+          holdrMeta: "Portfolio tracker · Web",
+          holdrDesc: "A clear view of your holdings across manual entries and broker data. See allocation, cost basis, gains and performance history together, with multi-currency display and AI-assisted analysis.",
+          holdrTag1: "Broker sync", holdrTag2: "Performance history", holdrTag3: "Multi-currency", openHoldr: "Open Holdr",
+          openqMeta: "Live Q&A · Web",
+          openqDesc: "A forum in a queue for events, teams and rooms. Open a Q, share the QR code, let people ask and upvote from their phones, then work through the best questions in present mode.",
+          openqTag1: "No signup to join", openqTag2: "Host controls", openqTag3: "Polls + export", openQ: "Open OpenQ",
+          pennyMeta: "Investment education · Web",
+          pennyDesc: "A bilingual place to learn how portfolios are put together. Explore four themed model strategies, compare risk and allocation, follow simulated performance and understand news through AI-assisted context.",
+          pennyTag1: "English + 繁中", pennyTag2: "4 model strategies", pennyTag3: "News context", openPenny: "Open Pennyvest",
+          numerologyMeta: "Chinese fortune-telling \u00b7 Web",
+          numerologyDesc: "Bazi and Ziwei chart casting with AI-assisted interpretation. Enter a birth moment, get both charts, TL;DR summaries and visual timelines of your decade luck.",
+          numerologyTag1: "Bazi + Ziwei", numerologyTag2: "TL;DR summaries", numerologyTag3: "Luck timelines", openNumerology: "Open 洛書命理",
+          zhconvertMeta: "Script converter \u00b7 Web",
+          zhconvertDesc: "Paste text or drop a file to convert between Simplified and Traditional Chinese. Handles plain text, Markdown, subtitles (SRT/VTT/LRC/ASS) and JSON \u2014 dialogue only, timestamps untouched.",
+          zhconvertTag1: "Simplified \u21c6 Traditional", zhconvertTag2: "Subtitle-safe", zhconvertTag3: "File upload", openZhconvert: "Open ZhConvert",
+          studioTitle: "One builder.<br>Useful software.<br><span>No theatre.</span>",
+          principle1: "Useful first", principle2: "Honest by default", principle3: "Priced fairly", principle4: "Built to stay simple",
+          footer: "Dawn Studio · Independent software.", backTop: "Back to top ↑", privacy: "Privacy"
+        },
+        zh: {
+          utility: "獨立軟件工作室",
+          heroTitle: "細小工具。<br><span class=\"accent\">真實生活。</span>",
+          heroBody: "Dawn Studio 製作專注實用的 app，涵蓋貨幣換算、音樂、剪貼板、投資組合追蹤、即場問答、投資教育、八字命理同繁簡轉換。",
+          explore: "探索全部 app",
+          principlesButton: "我們的原則",
+          backStudio: "← 返回 App 一覽",
+          featuresTitle: "主要功能",
+          sunLabel: "一人工作室<br>實用 app<br>用心製作",
+          appsTitle: "App 一覽",
+          appsIntro: "每款 app 都只專心解決一個清晰問題。打開瀏覽器，就可以直接開始用。",
+          npmTitle: "開源函式庫",
+          npmIntro: "由我哋嘅 app 抽出嚟嘅細小 package，公開畀所有人用。npm 一裝即用。",
+          libAuthDesc: "免密碼登入：magic link + 6 位驗證碼 + Google 登入。Edge-safe，零依賴。",
+          libZhDesc: "繁簡中文轉換，詞組級準確度。離線可用，字典按需載入。",
+          libPronounceDesc: "廣東話 / 普通話文字轉語音按鈕。零成本、裝置端運算，附 markdown 清理。",
+          libAiCacheDesc: "AI 串流 KV 快取加每月用量上限。重複問題零成本。",
+          libDragDesc: "滑鼠拖拽捲動橫向 chip 條。原生 DOM，零依賴。",
+          libThemeDesc: "深色 / 淺色主題：localStorage、theme-color 同步、防閃爍 head script。原生，零依賴。",
+          copyCmd: "複製安裝指令",
+          ufoMeta: "UFO 案件檔案庫 · Web + API + MCP",
+          ufoDesc: "持續更新嘅解密 UFO 案件檔案庫。瀏覽時間線、用 API 查詢，或者經 MCP 伺服器等你嘅 AI 助手去探索。",
+          ufoTag1: "案件檔案庫", ufoTag2: "REST API", ufoTag3: "MCP 伺服器", openRealufo: "開啟 RealUFO",
+          moneyMeta: "貨幣工具 · Web",
+          moneyDesc: "為跨貨幣生活而設的快速換算器。比較法幣、加密貨幣與商品，查看走勢、設定提示、規劃旅程、檢查報價，亦可一次過批量換算。",
+          moneyTag1: "30 種語言", moneyTag2: "匯率提示", moneyTag3: "批量 + 旅程工具", openMoney: "開啟 MoneyRate",
+          musicMeta: "音樂播放器 · Web + Android",
+          musicDesc: "一個集合華語及獨立音樂來源的 mobile-first 播放器。搜尋一次即可播放、建立收藏，並探索地區榜單、歌手完整作品與年度歌單包。",
+          musicTag1: "多來源搜尋", musicTag2: "15 種語言", musicTag3: "背景播放", openMusic: "開啟 OpenMusic",
+          clipMeta: "剪貼板工具 · Web",
+          clipDesc: "把不想遺失的文字與圖片集中放好。輸入、貼上、拖放、上載，或者直接儲存剪貼板內容，需要時一按取回。",
+          clipTag1: "文字 + 圖片", clipTag2: "一按擷取", clipTag3: "快速找回", openClip: "開啟 ClipBin",
+          holdrMeta: "投資組合追蹤 · Web",
+          holdrDesc: "把手動持倉與券商資料放在同一個清晰畫面。一次查看配置、成本、盈虧與歷史表現，支援多種顯示貨幣及 AI 輔助分析。",
+          holdrTag1: "券商同步", holdrTag2: "歷史表現", holdrTag3: "多種貨幣", openHoldr: "開啟 Holdr",
+          openqMeta: "即場問答 · Web",
+          openqDesc: "為活動、團隊與現場而設的排隊式 forum。開一個 Q、分享 QR code，參加者用手機提問及投票，再用 present mode 逐一處理熱門問題。",
+          openqTag1: "參加毋須登記", openqTag2: "主持工具", openqTag3: "投票 + 匯出", openQ: "開啟 OpenQ",
+          pennyMeta: "投資教育 · Web",
+          pennyDesc: "以中英雙語學習投資組合如何建立。探索四個主題模擬策略、比較風險與配置、追蹤模擬表現，並用 AI 輔助理解新聞脈絡。",
+          pennyTag1: "English + 繁中", pennyTag2: "4 個模擬策略", pennyTag3: "新聞脈絡", openPenny: "開啟 Pennyvest",
+          numerologyMeta: "八字命理 \u00b7 Web",
+          numerologyDesc: "八字紫微排盤加 AI 合參解讀。輸入出生時刻，一次排出兩個盤，附每節 TL;DR 重點與大運流年圖表。",
+          numerologyTag1: "八字 + 紫微", numerologyTag2: "TL;DR 重點", numerologyTag3: "大運圖表", openNumerology: "開啟洛書命理",
+          zhconvertMeta: "繁簡轉換 \u00b7 Web",
+          zhconvertDesc: "貼上文字或拖放檔案，一鍵轉換簡繁中文。支援純文字、Markdown、字幕（SRT/VTT/LRC/ASS）同 JSON——只轉對白，唔掂時間軸。",
+          zhconvertTag1: "簡 \u21c6 繁", zhconvertTag2: "字幕安全", zhconvertTag3: "檔案上傳", openZhconvert: "開啟 ZhConvert",
+          studioTitle: "一個人。<br>實用軟件。<br><span>不做門面功夫。</span>",
+          principle1: "實用行先", principle2: "誠實為本", principle3: "合理定價", principle4: "保持簡單",
+          footer: "Dawn Studio · 獨立軟件工作室。", backTop: "返回頂部 ↑", privacy: "私隱"
+        }
+      };
+
+
+      var products = {
+        moneyrate: {
+          name: "MoneyRate", color: "var(--amber)", url: "https://moneyrate.dawnstudio.app", logo: "/project-logos/moneyrate.png", tip: "https://dawnlimited.gumroad.com/l/moneyrate-tip",
+          en: { kicker: "Currency toolkit · Web", pitch: "Move between currencies without the friction.", detail: "Compare fiat, crypto and commodities in one focused toolkit, then move from a quick conversion to charts, alerts, trip planning and batch work without changing apps.", features: ["Fast currency conversion", "Charts and rate alerts", "Batch and trip tools"], open: "Open MoneyRate", tipText: "Support MoneyRate" },
+          zh: { kicker: "貨幣工具 · Web", pitch: "簡單直接，處理每一次跨貨幣需要。", detail: "在同一套專注工具比較法幣、加密貨幣及商品，由即時換算延伸至走勢、提示、旅程規劃及批量處理。", features: ["快速貨幣換算", "走勢與匯率提示", "批量及旅程工具"], open: "開啟 MoneyRate", tipText: "支持 MoneyRate" }
+        },
+        openmusic: {
+          name: "OpenMusic", color: "var(--coral)", url: "https://openmusic.dawnstudio.app", logo: "/project-logos/openmusic.svg", tip: "https://dawnlimited.gumroad.com/l/openmusic-tip",
+          en: { kicker: "Music player · Web + Android", pitch: "One player for music across sources.", detail: "Search Chinese and independent music sources together, play immediately, keep a library and move through regional charts, artist discographies and curated year packs.", features: ["Multi-source music search", "Library and background play", "Regional charts and discography packs"], open: "Open OpenMusic", tipText: "Support OpenMusic" },
+          zh: { kicker: "音樂播放器 · Web + Android", pitch: "跨來源音樂，一個播放器就夠。", detail: "同時搜尋華語及獨立音樂來源，即時播放及建立收藏，再探索地區榜單、歌手完整作品與年度歌單包。", features: ["多來源音樂搜尋", "收藏及背景播放", "地區榜單與作品集"], open: "開啟 OpenMusic", tipText: "支持 OpenMusic" }
+        },
+        clipbin: {
+          name: "ClipBin", color: "var(--blue)", url: "https://clipbin.dawnstudio.app", logo: "/project-logos/clipbin.png", tip: "https://dawnlimited.gumroad.com/l/clipbin-tip",
+          en: { kicker: "Clipboard desk · Web", pitch: "Catch what matters before it disappears.", detail: "Keep pasted text and images together in a compact workspace. Capture by typing, pasting, dropping or uploading, then retrieve what you need in a tap.", features: ["Text and image capture", "Paste, drop or upload", "Fast retrieval"], open: "Open ClipBin", tipText: "Support ClipBin" },
+          zh: { kicker: "剪貼板工具 · Web", pitch: "重要內容消失之前，先把它留低。", detail: "把文字與圖片集中在一個簡潔工作空間。輸入、貼上、拖放或上載，之後一按就可以取回。", features: ["文字與圖片擷取", "貼上、拖放或上載", "快速找回"], open: "開啟 ClipBin", tipText: "支持 ClipBin" }
+        },
+        holdr: {
+          name: "Holdr", color: "var(--green)", url: "https://holdr.dawnstudio.app", logo: "/project-logos/holdr.png", tip: "https://dawnlimited.gumroad.com/l/holdr-tip",
+          en: { kicker: "Portfolio tracker · Web", pitch: "Your whole portfolio, made legible.", detail: "Bring manual holdings and broker data into one view. Understand allocation, cost basis, gains and history across currencies, with AI-assisted context when you want it.", features: ["Manual holdings and broker sync", "Allocation and performance history", "Multi-currency display"], open: "Open Holdr", tipText: "Support Holdr" },
+          zh: { kicker: "投資組合追蹤 · Web", pitch: "把整個投資組合看得清清楚楚。", detail: "把手動持倉與券商資料放在同一畫面，了解配置、成本、盈虧及跨貨幣歷史表現，需要時再加入 AI 輔助脈絡。", features: ["手動持倉與券商同步", "配置與歷史表現", "多種貨幣顯示"], open: "開啟 Holdr", tipText: "支持 Holdr" }
+        },
+        openq: {
+          name: "OpenQ", color: "var(--violet)", url: "https://openq.dawnstudio.app/", logo: "/project-logos/openq.png", tip: "https://dawnlimited.gumroad.com/l/openq-tip",
+          en: { kicker: "Live Q&A · Web", pitch: "Let the best question rise to the top.", detail: "Open a room, share its QR code and let people ask or upvote from their phones. Hosts keep control and work through the queue in a clean presentation view.", features: ["No signup for participants", "Questions, upvotes and polls", "Host controls and export"], open: "Open OpenQ", tipText: "Support OpenQ" },
+          zh: { kicker: "即場問答 · Web", pitch: "讓最值得回答的問題自然浮上來。", detail: "開一個房間、分享 QR code，參加者即可用手機提問及投票。主持人保留控制，再用清晰的展示模式逐一回應。", features: ["參加者毋須登記", "提問、投票與 polls", "主持工具與匯出"], open: "開啟 OpenQ", tipText: "支持 OpenQ" }
+        },
+        pennyvest: {
+          name: "Pennyvest", color: "var(--teal)", url: "https://pennyvest.dawnstudio.app", logo: "/project-logos/pennyvest.png", tip: "https://dawnlimited.gumroad.com/l/pennyvest-tip",
+          en: { kicker: "Investment education · Web", pitch: "Learn portfolios by seeing how they fit together.", detail: "Explore themed model strategies in English or Traditional Chinese. Compare allocation and risk, follow simulated performance and add context to market news.", features: ["English and Traditional Chinese", "Themed model strategies", "Risk, allocation and news context"], open: "Open Pennyvest", tipText: "Support Pennyvest" },
+          zh: { kicker: "投資教育 · Web", pitch: "由組合結構開始，真正理解投資。", detail: "以英文或繁中探索主題模擬策略，比較配置與風險、追蹤模擬表現，並補充市場新聞的背景脈絡。", features: ["英文與繁中", "主題模擬策略", "風險、配置與新聞脈絡"], open: "開啟 Pennyvest", tipText: "支持 Pennyvest" }
+        },
+        realufo: {
+          name: "RealUFO", color: "#3ddc84", url: "https://realufo.dawnstudio.app", logo: "/project-logos/realufo.png",
+          links: [
+            { href: "https://realufo.org", en: "Case archive", zh: "案件檔案庫" },
+            { href: "https://realufo.org/developers", en: "REST API", zh: "REST API" },
+            { href: "https://www.npmjs.com/package/realufo-mcp", en: "MCP server", zh: "MCP 伺服器" }
+          ],
+          en: { kicker: "UFO case archive · Web + API + MCP", pitch: "Every declassified case, in one living archive.", detail: "Browse the timeline of declassified UFO cases, query the archive through the REST API, or let your AI assistant explore it via the realufo-mcp MCP server.", features: ["Declassified case archive", "REST API for developers", "MCP server: realufo-mcp on npm"], open: "Open RealUFO" },
+          zh: { kicker: "UFO 案件檔案庫 · Web + API + MCP", pitch: "所有解密案件，一個持續更新嘅檔案庫。", detail: "瀏覽解密 UFO 案件時間線、用 REST API 查詢檔案，或者經 realufo-mcp MCP 伺服器等你嘅 AI 助手去探索。", features: ["解密案件檔案庫", "開發者 REST API", "MCP 伺服器：npm 上嘅 realufo-mcp"], open: "開啟 RealUFO" }
+        },
+        numerology: {
+          name: "Numerology", color: "var(--amber)", url: "https://numerology.dawnstudio.app", logo: "/project-logos/numerology.png",
+          en: { kicker: "Chinese fortune-telling \u00b7 Web", pitch: "Two charts, one clear reading.", detail: "Cast Bazi and Ziwei charts from a single birth moment. AI-assisted interpretation with TL;DR summaries per section, element charts and decade-luck timelines.", features: ["Bazi + Ziwei chart casting", "TL;DR summaries and charts", "Decade luck timelines"], open: "Open Numerology", tipText: "Support Numerology" },
+          zh: { kicker: "八字命理 \u00b7 Web", pitch: "兩個盤，一個清晰解讀。", detail: "輸入出生時刻，一次排出八字與紫微兩個盤。AI 合參解讀附每節 TL;DR、五行圖表與大運流年時間線。", features: ["八字紫微排盤", "TL;DR 重點與圖表", "大運流年時間線"], open: "開啟 Numerology", tipText: "支持 Numerology" }
+        },
+        zhconvert: {
+          name: "ZhConvert", color: "#c9563c", url: "https://zhconvert.dawnstudio.app", logo: "/project-logos/zhconvert.png",
+          en: { kicker: "Script converter \u00b7 Web", pitch: "Simplified \u21c6 Traditional, without mangled subtitles.", detail: "Paste text or drop a file and convert between Simplified and Traditional Chinese with phrase-aware accuracy. Subtitle formats convert dialogue only \u2014 timestamps and tags stay intact.", features: ["Simplified \u21c6 Traditional + auto-detect", "Subtitle-safe: SRT/VTT/LRC/ASS", "Txt, Markdown, JSON, CSV upload"], open: "Open ZhConvert" },
+          zh: { kicker: "繁簡轉換 \u00b7 Web", pitch: "簡繁互轉，字幕唔會爛。", detail: "貼上文字或拖放檔案，用詞組級準確度轉換簡繁中文。字幕格式只轉對白——時間軸同標籤原封不動。", features: ["簡繁互轉 + 自動偵測", "字幕安全：SRT/VTT/LRC/ASS", "支援 Txt、Markdown、JSON、CSV 上載"], open: "開啟 ZhConvert" }
+        }
+      };
+      var currentLanguage = "en";
+
+      function renderProduct(slug) {
+        var product = products[slug];
+        var page = document.getElementById("product-page");
+        if (!product) {
+          document.body.classList.remove("product-route");
+          page.hidden = true;
+          return;
+        }
+        var text = product[currentLanguage];
+        document.body.classList.add("product-route");
+        page.hidden = false;
+        document.getElementById("product-kicker").textContent = text.kicker;
+        document.getElementById("product-title").innerHTML = product.logo ? '<img class="project-title-logo" src="' + product.logo + '" alt="">' : '';
+        document.getElementById("product-title").appendChild(document.createTextNode(product.name));
+        document.getElementById("product-pitch").textContent = text.pitch;
+        document.getElementById("product-detail").textContent = text.detail;
+        var featureList = document.getElementById("product-feature-list");
+        featureList.innerHTML = "";
+        text.features.forEach(function (feature) {
+          var li = document.createElement("li"); li.textContent = feature; featureList.appendChild(li);
+        });
+        var open = document.getElementById("product-open"); open.href = product.url; open.textContent = text.open;
+        var tip = document.getElementById("product-tip");
+        if (product.tip) { tip.style.display = ""; tip.href = product.tip; tip.textContent = text.tipText; }
+        else { tip.style.display = "none"; }
+        var linksBox = document.getElementById("product-links");
+        linksBox.innerHTML = "";
+        (product.links || []).forEach(function (l) {
+          var a = document.createElement("a");
+          a.className = "button secondary product-extra-link";
+          a.target = "_blank"; a.rel = "noopener";
+          a.href = l.href; a.textContent = l[currentLanguage] || l.en;
+          linksBox.appendChild(a);
+        });
+        var sourceVisual = document.querySelector('[data-product="' + slug + '"] .project-visual');
+        var art = document.getElementById("product-art"); art.innerHTML = "";
+        page.style.setProperty("--project-color", product.color);
+        art.style.setProperty("--project-color", product.color);
+        if (sourceVisual) art.appendChild(sourceVisual.cloneNode(true));
+        window.scrollTo(0, 0);
+        window.requestAnimationFrame(function () { window.scrollTo(0, 0); });
+      }
+
+      function route() {
+        var slug = location.hash.slice(1).toLowerCase();
+        renderProduct(products[slug] ? slug : "");
+      }
+
+      function setLanguage(lang) {
+        currentLanguage = lang;
+        var strings = copy[lang] || copy.en;
+        document.documentElement.lang = lang === "zh" ? "zh-Hant" : "en";
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          var key = el.getAttribute("data-i18n");
+          if (strings[key]) el.textContent = strings[key];
+        });
+        document.querySelectorAll("[data-i18n-html]").forEach(function (el) {
+          var key = el.getAttribute("data-i18n-html");
+          if (strings[key]) el.innerHTML = strings[key];
+        });
+        document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
+          var key = el.getAttribute("data-i18n-aria");
+          if (strings[key]) el.setAttribute("aria-label", strings[key]);
+        });
+        document.querySelectorAll("[data-lang]").forEach(function (button) {
+          button.setAttribute("aria-pressed", button.getAttribute("data-lang") === lang ? "true" : "false");
+        });
+        route();
+      }
+
+      document.querySelectorAll("[data-lang]").forEach(function (button) {
+        button.addEventListener("click", function () { setLanguage(button.getAttribute("data-lang")); });
+      });
+      document.querySelectorAll(".project[data-product]").forEach(function (card) {
+        card.addEventListener("click", function (event) {
+          if (event.target.closest("a")) return;
+          location.hash = card.getAttribute("data-product");
+        });
+      });
+      var COPY_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>';
+      var CHECK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+      document.querySelectorAll(".copy-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var code = btn.parentElement.querySelector("code");
+          var text = code ? code.textContent.trim() : "";
+          function done() {
+            btn.classList.add("copied");
+            btn.innerHTML = CHECK_SVG;
+            setTimeout(function () {
+              btn.classList.remove("copied");
+              btn.innerHTML = COPY_SVG;
+            }, 1500);
+          }
+          function fallback() {
+            var ta = document.createElement("textarea");
+            ta.value = text;
+            ta.style.position = "fixed";
+            ta.style.opacity = "0";
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand("copy"); } catch (e) {}
+            document.body.removeChild(ta);
+            done();
+          }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done, fallback);
+          } else { fallback(); }
+        });
+      });
+      window.addEventListener("hashchange", route);
+      if ("serviceWorker" in navigator) {
+        try { navigator.serviceWorker.register("/sw.js"); } catch (e) { /* offline support is best-effort */ }
+      }
+      route();
+    }());
+  </script>
+<script>
+  (function () {
+    var els = document.querySelectorAll(".project, .lib, .catalog-head, .studio-note");
+    if (!("IntersectionObserver" in window) || !els.length) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); } });
+    }, { threshold: 0.08 });
+    els.forEach(function (el) { el.classList.add("reveal"); io.observe(el); });
+  })();
+</script>
+<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "b378318d057440a7a6bae24ecde52416"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

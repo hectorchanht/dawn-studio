@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Page not found · Dawn Studio</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { color-scheme: light dark; --bg: #f7f8f5; --ink: #111214; --muted: #555b62; --theme: #E8590C; --ease: cubic-bezier(0.22, 1, 0.36, 1); }
+    @media (prefers-color-scheme: dark) { :root { --bg: #0d0e10; --ink: #f4f5ef; --muted: #b5bac0; } }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Manrope", "Noto Sans TC", sans-serif; font-size: 16px; line-height: 1.55; }
+    main { width: min(100% - 32px, 720px); margin-inline: auto; padding-block: 64px 80px; text-align: left; }
+    img { width: 64px; height: 64px; border-radius: 12px; }
+    h1 { font-size: 3rem; line-height: 1; letter-spacing: -.05em; margin: 24px 0 16px; text-wrap: balance; }
+    p { color: var(--muted); margin: 0 0 32px; max-width: 480px; text-wrap: pretty; }
+    .button { display: inline-flex; align-items: center; min-height: 48px; padding: 8px 12px; border: 1px solid var(--ink); border-radius: 6px; background: var(--ink); color: var(--bg); text-decoration: none; font-weight: 600; transition: background-color .3s var(--ease), color .3s var(--ease), transform .5s var(--ease); }
+    .button:hover { transform: translateY(-2px); }
+    .button:active { transform: scale(.98); }
+    :focus-visible { outline: 2px solid var(--theme); outline-offset: 3px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <main>
+    <img src="/logo.png" alt="Dawn Studio logo" width="64" height="64" />
+    <h1>This page is not here.</h1>
+    <p>The link may be old, or the page may have moved. Everything Dawn Studio makes lives on the app shelf.</p>
+    <a class="button" href="/">Back to the app shelf</a>
+  </main>
+</body>
+</html>
