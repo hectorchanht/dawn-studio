@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Examples · Dawn Studio</title>
+  <meta name="description" content="Dawn Studio apps doing real jobs: six worked examples, step by step, each one live for you to try." />
+  <link rel="canonical" href="https://dawnstudio.app/examples" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dawn Studio" />
+  <meta property="og:title" content="Examples · Dawn Studio" />
+  <meta property="og:description" content="Dawn Studio apps doing real jobs: six worked examples, step by step, each one live for you to try." />
+  <meta property="og:url" content="https://dawnstudio.app/changelog" />
+  <meta property="og:image" content="https://dawnstudio.app/logo.png" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="alternate" type="application/rss+xml" title="Dawn Studio Changelog"     <style>
+    :root { color-scheme: light dark; --bg: #f7f8f5; --surface: #ffffff; --ink: #111214; --muted: #555b62; --line: #c9cdd0; --theme: #E8590C; --tag: #B34700; --ease: cubic-bezier(0.22, 1, 0.36, 1); }
+    @media (prefers-color-scheme: dark) { :root { --bg: #0d0e10; --surface: #15171a; --ink: #f4f5ef; --muted: #b5bac0; --line: #383c40; --tag: #FF9A52; } }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Manrope", "Noto Sans TC", sans-serif; font-size: 16px; line-height: 1.55; }
+    main { width: min(100% - 32px, 860px); margin-inline: auto; padding-block: 48px 80px; }
+    h1 { font-size: clamp(2.4rem, 7vw, 3.4rem); line-height: 1; letter-spacing: -.05em; margin: 0 0 14px; text-wrap: balance; }
+    .lede { color: var(--muted); font-size: 1.075rem; margin: 0 0 8px; max-width: 620px; text-wrap: pretty; }
+    a { color: var(--ink); transition: color .3s var(--ease); }
+    a:hover { color: var(--theme); }
+    :focus-visible { outline: 2px solid var(--theme); outline-offset: 3px; border-radius: 4px; }
+    .topbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 40px; }
+    .back { font-weight: 600; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+    .topnav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+    .topnav a { font-weight: 600; text-decoration: none; color: var(--muted); }
+    .topnav a[aria-current="page"] { color: var(--ink); border-bottom: 2px solid var(--theme); padding-bottom: 2px; }
+    .topnav a:hover { color: var(--theme); }
+    footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; }
+    footer p { margin: 0; color: var(--muted); }
+    footer a { font-weight: 600; text-decoration: none; color: var(--muted); }
+    footer a:hover { color: var(--theme); }
+
+
+    .grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 36px; }
+    @media (min-width: 700px) { .grid { grid-template-columns: 1fr 1fr; } }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 0; }
+    .card .meta { font: 500 .72rem/1.3 "IBM Plex Mono", monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+    .card h2 { font-size: 1.5rem; line-height: 1.15; letter-spacing: -.02em; margin: 0 0 8px; text-wrap: balance; }
+    .card .job { color: var(--muted); margin: 0 0 16px; text-wrap: pretty; }
+    .steps { list-style: none; counter-reset: step; margin: 0 0 18px; padding: 0; display: grid; gap: 10px; }
+    .steps li { counter-increment: step; display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: start; }
+    .steps li::before { content: counter(step); font: 600 .78rem/26px "IBM Plex Mono", monospace; text-align: center; width: 26px; height: 26px; border: 1px solid var(--line); border-radius: 50%; color: var(--tag); }
+    .steps p { margin: 0; }
+    .steps strong { display: block; }
+    .steps span { color: var(--muted); }
+    .result { border-top: 1px solid var(--line); padding-top: 14px; margin-top: auto; }
+    .result p { margin: 0 0 12px; }
+    .result p strong { color: var(--tag); }
+    .open-link { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; text-decoration: none; border-bottom: 2px solid currentColor; padding-bottom: 2px; width: fit-content; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="topbar">
+      <a class="back" href="/">← Dawn Studio</a>
+      <nav class="topnav" aria-label="Dawn Studio">
+        <a href="/#apps">Apps</a>
+        <a href="/examples" aria-current="page">Examples</a>
+        <a href="/changelog">Changelog</a>
+      </nav>
+    </div>
+    <h1>Examples</h1>
+    <p class="lede">Each app doing one real job, step by step. Every example is live — open the app and follow along; nothing here is a mockup.</p>
+    <div class="grid">
+      <article class="card">
+        <p class="meta">Music player · Web + Android</p>
+        <h2>Find one song, keep a whole library</h2>
+        <p class="job">You hear a song title in two languages and want the real version, not a cover.</p>
+        <ol class="steps">
+          <li><p><strong>Search once</strong><span>Type the title: bilingual titles are searched by their Chinese part, across Chinese and independent sources at once.</span></p></li>
+          <li><p><strong>Play the original</strong><span>The player picks the original song by the original artist first, and queues the rest without disturbing what you built.</span></p></li>
+          <li><p><strong>Keep it</strong><span>Save it to your library, then explore the artist's discography or a ready-made year pack.</span></p></li>
+        </ol>
+        <div class="result">
+          <p><strong>Result:</strong> One search becomes a library you own, and per-song downloads are free.</p>
+          <a class="open-link" href="https://openmusic.dawnstudio.app" target="_blank" rel="noopener">Try it in OpenMusic →</a>
+        </div>
+      </article>
+      <article class="card">
+        <p class="meta">UFO case archive · Web + API + MCP</p>
+        <h2>Follow a declassified case end to end</h2>
+        <p class="job">A new official release drops and you want the actual files, not headlines about them.</p>
+        <ol class="steps">
+          <li><p><strong>Browse the timeline</strong><span>Open the archive and follow the case chronologically, release by release.</span></p></li>
+          <li><p><strong>Read the record</strong><span>Open the case file itself — the site's figures come straight from the archive database.</span></p></li>
+          <li><p><strong>Ask your AI</strong><span>Connect the MCP server and ask your own AI assistant about the case, with the archive as its source.</span></p></li>
+        </ol>
+        <div class="result">
+          <p><strong>Result:</strong> Primary documents you can cite, kept current automatically as new releases land.</p>
+          <a class="open-link" href="https://realufo.org" target="_blank" rel="noopener">Try it in RealUFO →</a>
+        </div>
+      </article>
+      <article class="card">
+        <p class="meta">Chinese fortune-telling · Web</p>
+        <h2>Cast a full chart from one birth moment</h2>
+        <p class="job">You want a Bazi and Ziwei reading without learning the system first — but with the evidence behind it.</p>
+        <ol class="steps">
+          <li><p><strong>Enter a birth moment</strong><span>Date and time is all it needs. No prior knowledge assumed.</span></p></li>
+          <li><p><strong>Read the TL;DR first</strong><span>Both charts are cast together, with a plain summary up top and the full reading below.</span></p></li>
+          <li><p><strong>Tap any key term</strong><span>Classical references open as popups with the authentic text and its source — nothing paraphrased away.</span></p></li>
+        </ol>
+        <div class="result">
+          <p><strong>Result:</strong> A chart you can act on today, and keep learning from as you go deeper.</p>
+          <a class="open-link" href="https://numerology.dawnstudio.app" target="_blank" rel="noopener">Try it in Numerology →</a>
+        </div>
+      </article>
+      <article class="card">
+        <p class="meta">Script converter · Web</p>
+        <h2>Convert subtitles without breaking a single timestamp</h2>
+        <p class="job">Your video is ready, but the subtitles are in the wrong script and a naive converter would mangle the timing lines.</p>
+        <ol class="steps">
+          <li><p><strong>Drop the file</strong><span>SRT, VTT, LRC and ASS are all understood, or paste plain text and Markdown instead.</span></p></li>
+          <li><p><strong>Convert dialogue only</strong><span>Timestamps and markup stay byte-identical; only the spoken text changes script.</span></p></li>
+          <li><p><strong>Download and ship</strong><span>Phrase-level accuracy, including protected terms that must never change.</span></p></li>
+        </ol>
+        <div class="result">
+          <p><strong>Result:</strong> Subtitles in the other script, timings untouched, ready to publish.</p>
+          <a class="open-link" href="https://zhconvert.dawnstudio.app" target="_blank" rel="noopener">Try it in ZhConvert →</a>
+        </div>
+      </article>
+      <article class="card">
+        <p class="meta">Currency toolkit · Web</p>
+        <h2>Convert a whole price list before a trip</h2>
+        <p class="job">You live across currencies and a trip is coming: a dozen prices, three currencies, one decision.</p>
+        <ol class="steps">
+          <li><p><strong>Paste the list</strong><span>Drop the whole list in at once instead of converting line by line.</span></p></li>
+          <li><p><strong>Compare properly</strong><span>Fiat, crypto and commodities side by side, with charts, then set a rate alert for the one that matters.</span></p></li>
+          <li><p><strong>Plan the trip</strong><span>Use the trip tools to see what things will actually cost when you land.</span></p></li>
+        </ol>
+        <div class="result">
+          <p><strong>Result:</strong> Every price in your currency, and an alert watching the rate while you pack.</p>
+          <a class="open-link" href="https://moneyrate.dawnstudio.app" target="_blank" rel="noopener">Try it in MoneyRate →</a>
+        </div>
+      </article>
+      <article class="card">
+        <p class="meta">Live Q&A · Web</p>
+        <h2>Run a room's questions without the chaos</h2>
+        <p class="job">You are hosting a talk and want the best questions to surface, not the loudest voices.</p>
+        <ol class="steps">
+          <li><p><strong>Open a Q</strong><span>Create the room and share its QR code: no app, no sign-up for the audience.</span></p></li>
+          <li><p><strong>Let the room ask</strong><span>People ask and upvote from their phones; the queue sorts itself.</span></p></li>
+          <li><p><strong>Present mode</strong><span>Work through the top questions on the big screen, one at a time.</span></p></li>
+        </ol>
+        <div class="result">
+          <p><strong>Result:</strong> A Q&A that ends with the right questions answered.</p>
+          <a class="open-link" href="https://openq.dawnstudio.app/" target="_blank" rel="noopener">Try it in OpenQ →</a>
+        </div>
+      </article>
+    </div>
+    <footer>
+      <p>Dawn Studio · Independent software.</p>
+      <a href="/examples">Examples</a>
+      <a href="/changelog">Changelog</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/">Home</a>
+    </footer>
+  </main>
+</body>
+</html>

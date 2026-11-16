@@ -1,0 +1,27 @@
+# Dawn Studio
+
+> Dawn Studio builds focused, freemium apps for real life: music, currency conversion, clipboard capture, portfolio tracking, live Q&A, investment education, Chinese fortune-telling and script conversion. One builder, useful software, no theatre.
+
+## Pages
+
+- [Home](https://dawnstudio.app/): the app shelf and open-source libraries
+- [Examples](https://dawnstudio.app/examples): each app doing one real job, step by step
+- [Changelog](https://dawnstudio.app/changelog): what shipped, dated, newest first (also as [Markdown](https://dawnstudio.app/changelog.md) and [RSS](https://dawnstudio.app/changelog/feed.xml))
+- [Blog](https://dawnstudio.app/blog): notes on building in the open — how RealUFO was rebuilt in 7 days, building OpenMusic, and the Muse review agent
+- [Privacy](https://dawnstudio.app/privacy.html): no accounts, no cookies, cookieless analytics only
+
+## Apps
+
+- [OpenMusic](https://openmusic.dawnstudio.app): music player across Chinese and independent sources, web + Android
+- [RealUFO](https://realufo.org): living archive of declassified UFO cases, with API and MCP server
+- [Numerology](https://numerology.dawnstudio.app): Bazi and Ziwei chart casting with AI-assisted, evidence-backed interpretation
+- [ZhConvert](https://zhconvert.dawnstudio.app): Simplified <-> Traditional Chinese conversion for text, Markdown, subtitles and JSON
+- [MoneyRate](https://moneyrate.dawnstudio.app): currency converter and toolkit for people who live across currencies
+- [ClipBin](https://clipbin.dawnstudio.app): a compact home for clipboard text and images
+- [Holdr](https://holdr.dawnstudio.app): portfolio tracker with allocation, cost basis and multi-currency display
+- [OpenQ](https://openq.dawnstudio.app/): live Q&A rooms with QR join and upvoting
+- [Pennyvest](https://pennyvest.dawnstudio.app): bilingual investment education with model strategies
+
+## Open-source libraries
+
+- @dawn-studio/auth, @dawn-studio/zh-convert, @dawn-studio/pronounce, @dawn-studio/ai-cache, @dawn-studio/drag-scroll, @dawn-studio/theme — on npm
