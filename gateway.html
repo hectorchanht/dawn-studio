@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Dawn Free Port · 自由港 — the permanent home of Dawn Studio's free apps: OpenMusic, OpenMovies and whatever comes next. Official addresses only. Free forever, no ads, no fakes.">
+<link rel="canonical" href="https://dawnstudio.app/gateway">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dawn Studio">
+<meta property="og:title" content="Dawn Free Port · 自由港">
+<meta property="og:description" content="Every Dawn free app, one free port. Official addresses only — free forever, no ads.">
+<meta property="og:url" content="https://dawnstudio.app/gateway">
+<meta property="og:image" content="https://dawnstudio.app/logo.png">
+<title>Dawn Free Port · 自由港 — Free Apps, Official Links Only</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF7ED; --surface:#FFFFFF; --surface2:#FFF1DE; --ink:#171310; --muted:#6B5E52; --line:#EADBC8;
+  --orange:#E8590C; --orange-dark:#C44A08; --amber:#F59F00; --green:#0A7A4B; --green-bg:#E6F4EC; --red:#C92A2A; --red-bg:#FDECEC;
+  --radius:18px;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#131110; --surface:#1D1A17; --surface2:#26211C; --ink:#F7EFE6; --muted:#A99A8A; --line:#332C26; --green-bg:#123324; --red-bg:#3A1717; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Archivo",system-ui,sans-serif;line-height:1.6}
+a{color:inherit}
+.mono{font-family:"JetBrains Mono",monospace}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.topbar{border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg) 88%, transparent);backdrop-filter:blur(10px);position:sticky;top:0;z-index:20}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.02em}
+.record{width:36px;height:36px;border-radius:50%;background:var(--ink);display:grid;place-items:center;flex-shrink:0;animation:spin 7s linear infinite}
+.record i{width:12px;height:12px;border-radius:50%;background:var(--orange);display:block;border:2px solid var(--bg)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){.record{animation:none}.pulse{animation:none}.tab-panel{animation:none}}
+.brand small{display:block;font-weight:600;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-size:10px;line-height:1}
+.live-pill{display:flex;align-items:center;gap:8px;background:var(--green-bg);color:var(--green);font-weight:700;font-size:13px;padding:8px 12px;border-radius:999px;white-space:nowrap}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(10,122,75,.5);animation:p 2s infinite}
+@keyframes p{70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.hero{padding:52px 0 8px}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);font-weight:700}
+h1,h2{font-family:"Bricolage Grotesque",sans-serif;line-height:.95;letter-spacing:-.03em;margin:0}
+h1{font-size:clamp(42px,7vw,76px);max-width:860px;margin-top:14px}
+h1 em{font-style:normal;color:var(--orange)}
+.lede{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:720px;margin:20px 0 0}
+.lede strong{color:var(--ink)}
+.manifesto{margin-top:22px;border-left:3px solid var(--orange);padding:4px 0 4px 16px;max-width:720px}
+.manifesto p{margin:0;font-size:16px}
+.manifesto p+p{margin-top:4px;color:var(--muted);font-size:15px}
+
+/* ---------- TABS ---------- */
+.tabs{margin-top:30px}
+.tab-list{display:flex;flex-wrap:wrap;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px}
+.tab-btn{flex:1 1 auto;min-height:48px;border:0;background:transparent;color:var(--muted);font:inherit;font-weight:700;font-size:15px;padding:10px 18px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.tab-btn:hover{color:var(--ink)}
+.tab-btn[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+.tab-btn .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:7px;vertical-align:2px}
+.tab-btn .dot.build{background:var(--amber)}
+.tab-btn .dot.soon{background:var(--muted)}
+.tab-panel{display:none;padding-top:26px}
+.tab-panel.active{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.panel-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:18px}
+.panel-head p{color:var(--muted);max-width:520px;margin:0}
+
+/* ---------- APP CARDS (overview) ---------- */
+.app-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.app-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:10px}
+.app-card.live{border-color:#BFE3D0}
+.app-card.building{border-color:#F0D9A8}
+.app-card.future{border-style:dashed;background:transparent}
+.app-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.app-glyph{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:24px;flex-shrink:0}
+.glyph-music{background:var(--ink);color:#FFF7ED}
+.glyph-movies{background:var(--orange);color:#fff}
+.glyph-future{background:var(--surface2);color:var(--muted);border:1px dashed var(--line)}
+.app-card h3{font-family:"Bricolage Grotesque",sans-serif;font-size:26px;letter-spacing:-.02em;margin:0;line-height:1.05}
+.app-card .app-sub{color:var(--muted);font-size:15px;margin:0}
+.app-addr{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:16px;word-break:break-all;background:var(--surface2);border-radius:10px;padding:10px 12px}
+.app-feats{display:flex;flex-wrap:wrap;gap:6px}
+.app-feats span{font-size:12px;font-weight:700;background:var(--surface2);border:1px solid var(--line);border-radius:999px;padding:4px 10px}
+.app-card .spacer{flex:1}
+.app-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+
+/* ---------- SHARED COMPONENTS (from v1) ---------- */
+.gateway-card{margin-top:6px;background:var(--ink);color:#FFF7ED;border-radius:24px;padding:26px;position:relative;overflow:hidden}
+.gateway-card:after{content:"";position:absolute;right:-70px;top:-70px;width:240px;height:240px;border-radius:50%;background:var(--orange);opacity:.9}
+.gateway-card.movies:after{background:var(--amber)}
+.gateway-card>*{position:relative;z-index:1}
+.gc-label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.75;font-weight:700;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.gc-domain{font-family:"JetBrains Mono",monospace;font-size:clamp(26px,5.4vw,48px);font-weight:700;line-height:1.05;margin:14px 0 6px;letter-spacing:-.04em;word-break:break-all}
+.gc-meta{opacity:.85;font-size:14px;max-width:640px}
+.gc-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 20px;border-radius:999px;font-weight:700;text-decoration:none;border:1px solid transparent;cursor:pointer;font:inherit;font-size:15px;background:none;color:inherit}
+.btn-primary{background:var(--orange);color:white}
+.btn-primary:hover{background:var(--orange-dark)}
+.btn-ghost{background:transparent;color:#FFF7ED;border-color:rgba(255,255,255,.35)}
+.btn-dark{background:var(--ink);color:var(--bg)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-sm{min-height:44px;padding:0 16px;font-size:14px}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.trust div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center;font-weight:700;font-size:14px}
+.trust span{display:block;font-size:20px;margin-bottom:2px}
+section{padding:38px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:18px;flex-wrap:wrap}
+h2{font-size:clamp(28px,4vw,40px)}
+.sec-head p{color:var(--muted);max-width:520px;margin:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.card h3{margin:0 0 8px;font-size:18px}
+.card p{color:var(--muted);margin:0;font-size:15px}
+.official{border-color:#BFE3D0}
+.fake{border-color:#F3C2C2}
+.domain-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px dashed var(--line)}
+.domain-row:last-child{border-bottom:0}
+.domain-row b{font-family:"JetBrains Mono",monospace;font-size:15px;word-break:break-all}
+.domain-row span{font-size:14px;color:var(--muted);text-align:right}
+.tag{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 8px;border-radius:999px;white-space:nowrap}
+.tag-live{background:var(--green-bg);color:var(--green)}
+.tag-build{background:#FFF4D6;color:#7A5200}
+.tag-gateway{background:#FFF1DE;color:#9A4A00}
+.tag-fake{background:var(--red-bg);color:var(--red);text-decoration:line-through}
+.note{font-size:13px;color:var(--muted);margin-top:12px}
+.checker{background:var(--surface2);border:1px solid var(--line);border-radius:20px;padding:22px}
+.checker form{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.checker input{flex:1;min-width:220px;min-height:52px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:0 14px;font-size:16px;font-family:"JetBrains Mono",monospace}
+.result{margin-top:14px;padding:14px 16px;border-radius:12px;font-weight:600;display:none}
+.result.ok{display:block;background:var(--green-bg);color:var(--green)}
+.result.bad{display:block;background:var(--red-bg);color:var(--red)}
+.result.warn{display:block;background:#FFF4D6;color:#7A5200}
+@media (prefers-color-scheme: dark){.result.warn{background:#3A2E12;color:#F5C86B}}
+.principles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.principle{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px}
+.principle .num{font-family:"JetBrains Mono",monospace;color:var(--orange);font-weight:700;font-size:13px}
+.principle h3{margin:8px 0 6px;font-size:17px;line-height:1.2}
+.principle p{margin:0;color:var(--muted);font-size:14px}
+.timeline{border-left:2px solid var(--line);margin-left:8px;padding-left:22px;display:grid;gap:20px}
+.tl-item{position:relative}
+.tl-item:before{content:"";position:absolute;left:-29px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:3px solid var(--orange)}
+.tl-item b{font-family:"JetBrains Mono",monospace}
+.tl-item p{margin:2px 0 0;color:var(--muted);font-size:14px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.step{background:var(--ink);color:#FFF7ED;border-radius:16px;padding:20px}
+.step span{width:32px;height:32px;border-radius:50%;background:var(--orange);display:grid;place-items:center;font-weight:800;margin-bottom:12px}
+.step h3{margin:0 0 6px}.step p{margin:0;opacity:.8;font-size:14px}
+.scope{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.scope ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.scope li{font-size:15px;padding-left:22px;position:relative;color:var(--muted)}
+.scope li b{color:var(--ink)}
+.scope li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800}
+.scope .no li:before{content:"✕";color:var(--red)}
+details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:4px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;padding:14px 0;min-height:48px;display:flex;align-items:center}
+details p{color:var(--muted);margin:0 0 16px}
+footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:999px;font-weight:700;opacity:0;pointer-events:none;transition:.25s;z-index:30;max-width:92vw;text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(max-width:760px){
+  .trust,.principles{grid-template-columns:1fr 1fr}
+  .grid2,.steps,.app-grid,.scope{grid-template-columns:1fr}
+  .hero{padding-top:34px}
+  .gateway-card{padding:20px}
+  .topbar .brand small{display:none}
+  .tab-list{border-radius:20px}
+  .tab-btn{flex:1 1 42%;white-space:normal}
+  .live-pill{font-size:12px;padding:7px 10px}
+}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap topbar-in">
+  <div class="brand"><div class="record"><i></i></div><div>Dawn Free Port<small>自由港 · Free Apps · Dawn Studio</small></div></div>
+  <div class="live-pill"><span class="pulse"></span> 2 APPS · 1 FREE PORT</div>
+</div></header>
+
+<main class="wrap">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="eyebrow">Dawn Studio · Dawn Free Port 自由港 · The page that never moves — bookmark this one</div>
+    <h1>Born to be free.<br><em>Every Dawn app,</em> one free port.</h1>
+    <p class="lede">Dawn builds free web apps and gives them away — no ads, no paywalls, no catch. Free apps like these get blocked, pressured and copied, and sometimes a domain has to move overnight. <strong>This free port doesn't move.</strong> No new domain to buy, no new address to memorise: every app lives under Dawn Studio, and its current home is always announced here first.</p>
+    <div class="manifesto">
+      <p><strong>Built solo, given freely.</strong> One person, a laptop, and a stubborn belief that good things on the internet should be free for friends — and for anyone who finds their way here.</p>
+      <p>If an app below ever disappears from its address, don't search for a replacement. Come back here. This page is the map.</p>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+      <div class="tab-list" role="tablist" aria-label="Dawn free apps">
+        <button class="tab-btn" role="tab" id="tab-all" aria-controls="panel-all" aria-selected="true" data-tab="all">All Apps</button>
+        <button class="tab-btn" role="tab" id="tab-music" aria-controls="panel-music" aria-selected="false" data-tab="music"><span class="dot"></span>OpenMusic</button>
+        <button class="tab-btn" role="tab" id="tab-movies" aria-controls="panel-movies" aria-selected="false" data-tab="movies"><span class="dot"></span>OpenMovies</button>
+        <button class="tab-btn" role="tab" id="tab-future" aria-controls="panel-future" aria-selected="false" data-tab="future"><span class="dot soon"></span>More to Come</button>
+      </div>
+
+      <!-- PANEL: ALL APPS -->
+      <div class="tab-panel active" role="tabpanel" id="panel-all" aria-labelledby="tab-all">
+        <div class="app-grid">
+          <article class="app-card live">
+            <div class="app-top"><div class="app-glyph glyph-music">♪</div><span class="tag tag-live">Live now</span></div>
+            <h3>OpenMusic</h3>
+            <p class="app-sub">Free music streaming. Search and play with no account; a free account is only for your liked songs, playlists, resume and recommendations.</p>
+            <div class="app-addr">openmusic.lol</div>
+            <div class="app-feats"><span>Free forever</span><span>No ads</span><span>Your Radio</span><span>Playlists sync</span></div>
+            <div class="spacer"></div>
+            <div class="app-actions">
+              <a class="btn btn-dark btn-sm" href="https://openmusic.lol" target="_blank" rel="noopener">Enter OpenMusic →</a>
+              <button class="btn btn-outline btn-sm" type="button" data-goto="music">Details &amp; status</button>
+            </div>
+          </article>
+
+          <article class="app-card live">
+            <div class="app-top"><div class="app-glyph glyph-movies">▶</div><span class="tag tag-live">Live now</span></div>
+            <h3>OpenMovies</h3>
+            <p class="app-sub">The same playbook, for film &amp; TV. Free to watch with no account; a free account is only for watched history, liked titles, Continue Watching and your watchlist.</p>
+            <div class="app-addr">openmovies.dawnstudio.app</div>
+            <div class="app-feats"><span>No new domain — a Dawn subdomain</span><span>Free forever</span><span>No ads</span><span>Continue Watching</span></div>
+            <div class="spacer"></div>
+            <div class="app-actions">
+              <a class="btn btn-dark btn-sm" href="https://openmovies.dawnstudio.app" target="_blank" rel="noopener">Enter OpenMovies →</a>
+              <button class="btn btn-outline btn-sm" type="button" data-goto="movies">Details &amp; status</button>
+            </div>
+          </article>
+
+          <article class="app-card future">
+            <div class="app-top"><div class="app-glyph glyph-future">✦</div><span class="tag tag-gateway">Next up</span></div>
+            <h3>The next free app</h3>
+            <p class="app-sub">Whatever it turns out to be, it will follow the same rules: free, no ads, launched on a Dawn subdomain first — and announced on this gateway before anywhere else.</p>
+            <div class="spacer"></div>
+            <div class="app-actions">
+              <button class="btn btn-outline btn-sm" type="button" data-goto="future">How new apps join ↓</button>
+            </div>
+          </article>
+
+          <article class="app-card future">
+            <div class="app-top"><div class="app-glyph glyph-future">✦</div><span class="tag tag-gateway">And the one after</span></div>
+            <h3>Room to grow</h3>
+            <p class="app-sub">This gateway is built to hold many tabs, not two. Each new free app gets its own tab, its own official-address card, and its own entry in the checker below.</p>
+            <div class="spacer"></div>
+            <div class="app-actions">
+              <a class="btn btn-outline btn-sm" href="#verify">Verify an address ↓</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="trust">
+          <div><span>✓</span>Free forever</div>
+          <div><span>✕</span>No ads, ever</div>
+          <div><span>✕</span>No pop-ups</div>
+          <div><span>✕</span>No redirects</div>
+        </div>
+        <p class="note">The fastest fake test, for every Dawn app: <strong>if it shows ads, asks you to download something, or redirects you — it's not us.</strong> Real Dawn apps have none of that.</p>
+      </div>
+
+      <!-- PANEL: OPENMUSIC -->
+      <div class="tab-panel" role="tabpanel" id="panel-music" aria-labelledby="tab-music" hidden>
+        <div class="panel-head"><h2>OpenMusic</h2><p>Free music, the BingeBang way: the code is the product, the domain is disposable, and this tab is where the current domain is always confirmed first.</p></div>
+
+        <div class="gateway-card">
+          <div class="gc-label"><span>● Current official site</span><span>Updated 18 Nov 2026</span></div>
+          <div class="gc-domain">openmusic.lol</div>
+          <p class="gc-meta">Free to listen · No account needed to play · Account is only for your liked songs, playlists, resume &amp; recommendations</p>
+          <div class="gc-actions">
+            <a class="btn btn-primary" href="https://openmusic.lol" target="_blank" rel="noopener">Enter OpenMusic →</a>
+            <button class="btn btn-ghost" type="button" data-copy="https://openmusic.lol">Copy address</button>
+            <a class="btn btn-ghost" href="#verify">How to verify it's real ↓</a>
+          </div>
+        </div>
+
+        <div class="scope">
+          <div class="card"><h3>Free account — what it's for</h3>
+            <ul>
+              <li><b>Liked songs</b> and <b>playlists</b>, synced across devices</li>
+              <li><b>Listening history</b> and <b>resume</b> — pick up where you left off</li>
+              <li><b>Your Radio &amp; recommendations</b>, built from what you actually play and like</li>
+            </ul>
+          </div>
+          <div class="card"><h3>What it is never for</h3>
+            <ul class="no">
+              <li>Not a <b>paywall</b> — listening never requires an account</li>
+              <li>No <b>payment</b>, no premium tier, no trial that expires</li>
+              <li>No <b>ads</b> unlocked, removed or otherwise — there are none</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 style="margin:26px 0 12px;font-size:19px">Domain churn log — OpenMusic</h3>
+        <div class="timeline">
+          <div class="tl-item"><b>openmusic.lol — current</b><p>Live now. All traffic, accounts and playlists are here.</p></div>
+          <div class="tl-item"><b>Free Port established</b><p>This permanent free port — Dawn Free Port · 自由港 — was created so the next move costs nobody their bookmark — the BingeBang <span class="mono">.club</span> playbook, applied to music.</p></div>
+          <div class="tl-item"><b>Next move — TBA</b><p>When (not if) this domain is pressured, the replacement will be posted here before the old one goes dark, whenever possible.</p></div>
+        </div>
+      </div>
+
+      <!-- PANEL: OPENMOVIES -->
+      <div class="tab-panel" role="tabpanel" id="panel-movies" aria-labelledby="tab-movies" hidden>
+        <div class="panel-head"><h2>OpenMovies</h2><p>OpenMusic's sibling. Same architecture, same promise — and deliberately <strong>no new domain</strong>: it lives on a Dawn Studio subdomain, because a free gift shouldn't start with a domain bill.</p></div>
+
+        <div class="gateway-card movies">
+          <div class="gc-label"><span>● Current official site</span><span>Live · Updated 18 Nov 2026</span></div>
+          <div class="gc-domain">openmovies.dawnstudio.app</div>
+          <p class="gc-meta">Free to watch · No account needed to play · Account is only for watched history, liked titles, Continue Watching &amp; your watchlist. This card carries the one official address — if any other address claims to be OpenMovies, it isn't.</p>
+          <div class="gc-actions">
+            <a class="btn btn-primary" href="https://openmovies.dawnstudio.app" target="_blank" rel="noopener">Enter OpenMovies →</a>
+            <button class="btn btn-ghost" type="button" data-copy="https://openmovies.dawnstudio.app">Copy address</button>
+            <a class="btn btn-ghost" href="#verify">How to verify it's real ↓</a>
+          </div>
+        </div>
+
+        <div class="scope">
+          <div class="card"><h3>Free account — what it's for</h3>
+            <ul>
+              <li><b>Watched</b> history — what you've already seen</li>
+              <li><b>Liked</b> titles and your <b>watchlist</b> for later</li>
+              <li><b>Resume / Continue Watching</b> — mid-episode, across devices</li>
+            </ul>
+          </div>
+          <div class="card"><h3>How it survives, from day one</h3>
+            <ul>
+              <li><b>Subdomain first</b> — no domain purchase to recoup, nothing to sell</li>
+              <li><b>Free-port-first</b> — any future move is announced on this tab first</li>
+              <li><b>Your library is portable</b> — account data lives with the app, not the address</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h3>About your data — plainly</h3>
+          <p>OpenMovies may look at anonymous usage patterns to understand what people watch and what to improve. That data is for analysis only. <strong style="color:var(--ink)">It is never sold.</strong> There are no ad trackers, because there are no ads — there's nothing to feed them.</p>
+        </div>
+
+        <h3 style="margin:26px 0 12px;font-size:19px">Status log — OpenMovies</h3>
+        <div class="timeline">
+          <div class="tl-item"><b>Live now — 18 Nov 2026</b><p>OpenMovies is live at <span class="mono">openmovies.dawnstudio.app</span> — free to watch, no account needed to play; a free account is only for your personal library.</p></div>
+          <div class="tl-item"><b>Address reserved</b><p><span class="mono">openmovies.dawnstudio.app</span> — a subdomain of the studio home, so no new domain was bought and none is needed.</p></div>
+          <div class="tl-item"><b>Built solo, announced here first</b><p>Built at Dawn Studio on the OpenMusic architecture — and announced on this tab first, as promised. Every “OpenMovies” site, app or download you find at any other address is not official.</p></div>
+        </div>
+      </div>
+
+      <!-- PANEL: FUTURE -->
+      <div class="tab-panel" role="tabpanel" id="panel-future" aria-labelledby="tab-future" hidden>
+        <div class="panel-head"><h2>More to come</h2><p>Dawn doesn't stop at two apps. The gateway is the permanent front door; new free apps move in behind it, one tab at a time.</p></div>
+        <div class="steps">
+          <div class="step"><span>1</span><h3>It starts free</h3><p>Every future app ships under the same rules: free to use, no ads, no account wall in front of the core experience.</p></div>
+          <div class="step"><span>2</span><h3>Subdomain first</h3><p>New apps launch on a Dawn Studio subdomain — no new domain to buy, no cost to pass on, nothing to monetise.</p></div>
+          <div class="step"><span>3</span><h3>Announced here first</h3><p>A new tab appears on this free port before the app is linked anywhere else. If it's not tabbed here, Dawn didn't launch it.</p></div>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <h3>Why build it this way?</h3>
+          <p>Because free apps that people love attract the wrong kind of attention — takedowns, blocks, copycats. A studio home that never moves, plus apps that can move in hours, is how the gifts survive. The maverick part isn't the risk; it's giving the work away anyway, and engineering it so nobody can easily take it away from the people it was given to.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY CHURN -->
+  <section>
+    <div class="sec-head"><h2>Why addresses<br>keep changing</h2><p>Same story as BingeBang for movies — and every free, no-ads service that stays alive long enough. Lawsuits, copyright pressure and blocks target domains. The code is the product. The domain is disposable.</p></div>
+    <div class="steps">
+      <div class="step"><span>1</span><h3>Blocked or pressured</h3><p>ISPs, search engines and hosts can block a domain overnight, and legal pressure can take one down — even when nothing about the service changed.</p></div>
+      <div class="step"><span>2</span><h3>We move, not close</h3><p>The same app — your account, library and history intact — reappears on a new address, usually within hours. Nothing you saved is tied to the old domain.</p></div>
+      <div class="step"><span>3</span><h3>The Free Port points the way</h3><p>This page, under Dawn Studio, is updated first. Bookmark the free port, not the apps, and you'll never lose any of them.</p></div>
+    </div>
+  </section>
+
+  <!-- OFFICIAL VS FAKE -->
+  <section id="verify">
+    <div class="sec-head"><h2>Official vs. fake</h2><p>Copycats buy look-alike domains, copy our names and logos, then fill the clones with ads, malware downloads and password phishing. Only trust what's listed here.</p></div>
+    <div class="grid2">
+      <div class="card official">
+        <h3>✓ Official — the trusted list</h3>
+        <div class="domain-row"><b>openmusic.lol</b><span class="tag tag-live">OpenMusic · Live</span></div>
+        <div class="domain-row"><b>openmovies.dawnstudio.app</b><span class="tag tag-live">OpenMovies · Live</span></div>
+        <div class="domain-row"><b>dawnstudio.app</b><span class="tag tag-gateway">Studio home</span></div>
+        <div class="domain-row"><b>dawnstudio.app/gateway</b><span class="tag tag-gateway">Free Port · this page</span></div>
+        <p class="note">Any future app or domain will appear in this list <em>before</em> it goes live anywhere else. If it's not listed here, Dawn didn't launch it.</p>
+      </div>
+      <div class="card fake">
+        <h3>✕ Not us — look-alike patterns to avoid</h3>
+        <p style="color:var(--muted);font-size:14px;margin:0 0 6px">Illustrative patterns, in the style copycats use — anything matching these that isn't on the trusted list is not official:</p>
+        <div class="domain-row"><b>openmusic.buzz / .click / .live</b><span class="tag tag-fake">Not official</span></div>
+        <div class="domain-row"><b>openmovies.* on any other root domain</b><span class="tag tag-fake">Not official</span></div>
+        <div class="domain-row"><b>open-music.* / open-movies.* / *-app.*</b><span class="tag tag-fake">Not official</span></div>
+        <div class="domain-row"><b>“OpenMusic” / “OpenMovies” apps on app stores</b><span class="tag tag-fake">Not official</span></div>
+        <div class="domain-row"><b>Any site with ads or a download prompt</b><span class="tag tag-fake">Not official</span></div>
+        <p class="note">Never enter your password on a site that isn't listed on the left. We will never ask you to install anything to listen or watch.</p>
+      </div>
+    </div>
+
+    <div class="checker" style="margin-top:16px">
+      <h3 style="margin:0">Check an address before you trust it</h3>
+      <p style="color:var(--muted);margin:6px 0 0;font-size:15px">Paste any “OpenMusic” or “OpenMovies” address you found on Google, Telegram or social media. We'll tell you if it's on the official list.</p>
+      <form id="checkForm">
+        <input id="domainInput" type="text" placeholder="e.g. openmusic.lol or openmovies.dawnstudio.app" autocomplete="off" spellcheck="false" aria-label="Domain to check">
+        <button class="btn btn-dark" type="submit" style="min-height:52px">Check address</button>
+      </form>
+      <div id="checkResult" class="result" role="status"></div>
+    </div>
+  </section>
+
+  <!-- PROMISE -->
+  <section>
+    <div class="sec-head"><h2>The Dawn promise</h2><p>One promise, every app, every tab. Free as long as free exists — inspired by the services that survived by moving fast, staying clean, and refusing to sell out the experience.</p></div>
+    <div class="principles">
+      <div class="principle"><div class="num">01</div><h3>Free, always</h3><p>Play music and watch films without paying and without an account. Registration is optional — it exists for your library, not as a paywall.</p></div>
+      <div class="principle"><div class="num">02</div><h3>No ads means no ads</h3><p>No banners, no pop-ups, no redirect traps, no “your download is ready” buttons. If you see one, you're on a fake.</p></div>
+      <div class="principle"><div class="num">03</div><h3>Your stuff stays yours</h3><p>Liked, playlists, watchlist, history and resume positions sync to your account, so a domain move never wipes your library.</p></div>
+      <div class="principle"><div class="num">04</div><h3>Data is never sold</h3><p>Anonymous usage patterns may be analysed to make the apps better. That's all. No ad trackers, no data sales, ever.</p></div>
+    </div>
+  </section>
+
+  <!-- STAY CONNECTED -->
+  <section>
+    <div class="grid2">
+      <div>
+        <h2 style="margin-bottom:18px">If an app won't open</h2>
+        <div class="card" style="display:grid;gap:0">
+          <div class="domain-row"><b>1. Refresh this free port</b><span>The new address, if any, will be in its tab</span></div>
+          <div class="domain-row"><b>2. Check Dawn Studio</b><span>Verify via dawnstudio.app if this page looks off</span></div>
+          <div class="domain-row"><b>3. Wait, don't download anything</b><span>Moves usually complete within hours</span></div>
+          <div class="domain-row"><b>4. Run the address checker above</b><span>Before you log in on any new address</span></div>
+        </div>
+        <p class="note">Don't Google for a replacement — that's exactly how people land on fakes.</p>
+      </div>
+      <div>
+        <h2 style="margin-bottom:18px">Stay connected</h2>
+        <div style="display:grid;gap:12px">
+          <div class="card"><h3>1 · Bookmark this free port</h3><p>Not the apps — this page. It's designed to stay put while everything behind it can move.</p></div>
+          <div class="card"><h3>2 · No Discord — for now</h3><p>Dawn is run solo and there's no time to moderate a community server properly, so there is <strong>no official Discord</strong> right now. Any Discord using our names is not us. If a volunteer steps up as a free mod / admin, a community channel may open — and it will be announced here first, and only here.</p></div>
+          <div class="card"><h3>3 · Check Dawn Studio</h3><p>Every app here is a Dawn Studio project. If an app and this free port ever both look unfamiliar, verify via <a href="https://dawnstudio.app" target="_blank" rel="noopener" style="color:var(--orange);font-weight:700">dawnstudio.app</a> before logging in anywhere.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <h2 style="margin-bottom:18px">Questions</h2>
+    <details open><summary>Do I need an account to listen or watch?</summary><p>No. On both OpenMusic and OpenMovies you can play for free with no account. An account only stores your personal stuff — liked, playlists, watchlist, history and resume / Continue Watching — and lets it follow you across devices and domain moves.</p></details>
+    <details><summary>Why does OpenMovies have no domain of its own?</summary><p>Deliberately. A free app that will never be monetised doesn't need a domain bill — it launches on a Dawn Studio subdomain, <span class="mono">openmovies.dawnstudio.app</span>. If it ever outgrows that, this free port will announce the move first.</p></details>
+    <details><summary>Why not just use one domain forever for everything?</summary><p>We would if we could. Free, no-ads services get blocked and pressured at the domain level — lawsuits and copyright claims included. A permanent gateway under Dawn Studio plus fast moves is how services like BingeBang stayed reachable for years; we're using the same survival playbook.</p></details>
+    <details><summary>A site looks exactly like OpenMusic or OpenMovies but has ads. Is it real?</summary><p>No. Real Dawn apps have no ads, no pop-ups and no redirects. A pixel-perfect copy with ads is still a copycat — leave it, and check the address with the checker above.</p></details>
+    <details><summary>Will I lose my library when an address changes?</summary><p>No — your account and library live with the app, not with the address. Log in on the new official address (verified here) and everything is there.</p></details>
+    <details><summary>Is there an official app on the app stores?</summary><p>Not via any app-store listing claiming to be us right now. If we ship one, it will be announced on this free port first. Anything else using our names is a copycat.</p></details>
+    <details><summary>What free app is coming next?</summary><p>Undecided — that's the fun of it. When it's real, it gets its own tab above, its own official-address card, and an entry in the checker, before it's linked anywhere else.</p></details>
+  </section>
+</main>
+
+<footer><div class="wrap"><span><strong style="color:var(--ink)">Dawn Free Port · 自由港</strong> — Dawn Studio's free apps: OpenMusic, OpenMovies, and whatever comes next. Free, no ads, for as long as we can keep them alive.</span><span class="mono">Free Port v1 · 18 Nov 2026</span></div></footer>
+<div class="toast" id="toast">Copied</div>
+
+<script>
+var OFFICIAL = {
+  "openmusic.lol": "OpenMusic",
+  "openmovies.dawnstudio.app": "OpenMovies",
+  "dawnstudio.app": "Dawn Studio"
+};
+function normalize(v){ return v.trim().toLowerCase().replace(/^https?:\/\//,"").replace(/^www\./,"").split("/")[0].split("?")[0]; }
+function showToast(msg){
+  var t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  setTimeout(function(){ t.classList.remove("show"); }, 2200);
+}
+function copyText(text){
+  function done(){ showToast("Copied — " + text.replace(/^https?:\/\//,"")); }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done).catch(done); } else { done(); }
+}
+
+/* Tabs */
+var tabBtns = Array.prototype.slice.call(document.querySelectorAll(".tab-btn"));
+function activateTab(name, pushHash){
+  tabBtns.forEach(function(btn){
+    var on = btn.getAttribute("data-tab") === name;
+    btn.setAttribute("aria-selected", on ? "true" : "false");
+    var panel = document.getElementById("panel-" + btn.getAttribute("data-tab"));
+    if(panel){ panel.classList.toggle("active", on); panel.hidden = !on; }
+  });
+  if(pushHash){ try{ history.replaceState(null, "", name === "all" ? location.pathname + location.search : "#" + name); }catch(err){} }
+}
+tabBtns.forEach(function(btn){
+  btn.addEventListener("click", function(){ activateTab(btn.getAttribute("data-tab"), true); });
+});
+document.querySelectorAll("[data-goto]").forEach(function(el){
+  el.addEventListener("click", function(){
+    activateTab(el.getAttribute("data-goto"), true);
+    document.querySelector(".tabs").scrollIntoView({behavior:"smooth", block:"start"});
+  });
+});
+document.querySelectorAll("[data-copy]").forEach(function(el){
+  el.addEventListener("click", function(){ copyText(el.getAttribute("data-copy")); });
+});
+(function(){
+  var h = (location.hash || "").replace("#","");
+  if(["music","movies","future"].indexOf(h) !== -1){ activateTab(h, false); }
+})();
+
+/* Checker */
+document.getElementById("checkForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var v = normalize(document.getElementById("domainInput").value);
+  var box = document.getElementById("checkResult");
+  box.className = "result";
+  if(!v){ box.classList.add("warn"); box.textContent = "Paste an address first — e.g. openmusic.lol"; return; }
+  if(OFFICIAL[v]){ box.classList.add("ok"); box.textContent = "✓ Official — " + v + " is the official " + OFFICIAL[v] + " address on this free port. You're safe to use it."; }
+  else if(v.indexOf("openmusic") !== -1 || v.indexOf("open-music") !== -1 || v.indexOf("openmovies") !== -1 || v.indexOf("open-movies") !== -1){ box.classList.add("bad"); box.textContent = "✕ Not official — " + v + " uses a Dawn app name but is NOT listed here. Don't log in, don't download anything. Come back to this free port for the real address."; }
+  else { box.classList.add("warn"); box.textContent = "? Not a Dawn app address — " + v + " isn't on the official list. Only trust addresses listed on this free port."; }
+});
+</script>
+</body>
+</html>
