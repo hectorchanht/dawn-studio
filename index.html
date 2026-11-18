@@ -251,7 +251,10 @@
       pointer-events: none;
     }
     /* Incense wisps: AI job roles rising off the sun like incense smoke.
-       Positional motion, so reduced-motion gets a static row instead (see JS). */
+       They move on EVERY device — under reduced-motion the animation keeps
+       its real duration (see the reduce block exception), per Hector
+       2026-11-17: a static page reads as broken, the rising roles ARE the
+       content. Duration is per-wisp via --wisp-dur (set by the spawner). */
     .founder-wisp {
       position: absolute;
       bottom: 6%;
@@ -262,6 +265,7 @@
       opacity: 0;
       translate: -50% 0;
       animation: founder-rise linear forwards;
+      animation-duration: var(--wisp-dur, 5s);
       will-change: transform, opacity, filter;
     }
     .founder-wisp .wisp-role {
@@ -288,24 +292,6 @@
       82% { transform: translate(6px, -148px) scale(1.14); opacity: .38; filter: blur(1px); }
       100% { transform: translate(-3px, -178px) scale(1.2); opacity: 0; filter: blur(2.5px); }
     }
-    .smoke-static {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 54%;
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      overflow: hidden;
-      font: 500 .68rem/1 "IBM Plex Mono", monospace;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      white-space: nowrap;
-    }
-    .smoke-static[hidden] { display: none; }
-    html[lang^="zh"] .smoke-static { text-transform: none; }
-
     /* Founder card (2026-11-17): the one human behind the studio */
     #founder { padding-block: 56px 8px; }
     .founder-card {
@@ -967,9 +953,12 @@
       .reveal { opacity: 1; transform: none; transition: none; }
       *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
       /* Frozen animations must show the logo's static rainbow, not a mid-cycle state.
-         Exception: ray colour cycle is colour-only (no positional motion), so it
-         keeps running even under reduced-motion per site design. */
+         Exceptions that keep moving under reduced-motion per site design:
+         the ray colour cycle (colour-only), and the incense wisps — Hector
+         2026-11-17: the rising AI roles move on every device, no static
+         fallback; a frozen hero reads as broken. */
       .hero-ray { animation-duration: 7s !important; }
+      .founder-wisp { animation-duration: var(--wisp-dur, 5s) !important; }
     }
   </style>
 </head>
@@ -1015,9 +1004,7 @@
               <path d="M 205 320 A 95 95 0 0 1 395 320 Z" fill="#E8590C"/>
               <rect x="150" y="313" width="300" height="14" rx="7" fill="#274b73"/>
             </svg>
-            <div class="smoke-layer" id="smoke-layer">
-              <div class="smoke-static" id="smoke-static" hidden></div>
-            </div>
+            <div class="smoke-layer" id="smoke-layer"></div>
           </div>
           <p class="sun-label" data-i18n-html="sunLabel">One person<br>Useful apps<br>Built with care</p>
         </div>
@@ -1683,34 +1670,16 @@
   /* Incense roles over the hero sun (2026-11-17): AI job roles rise off the
      sun like incense smoke — role label + ember dot, gentle sway, fade + blur.
      Roles come from the i18n dict (window.DAWN_SMOKE_ROLES) and follow the
-     EN/繁中 toggle via <html lang>. Positional motion, so prefers-reduced-motion
-     gets a static row instead; spawning pauses off-screen / tab hidden. */
+     EN/繁中 toggle via <html lang>. The wisps move on EVERY device: there is
+     deliberately no prefers-reduced-motion fallback (Hector 2026-11-17 —
+     skip it, every machine moves; a frozen hero reads as broken). Spawning
+     pauses off-screen / tab hidden. */
   (function () {
     var layer = document.getElementById("smoke-layer");
     if (!layer) return;
     var ROLES = window.DAWN_SMOKE_ROLES || { en: [], zh: [] };
     function currentLang() { return /^zh/i.test(document.documentElement.lang || "") ? "zh" : "en"; }
     function currentRoles() { return ROLES[currentLang()] || ROLES.en || []; }
-
-    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      var box = document.getElementById("smoke-static");
-      if (!box) return;
-      var renderStatic = function () {
-        box.textContent = "";
-        var count = window.innerWidth < 480 ? 3 : 5;
-        currentRoles().slice(0, count).forEach(function (role) {
-          var span = document.createElement("span");
-          span.textContent = role;
-          box.appendChild(span);
-        });
-        box.hidden = false;
-      };
-      renderStatic();
-      if ("MutationObserver" in window) {
-        new MutationObserver(renderStatic).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
-      }
-      return;
-    }
 
     var stage = layer.closest ? layer.closest(".sun-stage") : null;
     var alive = 0, lastIdx = -1, timer = null, inView = true;
@@ -1731,7 +1700,7 @@
       wisp.className = "founder-wisp";
       wisp.style.left = (33 + Math.random() * 34) + "%";
       var duration = 4.4 + Math.random() * 1.2;
-      wisp.style.animationDuration = duration + "s";
+      wisp.style.setProperty("--wisp-dur", duration + "s");
       var label = document.createElement("div");
       label.className = "wisp-role";
       label.textContent = list[i];
