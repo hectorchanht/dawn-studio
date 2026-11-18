@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-title-en="How I rebuilt RealUFO in 6 days with Claude — Dawn Studio" data-title-zh="我點樣用 Claude 6 日重建 RealUFO — Dawn Studio">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -76,6 +76,13 @@
       .bc-wrap { gap: 4px; }
       .prose table { display: block; overflow-x: auto; }
     }
+
+    .lang-switch { display: inline-flex; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+    .lang-switch button { min-width: 48px; min-height: 34px; padding: 5px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--muted); cursor: pointer; font: inherit; font-weight: 600; }
+    .lang-switch button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+    [hidden] { display: none !important; }
+    html[lang^="zh"] h1 { letter-spacing: -.01em; line-height: 1.15; }
+    html[lang^="zh"] .prose h2 { letter-spacing: 0; }
   </style>
 </head>
 <body>
@@ -87,11 +94,16 @@
         <a href="/examples">Examples</a>
         <a href="/changelog">Changelog</a>
       </nav>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="zh" aria-pressed="false">繁中</button>
+      </div>
     </div>
     <article>
-      <p class="kicker"><time datetime="2026-10-06">Oct 6, 2026</time></p>
-      <h1>How I rebuilt RealUFO in 6 days with Claude</h1>
-      <div class="prose">
+      <p class="kicker"><time datetime="2026-10-06"><span class="i18n-en">Oct 6, 2026</span><span class="i18n-zh" hidden>2026 年 10 月 6 日</span></time></p>
+      <h1 class="i18n-en">How I rebuilt RealUFO in 6 days with Claude</h1>
+      <h1 class="i18n-zh" hidden>我點樣用 Claude 6 日重建 RealUFO</h1>
+      <div class="prose i18n-en">
         <p>For about two months, I didn’t touch RealUFO. The archive existed — hundreds of declassified records, sitting there — and I had no idea what it was supposed to become. So I left it alone.</p>
         <p>Then a stranger posted in the <strong>/board/uap</strong> discussion board. Someone I’d never met cared enough about this weird little archive to write in it. That was the whole spark. I’ve been building intensely ever since.</p>
 
@@ -136,6 +148,41 @@
         <p><a href="https://realufo.org" target="_blank" rel="noopener">realufo.org →</a> · <a href="https://github.com/hectorchanht/realufo" target="_blank" rel="noopener">GitHub →</a></p>
         <p><em>Updated November 16, 2026 — figures corrected to the GitHub commits API.</em></p>
             </div>
+      <div class="prose i18n-zh" hidden>
+        <p>差唔多兩個月，我冇掂過 RealUFO。個檔案庫喺度 — 幾百條解密紀錄，擺喺嗰度 — 而我唔知佢應該變成啲咩。所以我由佢。</p>
+        <p>跟住有個陌生人喺 <strong>/board/uap</strong> 討論區留咗言。一個我從未見過嘅人，居然在乎呢個古怪嘅細檔案庫，仲寫咗嘢入去。嗰下就係成個火花。自此我就冇停過咁起嘢。</p>
+        <h3>數字</h3>
+        <p>個 repo 76 日有 <strong>868 個 commits</strong> — 其中 <strong>797 個、92%，喺六日入面落地</strong>。最高峰係 10 月 3 號：<strong>單日 327 個 commits</strong>。唔係 ingest 嚟嚟去去嗰啲 — 係真 features，review 過、出咗貨嘅。</p>
+        <p>全程同我拍住上嘅係 Claude。我講我想點，佢起，我 test，我哋迭代。有啲夜晚，我哋冇停過。</p>
+        <figure class="chart">
+          <div class="ch-wrap" role="img" aria-label="GitHub commit 熱圖">
+  <div class="ch-months"><span class="ch-month">7月</span><span class="ch-month"></span><span class="ch-month">8月</span><span class="ch-month"></span><span class="ch-month"></span><span class="ch-month"></span><span class="ch-month">9月</span><span class="ch-month"></span><span class="ch-month"></span><span class="ch-month"></span><span class="ch-month"></span><span class="ch-month">10月</span></div>
+  <div class="ch-grid"><div class="ch-week"><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-07-19"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-07-20"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-07-21"></span><span class="ch-cell" style="background:#0e4429" title="30 commits on 2026-07-22"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-07-23"></span><span class="ch-cell" style="background:#0e4429" title="25 commits on 2026-07-24"></span><span class="ch-cell" style="background:#0e4429" title="16 commits on 2026-07-25"></span></div><div class="ch-week"><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-07-26"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-07-27"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-07-28"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-07-29"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-07-30"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-07-31"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-01"></span></div><div class="ch-week"><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-02"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-03"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-04"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-05"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-06"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-07"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-08"></span></div><div class="ch-week"><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-09"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-10"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-11"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-12"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-13"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-14"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-15"></span></div><div class="ch-week"><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-16"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-17"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-18"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-19"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-20"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-21"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-22"></span></div><div class="ch-week"><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-23"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-24"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-25"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-26"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-27"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-28"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-29"></span></div><div class="ch-week"><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-30"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-31"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-01"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-02"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-03"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-04"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-05"></span></div><div class="ch-week"><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-06"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-07"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-08"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-09"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-10"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-11"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-12"></span></div><div class="ch-week"><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-13"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-14"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-15"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-16"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-17"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-18"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-19"></span></div><div class="ch-week"><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-20"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-21"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-22"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-23"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-24"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-25"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-26"></span></div><div class="ch-week"><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-27"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-28"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-29"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-30"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-10-01"></span><span class="ch-cell" style="background:#39d353" title="265 commits on 2026-10-02"></span><span class="ch-cell" style="background:#39d353" title="327 commits on 2026-10-03"></span></div><div class="ch-week"><span class="ch-cell" style="background:#006d32" title="117 commits on 2026-10-04"></span><span class="ch-cell" style="background:#0e4429" title="48 commits on 2026-10-05"></span><span class="ch-cell" style="background:#0e4429" title="40 commits on 2026-10-06"></span><span class="ch-cell ch-future"></span><span class="ch-cell ch-future"></span><span class="ch-cell ch-future"></span><span class="ch-cell ch-future"></span></div></div>
+  <div class="ch-legend"><span>較少</span><span class="ch-cell" style="background:#161b22"></span><span class="ch-cell" style="background:#0e4429"></span><span class="ch-cell" style="background:#006d32"></span><span class="ch-cell" style="background:#26a641"></span><span class="ch-cell" style="background:#39d353"></span><span>較多</span></div>
+  <div class="ch-total">過去 12 星期 868 個 commits</div>
+</div>
+          <figcaption>Commits 去 <a href="https://github.com/hectorchanht/realufo" target="_blank" rel="noopener">hectorchanht/realufo</a>，資料嚟自 GitHub API（UTC 日）。兩個月乜都冇，跟住就係衝刺。</figcaption>
+        </figure>
+        <figure class="chart">
+          <div class="bc-wrap" role="img" aria-label="每日 commits 柱狀圖"><div class="bc-bar"><span class="bc-count">0</span><span class="bc-fill" style="height:0%"></span><span class="bc-day">10月01日</span></div><div class="bc-bar"><span class="bc-count">265</span><span class="bc-fill" style="height:81%"></span><span class="bc-day">10月02日</span></div><div class="bc-bar bc-peak"><span class="bc-count">327</span><span class="bc-fill" style="height:100%"></span><span class="bc-day">10月03日</span></div><div class="bc-bar"><span class="bc-count">117</span><span class="bc-fill" style="height:36%"></span><span class="bc-day">10月04日</span></div><div class="bc-bar"><span class="bc-count">48</span><span class="bc-fill" style="height:15%"></span><span class="bc-day">10月05日</span></div><div class="bc-bar"><span class="bc-count">40</span><span class="bc-fill" style="height:12%"></span><span class="bc-day">10月06日</span></div></div>
+          <figcaption>衝刺嗰星期，逐日睇。10 月 3 號：327 個 commits — 最高峰。</figcaption>
+        </figure>
+        <h3>起咗啲咩</h3>
+        <p>嗰個星期，realufo.org 由一個安靜嘅檔案庫變成一個活生生嘅網站：全文搜尋連 <strong>頁級引用</strong>、紀錄嘅 AI 摘要、討論區、政府 <strong>發布追蹤器</strong>、一個喺十幾萬個 embedded chunks 上面行嘅 RAG <strong>「問檔案庫」</strong>問答、新發布電郵提示、SEO 同 Google 索引，仲有 deploy pipeline 畀我正正經經修好。</p>
+        <p>嗰啲全部都係 commits。三日過百。</p>
+        <h3>嗰一刻</h3>
+        <p>有啲夜晚我開條 UFO 片，逐格逐格睇，揾嗰樣喺一秒都唔夠入面掠過畫面嘅嘢。跟住我見到喇 — 一個形狀，兩格就冇咗，快到真實時間冇一隻眼捉得住。</p>
+        <p>嗰一刻我就知我做嘅嘢值幾多。我起咗嗰個裝住呢啲片段嘅檔案庫。搜尋得到、睇得到、真嘅。我做咗啲有用嘅嘢 — 而每一秒我都享受。</p>
+        <p>我唔知我見到嘅係咪 UFO。但我知，總有一日，有人會坐低，攞住呢啲紀錄，一格一格咁睇。個檔案庫會喺度，因為我起咗佢。</p>
+        <h3>我學到啲咩</h3>
+        <p><strong>日日出貨，唔係就停滯。</strong>嗰兩個月嘅沉默教我嘅，比衝刺仲多 — 一個冇 momentum 嘅 project，係一個你已經放棄咗嘅 project。每日 deploy 等個循環夠緊：起、睇佢上線、修、重複。</p>
+        <p><strong>等真 user 拉你向前。</strong></p>
+        <p>起咗佢，放喺人搵得到嘅地方，當有人敲門嗰陣，聽。</p>
+        <p><strong>AI pair programming 係力量倍增器，唔係替代品。</strong>我留低做 product 個腦 — 每個決定、每句「呢樣真係 work 唔 work」、每個咩先重要嘅判斷。Claude 做對手。判斷力從來冇離開過間房，因為判斷力係我嘅。</p>
+        <p>之後我將 realufo.org 嘅日常照顧交咗畀 Muse — 監察、維護、嗰啲靜靜哋嘅功夫。我返去起嘢。呢樣就係我做嘅事：<strong>我起我用嘅嘢，同埋畀所有人用嘅嘢。</strong></p>
+        <p><a href="https://realufo.org" target="_blank" rel="noopener">realufo.org →</a> · <a href="https://github.com/hectorchanht/realufo" target="_blank" rel="noopener">GitHub →</a></p>
+        <p><em>2026 年 11 月 16 日更新 — 數字已按 GitHub commits API 修正。</em></p>
+      </div>
     </article>
     <footer>
       <p>© 2026 Dawn Studio</p>
@@ -146,5 +193,6 @@
       <a href="/">Home</a>
     </footer>
   </main>
+  <script src="/blog/lang.js"></script>
 </body>
 </html>

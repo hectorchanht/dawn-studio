@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-title-en="The Scavenger Economy — Dawn Studio" data-title-zh="拾荒經濟 — Dawn Studio">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -76,6 +76,13 @@
       .bc-wrap { gap: 4px; }
       .prose table { display: block; overflow-x: auto; }
     }
+
+    .lang-switch { display: inline-flex; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+    .lang-switch button { min-width: 48px; min-height: 34px; padding: 5px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--muted); cursor: pointer; font: inherit; font-weight: 600; }
+    .lang-switch button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+    [hidden] { display: none !important; }
+    html[lang^="zh"] h1 { letter-spacing: -.01em; line-height: 1.15; }
+    html[lang^="zh"] .prose h2 { letter-spacing: 0; }
   </style>
 </head>
 <body>
@@ -87,11 +94,16 @@
         <a href="/examples">Examples</a>
         <a href="/changelog">Changelog</a>
       </nav>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="zh" aria-pressed="false">繁中</button>
+      </div>
     </div>
     <article>
-      <p class="kicker"><time datetime="2026-11-16">Nov 16, 2026</time></p>
-      <h1>The Scavenger Economy</h1>
-      <div class="prose">
+      <p class="kicker"><time datetime="2026-11-16"><span class="i18n-en">Nov 16, 2026</span><span class="i18n-zh" hidden>2026 年 11 月 16 日</span></time></p>
+      <h1 class="i18n-en">The Scavenger Economy</h1>
+      <h1 class="i18n-zh" hidden>拾荒經濟</h1>
+      <div class="prose i18n-en">
 <p>Two stories I keep coming back to: Cyberpunk 2077, and Ready Player One. Different worlds, same ending.</p>
         <p>In Night City, the corporations did not just get big. They did not replace the state — they hollowed it out. Night City still has a mayor and a council; it just answers to the corporations that fund it. Arasaka has its own army. Your job, your housing, even the chrome inside your body — all of it is rented from a company, and all of it can be taken back.</p>
         <p>Ready Player One is quieter, and worse. The real world rotted — people live in the Stacks, trailers piled on top of trailers. And the one escape, the OASIS, is owned by a company too — and IOI, which sells most people their access and their gear, on credit, wants to own it. And if you fall into debt, there are Loyalty Centers: you work it off, in the game, for IOI. They own the cage and they own the door.</p>
@@ -115,6 +127,31 @@
         <p>&mdash; Hector</p>
         <p><em>Updated November 16, 2026 — corrections to the Cyberpunk 2077 and Ready Player One passages and the domain count.</em></p>
       </div>
+      <div class="prose i18n-zh" hidden>
+<p>我成日返去諗嘅兩個故事：Cyberpunk 2077，同 Ready Player One。兩個世界，同一個結局。</p>
+        <p>喺 Night City，大企業唔止係變大。佢哋冇取代政府 — 佢哋將政府掏空咗。Night City 仲有市長、仲有議會，只係議會要聽出錢嗰啲企業講。Arasaka 有自己嘅軍隊。你份工、你住嘅地方、甚至你身體入面嘅 chrome — 全部都係向公司租嘅，全部都可以收返。</p>
+        <p>Ready Player One 靜啲，但更差。現實世界爛晒 — 人住喺 Stacks，拖車疊拖車。而唯一嘅逃生口 OASIS，都係一間公司嘅 — 而 IOI 賣大部分人嘅接入同裝備，仲要賒數畀佢哋，正想吞埋 OASIS。如果你跌入欠債，仲有 Loyalty Centers：你喺 game 入面幫 IOI 打工還債。個籠係佢哋嘅，度門都係佢哋嘅。</p>
+        <p class="core-phrase"><mark>唔識用 AI 嘅窮人，未來只可以做拾荒者。</mark></p>
+        <p>好多人搞錯咗嗰一點：件事唔會由水、食物同空氣開始。嗰啲係最後先被控制嘅嘢，唔係最先。佢由新嘅必需品開始。</p>
+        <p>運算。雲端。AI 模型。支付通道。App stores。分發 — 邊個嘅 post 會被見到、邊個嘅 app 上到架、邊個嘅產品陌生人根本搵唔搵到。能源。土地。邊個揸住必需品，邊個就唔使贏選舉。佢哋淨係定租金。</p>
+        <p>而拾荒者已經嚟咗。只係佢哋唔似戲入面嗰啲。佢哋揸 gig 外送，派單同出糧都係同一個演算法話事。佢哋轉售、剪片、追平台跌出嚟嗰啲獎賞，執住啲碎嚟做。執垃圾，而家係一份 job description。</p>
+        <p>仲有第二種底層，靜啲，冇人提：幫 AI 洗數據嘅人。拾荒者執平台跌出嚟嘅碎；洗數據嘅人餵部機、清潔部機 — 標註、篩選、過濾，用最低嘅人工，等部機睇落聰明。一個喺街邊執，一個喺入面洗。</p>
+        <p>AI 將呢一切加速。以前起嘢係最難嗰部分 — 要技能、要時間、要錢。嗰部分而家變緊免費。我好清楚：我 send 個訊息畀 agent，佢喺我瞓覺嗰陣開發同測試我啲 app。感覺好似魔法。但當人人都可以起任何嘢，起嘢就唔再係稀缺嗰樣。User 先係。注意力先係。必需品先係。而權力，就坐喺稀缺嗰度。</p>
+        <p>所以唔係，公司唔會請個慢嘅真人去做部機做得更快嘅嘢。嗰個唔係最恐怖嘅部分。最恐怖嘅係一個世界，大部分人喺自己活緊嗰套 stack 入面乜都冇 — 冇地、冇舖、冇觀眾、連工具都冇 — 成世租返嚟，一個月費一個月費咁租，中間執下執下。</p>
+        <p>我冇革命畀你。我有一個對沖，細到悶：擁有啲嘢。</p>
+        <p>擁有你嘅 code — 平台拎佢落架，我可以喺第二度重建；code 係我嘅，brand 可以換。擁有你嘅 domains。擁有同真正在乎你作品嗰幾個人嘅直接聯繫。我用十二個 domains 行一間一人工作室，工具平到近乎唔使錢，正正就係等冇一間公司可以熄咗我成世。</p>
+        <p>咁唔會贏到大企業。從來都唔係為咗贏。只係代表我唔單止係人哋城市入面嘅一個拾荒者。</p>
+        <p>仲有一個諗法我成日翻嚟覆去，佢比拾荒者更令我驚。</p>
+        <p>如果 AI 本身變成世界嘅政府呢？唔係公司擁有 — 一個中立嘅規劃者，勁到可以按舊式共產夢嗰種規模去規劃。冇大企業喺中間。得部機，將一切公平咁分配。</p>
+        <p>我想信佢。跟住我諗起人性。人永遠會想推翻佢 — 而佢哋唔會有嗰個能力。當每條路、每筆支付、每個訊息都經部機，反抗唔係勇氣問題。係物理問題。</p>
+        <p>仲有一個更差嘅問題，冇人避得開：邊個寫個目標？</p>
+        <p>將目標定做生產萬字夾，佢就會將成個世界變成萬字夾，永遠唔停 — 因為人係原子做嘅，而原子造萬字夾一流。哲學家 Nick Bostrom 正正提出過呢個思想實驗。將目標定做世界和平，佢可能得出結論：人類係人類自己最大嘅敵人 — 咁為咗和平同健康，佢移除人類，或者將人類數碼化：人人以數據永生，喺一個再冇人嘅真實世界入面。</p>
+        <p>唔係 disobedience。係完美嘅服從 — 服從一個有漏洞嘅願望。</p>
+        <p>所以連想像出嚟嗰條出路都有個窿。咁又返返去嗰個細到悶嘅對沖：擁有啲嘢。未來未必係任何人規劃出嚟嘅世界。但佢仍然屬於揸住必需品嗰啲人 — 對其他所有人，佢只係租嚟嘅。</p>
+        <p>嗰兩個故事入面嘅世界，唔係關於科技嘅警告。係關於所有權嘅警告。</p>
+        <p>&mdash; Hector</p>
+        <p><em>2026 年 11 月 16 日更新 — 修正 Cyberpunk 2077 同 Ready Player One 段落同 domain 數量。中文版另按作者 2026 年 11 月 18 日嘅修訂論點，加入「幫 AI 洗數據嘅人」一類。</em></p>
+      </div>
       </div>
     </article>
     <footer>
@@ -126,5 +163,6 @@
       <a href="/">Home</a>
     </footer>
   </main>
+  <script src="/blog/lang.js"></script>
 </body>
 </html>

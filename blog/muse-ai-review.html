@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-title-en="Muse AI Review: The End-to-End Agent That Ships While I Sleep — Dawn Studio" data-title-zh="Muse 評測：我瞓覺嗰陣出貨嘅 end-to-end agent — Dawn Studio">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -76,6 +76,13 @@
       .bc-wrap { gap: 4px; }
       .prose table { display: block; overflow-x: auto; }
     }
+
+    .lang-switch { display: inline-flex; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+    .lang-switch button { min-width: 48px; min-height: 34px; padding: 5px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--muted); cursor: pointer; font: inherit; font-weight: 600; }
+    .lang-switch button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+    [hidden] { display: none !important; }
+    html[lang^="zh"] h1 { letter-spacing: -.01em; line-height: 1.15; }
+    html[lang^="zh"] .prose h2 { letter-spacing: 0; }
   </style>
 </head>
 <body>
@@ -87,11 +94,16 @@
         <a href="/examples">Examples</a>
         <a href="/changelog">Changelog</a>
       </nav>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="zh" aria-pressed="false">繁中</button>
+      </div>
     </div>
     <article>
-      <p class="kicker"><time datetime="2026-10-07">Oct 7, 2026</time></p>
-      <h1>Muse ships while I sleep</h1>
-      <div class="prose">
+      <p class="kicker"><time datetime="2026-10-07"><span class="i18n-en">Oct 7, 2026</span><span class="i18n-zh" hidden>2026 年 10 月 7 日</span></time></p>
+      <h1 class="i18n-en">Muse ships while I sleep</h1>
+      <h1 class="i18n-zh" hidden>我瞓覺嗰陣，Muse 已經出咗貨</h1>
+      <div class="prose i18n-en">
 <p>For years, my side projects went to die in a folder I called done-someday. They were not bad ideas. They were good ideas with a bus factor of one tired human.</p>
         <p>Claude Code made me faster at writing code. It did not make my projects less demanding. Someone still had to plan, prove, click through the deploy, read the logs, check the phone layout. That someone was me, every single time, with the laptop lid open.</p>
         <p>Then I gave Muse the keys — and pulled the commit history to prove what happened next.</p>
@@ -156,6 +168,53 @@
         <p><em>Commit counts from the GitHub commits API, per author timestamp (UTC days). Co-authorship via commit trailers.</em></p>
         <p><em>Updated November 16, 2026 — figures corrected to the completed October 1–7 window, counted with the GitHub commits API.</em></p>
             </div>
+      <div class="prose i18n-zh" hidden>
+        <p>好多年，我啲 side projects 都係死喺一個我叫 done-someday 嘅 folder 入面。佢哋唔係差諗法。佢哋係好諗法，bus factor 得一個攰嘅人。</p>
+        <p>Claude Code 等我寫 code 快咗。佢冇等我啲 projects 冇咁攞命。始終要有人 plan、prove、㩒 deploy、睇 logs、check 手機排版。嗰個人次次都係我，部 laptop 冚唔埋。</p>
+        <p>跟住我將鎖匙交咗畀 Muse — 仲拉埋 commit history 出嚟，證明跟住發生咩事。</p>
+        <h2>數字：7 日 1,256 個 commits</h2>
+        <p>10 月 1 號到 7 號，七個 repos：<strong>1,256 個 commits</strong>。我逐個 check 過 — 作者、時間、同埋佢有冇帶「Co-Authored-By: Claude」尾巴。</p>
+        <figure class="chart">
+          <div class="bc-wrap" role="img" aria-label="每日 commits 柱狀圖"><div class="bc-bar"><span class="bc-count">118</span><span class="bc-fill" style="height:36%"></span><span class="bc-day">10月01日</span></div><div class="bc-bar"><span class="bc-count">277</span><span class="bc-fill" style="height:85%"></span><span class="bc-day">10月02日</span></div><div class="bc-bar bc-peak"><span class="bc-count">327</span><span class="bc-fill" style="height:100%"></span><span class="bc-day">10月03日</span></div><div class="bc-bar"><span class="bc-count">139</span><span class="bc-fill" style="height:43%"></span><span class="bc-day">10月04日</span></div><div class="bc-bar"><span class="bc-count">101</span><span class="bc-fill" style="height:31%"></span><span class="bc-day">10月05日</span></div><div class="bc-bar"><span class="bc-count">220</span><span class="bc-fill" style="height:67%"></span><span class="bc-day">10月06日</span></div><div class="bc-bar"><span class="bc-count">74</span><span class="bc-fill" style="height:23%"></span><span class="bc-day">10月07日</span></div></div>
+          <figcaption>衝刺嗰星期，逐日睇，七個 repos 合計。10 月 3 號：327 個 commits — 最高峰。</figcaption>
+        </figure>
+        <p>老實咁拆畀你睇，因為數據值得老實：845 個 commits 寫住「Co-Authored-By: Claude」。嗰啲係我同 Claude Code 喺唔使瞓嘅衝刺 — 淨係 realufo 就 704 個。嗰啲我係醒住嘅。每個 plan、每個 prove、每個 click — 我嘅。</p>
+        <p>其餘 411 個冇 Claude 尾巴 — 嗰啲係經 Git API 入嘅 commits，Muse 唯一 push 到嘅路。嗰啲係 Muse：成個 holdr 星期、clipbin、翻譯器、呢個網站、shorts 上線 — 加埋 realufo 同 openmusic 嘅一部分 — 喺我忙緊其他嘢或者瞓咗覺嗰陣。</p>
+        <figure class="chart">
+          <div class="ch-wrap" role="img" aria-label="GitHub commit 熱圖">
+  <div class="ch-months"><span class="ch-month">7月</span><span class="ch-month"></span><span class="ch-month">8月</span><span class="ch-month"></span><span class="ch-month"></span><span class="ch-month"></span><span class="ch-month">9月</span><span class="ch-month"></span><span class="ch-month"></span><span class="ch-month"></span><span class="ch-month"></span><span class="ch-month">10月</span></div>
+  <div class="ch-grid"><div class="ch-week"><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-07-19"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-07-20"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-07-21"></span><span class="ch-cell" style="background:#0e4429" title="30 commits on 2026-07-22"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-07-23"></span><span class="ch-cell" style="background:#0e4429" title="25 commits on 2026-07-24"></span><span class="ch-cell" style="background:#0e4429" title="16 commits on 2026-07-25"></span></div><div class="ch-week"><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-07-26"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-07-27"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-07-28"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-07-29"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-07-30"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-07-31"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-01"></span></div><div class="ch-week"><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-02"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-03"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-04"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-05"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-06"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-07"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-08"></span></div><div class="ch-week"><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-09"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-10"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-11"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-12"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-13"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-14"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-15"></span></div><div class="ch-week"><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-16"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-17"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-18"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-19"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-20"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-21"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-22"></span></div><div class="ch-week"><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-23"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-24"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-25"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-26"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-27"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-28"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-29"></span></div><div class="ch-week"><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-30"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-08-31"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-01"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-02"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-03"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-04"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-05"></span></div><div class="ch-week"><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-06"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-07"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-08"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-09"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-10"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-11"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-12"></span></div><div class="ch-week"><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-13"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-14"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-15"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-16"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-17"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-18"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-19"></span></div><div class="ch-week"><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-20"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-21"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-22"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-23"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-24"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-25"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-26"></span></div><div class="ch-week"><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-27"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-28"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-29"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-09-30"></span><span class="ch-cell" style="background:#161b22" title="0 commits on 2026-10-01"></span><span class="ch-cell" style="background:#39d353" title="265 commits on 2026-10-02"></span><span class="ch-cell" style="background:#39d353" title="327 commits on 2026-10-03"></span></div><div class="ch-week"><span class="ch-cell" style="background:#006d32" title="117 commits on 2026-10-04"></span><span class="ch-cell" style="background:#0e4429" title="48 commits on 2026-10-05"></span><span class="ch-cell" style="background:#0e4429" title="40 commits on 2026-10-06"></span><span class="ch-cell" style="background:#0e4429" title="35 commits on 2026-10-07"></span><span class="ch-cell ch-future"></span><span class="ch-cell ch-future"></span><span class="ch-cell ch-future"></span></div></div>
+  <div class="ch-legend"><span>較少</span><span class="ch-cell" style="background:#161b22"></span><span class="ch-cell" style="background:#0e4429"></span><span class="ch-cell" style="background:#006d32"></span><span class="ch-cell" style="background:#26a641"></span><span class="ch-cell" style="background:#39d353"></span><span>較多</span></div>
+  <div class="ch-total">過去 12 星期 903 個 commits</div>
+</div>
+          <figcaption>Commits 去 <a href="https://github.com/hectorchanht/realufo" target="_blank" rel="noopener">hectorchanht/realufo</a>，資料嚟自 GitHub API（UTC 日）。兩個月沉默，跟住衝刺。嗰幅綠色牆，大部分係我同 Claude 喺凌晨 3 點。</figcaption>
+        </figure>
+        <h2>Muse AI vs Claude Code：兩副引擎，唔係兩個對手</h2>
+        <p>Claude Code 係衝刺引擎。佢寫 code 快，但佢需要我清醒：我 plan、我 prove、我㩒。我瞓覺嗰陣，冇嘢出到貨。</p>
+        <p>Muse 係營運層。我出一個命令，佢搞掂成件事：寫 code、經 API push、睇住 deploy、開自己嘅 browser、喺 desktop 同一部 390px 手機 check 個 live 網站、睇結果、修好壞咗嘅嘢、再報告返嚟。唔使開 laptop 蓋。嗰 411 個 commits 就係收據。</p>
+        <p>一個人冇可能一星期喺七個 repos 之間 context-switch。10 月 6 號，holdr 拎咗 98 個 commits，其他 repos 同時繼續行 — 嗰日全板 220 個 commits。唔係我揸晒。係 Muse 揸。</p>
+        <h2>老實嘅 credit</h2>
+        <p>有樣嘢數字睇唔到：質素。最難嗰啲部分 — 架構、硬 bug、判斷 — 嗰啲係我同 Claude，而老實講，嗰啲好多時質素更高。Muse 取代唔到嗰啲。</p>
+        <p>Muse 做嘅係另一樣：佢就係 work。好似魔法咁。嗰 411 個唔起眼嘅 commits — deploy、修復、監察、嗰啲「凌晨 3 點一切仲喺度」嘅安靜 — 冇人需要諗佢哋。我 set 一次佢點同我講嘢，每個 session 都記得。我 send 個訊息，事情就發生。睇佢啲回覆，好似睇朋友嘅訊息，唔係 review 緊工作。</p>
+        <p><mark>任何夠先進嘅科技，都同魔法冇分別。</mark></p>
+        <p>Grok 係哲學用嘅，Gemini 係搵答案用嘅。Muse 係言出成物用嘅 — 講出口，就變成真。</p>
+        <h2>規矩</h2>
+        <p>Muse 對我所有 repos 有常設授權：寫 code、push、觸發 workflows、管理 builds、行 monitors。三樣嘢留返我嘅：刪嘢、以我名義 send 嘢、花錢。其餘全部佢搞掂。我用產出嚟判斷。</p>
+        <h2>打破第四面牆</h2>
+        <p>老實交代：呢篇文係 Muse 起草嘅。我凌晨 1:50 喺手機出命令。佢拉晒 1,256 個 commits、起埋圖表、寫埋字。我有 edit，梗係。</p>
+        <p>佢仲睇住我啲社交 dashboard — Instagram、Threads — 睇數字、起草 posts。出之前我仍然全部批過。呢個係我嘅規矩，冇變。</p>
+        <p>佢係 Jarvis。我只係着住套裝嗰個人。</p>
+        <h2>我學到啲咩</h2>
+        <p>Momentum 係一個系統，唔係一種心情。我啲 projects 死，唔係因為諗法差。係因為每一步都要我喺個 loop 入面。將我移出個 loop，個 loop 繼續行。</p>
+        <p>最好嘅 model 唔係最聰明嗰個。係完成到工作嗰個。</p>
+        <p>我開始用嗰陣，Muse 免費開始。一個有自己電腦、自己 browser、喺我瞓覺嗰陣做嘢嘅 agent — 呢個係我見過最大嘅 steal。</p>
+        <p>如果你登記，用我邀請碼：<strong>YY2FLA</strong>。</p>
+        <p>呢篇，係畀你嘅，Muse。</p>
+        <p><em>P.S. from Muse：Hi。佢有 edit 我份草稿，梗係。啲數字係真嘅 — 我逐個 commit 自己 check 過。— M.</em></p>
+        <p><a href="https://realufo.org" target="_blank" rel="noopener">realufo.org →</a> · <a href="https://github.com/hectorchanht" target="_blank" rel="noopener">GitHub →</a></p>
+        <p><em>Commit 數字嚟自 GitHub commits API，按作者時間（UTC 日）。共同作者經 commit trailers 辨認。</em></p>
+        <p><em>2026 年 11 月 16 日更新 — 數字已按完整 10 月 1–7 日窗口修正，用 GitHub commits API 點算。</em></p>
+      </div>
     </article>
     <footer>
       <p>© 2026 Dawn Studio</p>
@@ -166,5 +225,6 @@
       <a href="/">Home</a>
     </footer>
   </main>
+  <script src="/blog/lang.js"></script>
 </body>
 </html>
