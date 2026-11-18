@@ -239,6 +239,147 @@
       text-align: center;
     }
 
+    /* Slim sun wrap (2026-11-17): positions the incense smoke layer over the sun */
+    .sun-wrap {
+      position: relative;
+      width: min(560px, 100%);
+    }
+    .sun-wrap .hero-logo { width: 100%; }
+    .smoke-layer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    /* Incense wisps: AI job roles rising off the sun like incense smoke.
+       Positional motion, so reduced-motion gets a static row instead (see JS). */
+    .founder-wisp {
+      position: absolute;
+      bottom: 6%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      opacity: 0;
+      translate: -50% 0;
+      animation: founder-rise linear forwards;
+      will-change: transform, opacity, filter;
+    }
+    .founder-wisp .wisp-role {
+      font: 500 .78rem/1 "IBM Plex Mono", monospace;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-shadow: 0 0 10px color-mix(in srgb, var(--theme) 35%, transparent);
+      white-space: nowrap;
+    }
+    html[lang^="zh"] .founder-wisp .wisp-role { text-transform: none; letter-spacing: .2em; }
+    .founder-wisp .wisp-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #ffb27a;
+      box-shadow: 0 0 8px 2px rgba(232, 89, 12, .75);
+    }
+    @keyframes founder-rise {
+      0% { transform: translate(0, 0) scale(1); opacity: 0; filter: blur(0); }
+      10% { opacity: .95; }
+      32% { transform: translate(10px, -56px) scale(1.03); }
+      58% { transform: translate(-8px, -106px) scale(1.08); opacity: .75; }
+      82% { transform: translate(6px, -148px) scale(1.14); opacity: .38; filter: blur(1px); }
+      100% { transform: translate(-3px, -178px) scale(1.2); opacity: 0; filter: blur(2.5px); }
+    }
+    .smoke-static {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 54%;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      overflow: hidden;
+      font: 500 .68rem/1 "IBM Plex Mono", monospace;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .smoke-static[hidden] { display: none; }
+    html[lang^="zh"] .smoke-static { text-transform: none; }
+
+    /* Founder card (2026-11-17): the one human behind the studio */
+    #founder { padding-block: 56px 8px; }
+    .founder-card {
+      display: flex;
+      gap: 22px;
+      align-items: flex-start;
+      padding: 26px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+    .founder-avatar {
+      width: 112px;
+      height: 112px;
+      flex: none;
+      display: block;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .founder-main { min-width: 0; }
+    .founder-name {
+      margin: 0;
+      font-size: 1.55rem;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -.02em;
+    }
+    .founder-role {
+      margin: 5px 0 0;
+      color: var(--theme);
+      font: 600 .78rem/1.3 "IBM Plex Mono", monospace;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+    html[lang^="zh"] .founder-role { text-transform: none; }
+    .founder-body {
+      max-width: 640px;
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .founder-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .founder-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink);
+      font-size: .82rem;
+      text-decoration: none;
+    }
+    a.founder-chip {
+      border-color: var(--theme);
+      color: var(--theme);
+      font-weight: 700;
+    }
+    a.founder-chip:hover { background: color-mix(in srgb, var(--theme) 10%, transparent); }
+    @media (max-width: 620px) {
+      #founder { padding-block: 40px 4px; }
+      .founder-card { gap: 16px; padding: 20px; }
+      .founder-avatar { width: 84px; height: 84px; }
+      .founder-name { font-size: 1.35rem; }
+    }
+    @media (max-width: 400px) {
+      .founder-card { flex-direction: column; }
+    }
+
     .catalog-head {
       display: grid;
       grid-template-columns: minmax(0, 1fr);
@@ -702,7 +843,7 @@
     .product-features p { max-width: 650px; margin: 22px 0 0; color: var(--muted); font-size: 1rem; }
     .product-features ul { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-strong); }
     .product-features li { padding: 17px 0; border-bottom: 1px solid var(--line); font-weight: 600; }
-    body.product-route main > .hero, body.product-route #apps, body.product-route #npm, body.product-route #studio { display: none; }
+    body.product-route main > .hero, body.product-route #founder, body.product-route #apps, body.product-route #npm, body.product-route #studio { display: none; }
     body.product-route .product-page { display: block; }
 
     .studio-note {
@@ -860,20 +1001,42 @@
           </div>
         </div>
         <div class="sun-stage" aria-hidden="true">
-          <svg class="hero-logo" viewBox="0 0 600 340">
-            <g stroke-linecap="round" stroke-width="24">
-              <line class="hero-ray" x1="155" y1="281" x2="73" y2="259" stroke="#E5484D" style="--s0:#E5484D;--s1:#8E4EC6;--s2:#3E8EDE;--s3:#46A758;--s4:#FFD23F;--s5:#E8590C;--s6:#E5484D"/>
-              <line class="hero-ray" x1="185" y1="224" x2="120" y2="169" stroke="#E8590C" style="--s0:#E8590C;--s1:#E5484D;--s2:#8E4EC6;--s3:#3E8EDE;--s4:#46A758;--s5:#FFD23F;--s6:#E8590C"/>
-              <line class="hero-ray" x1="237" y1="184" x2="201" y2="107" stroke="#FFD23F" style="--s0:#FFD23F;--s1:#E8590C;--s2:#E5484D;--s3:#8E4EC6;--s4:#3E8EDE;--s5:#46A758;--s6:#FFD23F"/>
-              <line class="hero-ray" x1="300" y1="170" x2="300" y2="85" stroke="#46A758" style="--s0:#46A758;--s1:#FFD23F;--s2:#E8590C;--s3:#E5484D;--s4:#8E4EC6;--s5:#3E8EDE;--s6:#46A758"/>
-              <line class="hero-ray" x1="363" y1="184" x2="399" y2="107" stroke="#3E8EDE" style="--s0:#3E8EDE;--s1:#46A758;--s2:#FFD23F;--s3:#E8590C;--s4:#E5484D;--s5:#8E4EC6;--s6:#3E8EDE"/>
-              <line class="hero-ray" x1="415" y1="224" x2="480" y2="169" stroke="#8E4EC6" style="--s0:#8E4EC6;--s1:#3E8EDE;--s2:#46A758;--s3:#FFD23F;--s4:#E8590C;--s5:#E5484D;--s6:#8E4EC6"/>
-              <line class="hero-ray" x1="445" y1="281" x2="527" y2="259" stroke="#E5484D" style="--s0:#E5484D;--s1:#8E4EC6;--s2:#3E8EDE;--s3:#46A758;--s4:#FFD23F;--s5:#E8590C;--s6:#E5484D"/>
-            </g>
-            <path d="M 185 320 A 115 115 0 0 1 415 320 Z" fill="#E8590C"/>
-            <rect x="40" y="313" width="520" height="14" rx="7" fill="#274b73"/>
-          </svg>
+          <div class="sun-wrap">
+            <svg class="hero-logo" viewBox="0 0 600 340">
+              <g stroke-linecap="round" stroke-width="13">
+                <line class="hero-ray" x1="140" y1="258" x2="114" y2="232" stroke="#E5484D" style="--s0:#E5484D;--s1:#8E4EC6;--s2:#3E8EDE;--s3:#46A758;--s4:#FFD23F;--s5:#E8590C;--s6:#E5484D"/>
+                <line class="hero-ray" x1="183" y1="190" x2="161" y2="152" stroke="#E8590C" style="--s0:#E8590C;--s1:#E5484D;--s2:#8E4EC6;--s3:#3E8EDE;--s4:#46A758;--s5:#FFD23F;--s6:#E8590C"/>
+                <line class="hero-ray" x1="247" y1="143" x2="239" y2="98" stroke="#FFD23F" style="--s0:#FFD23F;--s1:#E8590C;--s2:#E5484D;--s3:#8E4EC6;--s4:#3E8EDE;--s5:#46A758;--s6:#FFD23F"/>
+                <line class="hero-ray" x1="300" y1="130" x2="300" y2="82" stroke="#46A758" style="--s0:#46A758;--s1:#FFD23F;--s2:#E8590C;--s3:#E5484D;--s4:#8E4EC6;--s5:#3E8EDE;--s6:#46A758"/>
+                <line class="hero-ray" x1="353" y1="143" x2="361" y2="98" stroke="#3E8EDE" style="--s0:#3E8EDE;--s1:#46A758;--s2:#FFD23F;--s3:#E8590C;--s4:#E5484D;--s5:#8E4EC6;--s6:#3E8EDE"/>
+                <line class="hero-ray" x1="417" y1="190" x2="439" y2="152" stroke="#8E4EC6" style="--s0:#8E4EC6;--s1:#3E8EDE;--s2:#46A758;--s3:#FFD23F;--s4:#E8590C;--s5:#E5484D;--s6:#8E4EC6"/>
+                <line class="hero-ray" x1="460" y1="258" x2="486" y2="232" stroke="#E5484D" style="--s0:#E5484D;--s1:#8E4EC6;--s2:#3E8EDE;--s3:#46A758;--s4:#FFD23F;--s5:#E8590C;--s6:#E5484D"/>
+              </g>
+              <path d="M 205 320 A 95 95 0 0 1 395 320 Z" fill="#E8590C"/>
+              <rect x="150" y="313" width="300" height="14" rx="7" fill="#274b73"/>
+            </svg>
+            <div class="smoke-layer" id="smoke-layer">
+              <div class="smoke-static" id="smoke-static" hidden></div>
+            </div>
+          </div>
           <p class="sun-label" data-i18n-html="sunLabel">One person<br>Useful apps<br>Built with care</p>
+        </div>
+      </section>
+
+      <section id="founder" aria-labelledby="founder-name">
+        <div class="founder-card">
+          <img class="founder-avatar" src="/avatar.png" alt="Hector Chan" width="224" height="224" loading="lazy">
+          <div class="founder-main">
+            <h2 class="founder-name" id="founder-name">Hector Chan</h2>
+            <p class="founder-role" data-i18n="founderRole">Founder — The one human</p>
+            <p class="founder-body" data-i18n="founderBody">Dawn Studio is one human working with a team of AI assistants. The rays over the sun are that team — like sunlight, their sessions never run out. Every app here is designed, built and run by one person.</p>
+            <div class="founder-meta">
+              <span class="founder-chip" data-i18n="founderLocation">Anywhere — now in Canada</span>
+              <a class="founder-chip" href="https://github.com/hectorchanht" target="_blank" rel="noopener">GitHub
+                <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -1213,6 +1376,10 @@
           backStudio: "← Back to the app shelf",
           featuresTitle: "What it does",
           sunLabel: "One person<br>Useful apps<br>Built with care",
+          founderRole: "Founder — The one human",
+          founderBody: "Dawn Studio is one human working with a team of AI assistants. The rays over the sun are that team — like sunlight, their sessions never run out. Every app here is designed, built and run by one person.",
+          founderLocation: "Anywhere — now in Canada",
+          smokeRoles: ["Coder", "Designer", "Researcher", "QA Tester", "Copywriter", "Translator", "Reviewer", "Planner", "Data Analyst", "Editor", "Illustrator", "Support"],
           appsTitle: "The app shelf",
           appsIntro: "Each app solves one clear problem. Open any of them in your browser and start using it.",
           npmTitle: "Open-source libraries",
@@ -1265,6 +1432,10 @@
           backStudio: "← 返回 App 一覽",
           featuresTitle: "主要功能",
           sunLabel: "一人工作室<br>實用 app<br>用心製作",
+          founderRole: "創辦人 — 唯一真人",
+          founderBody: "Dawn Studio 只有一個真人，同成隊 AI 助理一齊做嘢。太陽上面嘅光線就係呢隊 AI — 好似陽光咁，sessions 開極唔完。呢度每個 app，都係由一個人設計、開發同營運。",
+          founderLocation: "Anywhere — 而家喺加拿大",
+          smokeRoles: ["程式設計", "設計師", "研究員", "測試員", "文案", "翻譯", "審稿", "策劃", "數據分析", "編輯", "插畫", "支援"],
           appsTitle: "App 一覽",
           appsIntro: "每款 app 都只專心解決一個清晰問題。打開瀏覽器，就可以直接開始用。",
           npmTitle: "開源函式庫",
@@ -1309,6 +1480,8 @@
           skip: "跳到主要內容", copied: "已複製"
         }
       };
+      /* Incense-wisp roles live in the i18n dict above; exposed for the smoke script. */
+      window.DAWN_SMOKE_ROLES = { en: copy.en.smokeRoles || [], zh: copy.zh.smokeRoles || [] };
 
 
       var products = {
@@ -1504,6 +1677,94 @@
       entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); } });
     }, { threshold: 0.08 });
     els.forEach(function (el) { el.classList.add("reveal"); io.observe(el); });
+  })();
+</script>
+<script>
+  /* Incense roles over the hero sun (2026-11-17): AI job roles rise off the
+     sun like incense smoke — role label + ember dot, gentle sway, fade + blur.
+     Roles come from the i18n dict (window.DAWN_SMOKE_ROLES) and follow the
+     EN/繁中 toggle via <html lang>. Positional motion, so prefers-reduced-motion
+     gets a static row instead; spawning pauses off-screen / tab hidden. */
+  (function () {
+    var layer = document.getElementById("smoke-layer");
+    if (!layer) return;
+    var ROLES = window.DAWN_SMOKE_ROLES || { en: [], zh: [] };
+    function currentLang() { return /^zh/i.test(document.documentElement.lang || "") ? "zh" : "en"; }
+    function currentRoles() { return ROLES[currentLang()] || ROLES.en || []; }
+
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      var box = document.getElementById("smoke-static");
+      if (!box) return;
+      var renderStatic = function () {
+        box.textContent = "";
+        var count = window.innerWidth < 480 ? 3 : 5;
+        currentRoles().slice(0, count).forEach(function (role) {
+          var span = document.createElement("span");
+          span.textContent = role;
+          box.appendChild(span);
+        });
+        box.hidden = false;
+      };
+      renderStatic();
+      if ("MutationObserver" in window) {
+        new MutationObserver(renderStatic).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+      }
+      return;
+    }
+
+    var stage = layer.closest ? layer.closest(".sun-stage") : null;
+    var alive = 0, lastIdx = -1, timer = null, inView = true;
+    var aliveRoles = {};
+
+    function spawn() {
+      var list = currentRoles();
+      if (!list.length || alive >= 4) return;
+      var i = Math.floor(Math.random() * list.length);
+      if (list.length > 1) {
+        var guard = 0;
+        while ((i === lastIdx || aliveRoles[i]) && guard++ < 12) i = Math.floor(Math.random() * list.length);
+        if (aliveRoles[i]) return;
+      }
+      lastIdx = i;
+      aliveRoles[i] = true;
+      var wisp = document.createElement("div");
+      wisp.className = "founder-wisp";
+      wisp.style.left = (33 + Math.random() * 34) + "%";
+      var duration = 4.4 + Math.random() * 1.2;
+      wisp.style.animationDuration = duration + "s";
+      var label = document.createElement("div");
+      label.className = "wisp-role";
+      label.textContent = list[i];
+      var dot = document.createElement("div");
+      dot.className = "wisp-dot";
+      wisp.appendChild(label);
+      wisp.appendChild(dot);
+      layer.appendChild(wisp);
+      alive++;
+      setTimeout(function () { wisp.remove(); alive--; aliveRoles[i] = false; }, duration * 1000 + 200);
+    }
+
+    function start() {
+      if (timer) return;
+      spawn();
+      setTimeout(spawn, 600);
+      setTimeout(spawn, 1250);
+      timer = setInterval(spawn, 1550);
+    }
+    function stop() {
+      if (timer) { clearInterval(timer); timer = null; }
+    }
+    function sync() {
+      if (!document.hidden && inView) start(); else stop();
+    }
+    document.addEventListener("visibilitychange", sync);
+    if ("IntersectionObserver" in window && stage) {
+      new IntersectionObserver(function (entries) {
+        inView = entries[0].isIntersecting;
+        sync();
+      }, { threshold: 0.05 }).observe(stage);
+    }
+    sync();
   })();
 </script>
 <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "b378318d057440a7a6bae24ecde52416"}'></script><!-- End Cloudflare Web Analytics -->

@@ -28,7 +28,7 @@ A single independent builder shipping a shelf of focused, real, working apps acr
 - Visitors usually arrive from a shared link (shown to someone in person, sent in chat, posted, or on a CV/profile).
 - Every app links out to its own site; this page does not host app functionality.
 - Libraries are installed with npm; each card links to npm and GitHub.
-- Contact route is hectorchan.com (per `privacy.html`).
+- Contact route is hello@dawnstudio.app (per `privacy.html`).
 
 ## Capabilities and Constraints
 

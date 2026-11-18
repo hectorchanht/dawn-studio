@@ -259,3 +259,15 @@ An enlarged inline-SVG logo: a static Dawn Ember sun on a horizon line, with ray
 - **Don't** set prose in IBM Plex Mono or set labels in Manrope.
 - **Don't** draw the sun's rays as alternating red-and-white bands radiating to the edges. Keep them as short spectrum strokes above the horizon.
 - **Don't** add soft blurred shadows to page chrome; depth stays in the illustrations.
+
+## 2026-11-17 — Founder card, slim sun, incense roles
+
+Decisions from the Dawn Studio / hectorchan.com merge (Hector, 2026-11-17):
+
+- **Hero stays the sun (option B).** The colour-changing sun remains the hero. The founder card sits directly below the hero — the site stays a company site whose one human appears as the second thing you see, not the hero.
+- **Logo is sun-only, never a face.** The Dawn Studio logo is the company mark; Hector's avatar appears on the page as founder intro, separate from the logo.
+- **Slim sun geometry, shared by hero and logo:** semicircle radius 95 (was 115) in the 600×340 viewBox, rays at 13px stroke (was 24px), horizon bar 300 wide (was 520). Same Hermes orange `#E8590C`; the per-ray colour-cycle animation is unchanged. A future logo redraw uses this same slim geometry, static, one rainbow colour per ray.
+- **Rays = the AI team.** The sun's rays symbolise Hector's AI assistants/agents — sunlight is effectively infinite within our lifetime, just like AI agent sessions. Core brand meaning, carried in the founder-card copy, not decoration.
+- **Incense roles.** Random AI job roles (Coder, Designer, Researcher, QA…) rise above the sun like incense smoke （燒香） — label + ember dot, gentle sway, fading and blurring as they disperse; at most 4 alive, pausing when the hero is off-screen or the tab is hidden. Roles ship in the i18n dict and follow the EN/繁中 toggle. Under `prefers-reduced-motion` the wisps do not spawn; a static row of role names shows instead (the colour-only ray cycle keeps running, as before).
+- **Founder card final spec:** the existing illustrated avatar (`avatar.png`, from hectorchan.com) unchanged as the main visual; name "Hector Chan" (not translated, no Chinese name displayed); title "Founder"; location line "Anywhere — now in Canada" (no city — never Calgary); the only external link is GitHub (`github.com/hectorchanht`). No Instagram, no LinkedIn.
+- **Contact:** hello@dawnstudio.app (per `privacy.html`); hectorchan.com content is fully merged here and the domain will 301 to dawnstudio.app.
