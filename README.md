@@ -15,3 +15,9 @@ A single self-contained static site: `index.html` plus its icons, PWA and SEO fi
 ## Deployment
 
 Deployed to Cloudflare Pages (project `dawn-studio`) by direct upload — pushing this repo does not deploy the site. The deployed file set is exactly the files in this repo root (plus `project-logos/`).
+
+## Licence
+
+This software is licensed under the PolyForm Noncommercial License 1.0.0 - see [LICENSE](LICENSE).
+
+Commercial or business use of this software requires the prior written acknowledgement of Dawn Studio.
