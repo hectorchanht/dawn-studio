@@ -7,7 +7,7 @@
 - [Home](https://dawnstudio.app/): the app shelf and open-source libraries
 - [Examples](https://dawnstudio.app/examples): each app doing one real job, step by step
 - [Changelog](https://dawnstudio.app/changelog): what shipped, dated, newest first (also as [Markdown](https://dawnstudio.app/changelog.md) and [RSS](https://dawnstudio.app/changelog/feed.xml))
-- [Blog](https://dawnstudio.app/blog): notes on building in the open — how RealUFO was rebuilt in 7 days, building OpenMusic, and the Muse review agent
+- [Blog](https://dawnstudio.app/blog): notes on building in the open — how RealUFO was rebuilt in 7 days, building OpenMusic, the Muse review agent, OpenTeacher (a free AI teacher), and 人機共生 (human–AI symbiosis, in Cantonese)
 - [Privacy](https://dawnstudio.app/privacy.html): no accounts, no cookies, cookieless analytics only
 
 ## Apps

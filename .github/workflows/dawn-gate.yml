@@ -16,3 +16,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run Dawn Gate check
         run: python3 .github/dawn-gate/check.py .
+      - name: Blog seam check (cards, index links, sitemap)
+        run: python3 check-blog.py
+      - name: Link media card check (homepage)
+        run: python3 check-media-card.py
