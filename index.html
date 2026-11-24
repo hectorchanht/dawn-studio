@@ -561,6 +561,16 @@
       font-weight: 700;
     }
     .project-link svg { transition: transform .3s var(--ease); }
+    /* Icon sweep 2026-11-23 (Dawn-Design §8 v1.6): card actions are icon-only.
+       Fixed 44x44 geometry — the label never sizes the control (NO STRETCH). */
+    .project-link {
+      width: 44px; height: 44px; padding: 0; margin-top: 28px;
+      display: inline-flex; align-items: center; justify-content: center;
+      border: 1px solid var(--line-strong); border-radius: 999px;
+    }
+    .project-link:hover { border-color: var(--theme); }
+    .button.icon-only { width: 48px; min-width: 48px; padding: 0; flex: none; }
+    @media (max-width: 620px) { .hero-actions .button.icon-only { width: 48px; } }
     .project-link:hover svg { transform: translate(3px, -3px); }
 
     .lib-grid {
@@ -910,7 +920,7 @@
     .product-home-link { color: inherit; text-decoration: none; }
     .product-home-link:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
     .product-page { padding-block: 34px 84px; }
-    .product-back { display: inline-block; margin-bottom: 44px; color: var(--muted); text-decoration: none; border-bottom: 1px solid currentColor; font-weight: 600; }
+    .product-back { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 999px; margin-bottom: 44px; color: var(--muted); text-decoration: none; border-bottom: 1px solid currentColor; font-weight: 600; }
     .product-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, .9fr); gap: 40px; align-items: center; min-height: 570px; border-bottom: 1px solid var(--line-strong); }
     .product-hero-copy { min-width: 0; }
     .product-kicker { margin: 18px 0 0; color: var(--muted); font: 500 .75rem/1.4 "IBM Plex Mono", monospace; letter-spacing: .09em; text-transform: uppercase; }
@@ -976,7 +986,7 @@
       font-size: .875rem;
     }
     footer p { margin: 0; }
-    .back-top { text-decoration: none; border-bottom: 1px solid currentColor; }
+    .back-top { text-decoration: none; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); } .back-top:hover { border-color: var(--line-strong); }
 
     @media (max-width: 900px) {
       .hero { min-height: auto; grid-template-columns: 1fr; gap: 20px; padding-top: 56px; }
@@ -1085,11 +1095,11 @@
           <h1 id="hero-title" data-i18n-html="heroTitle">Small tools.<br><span class="accent">Real life.</span></h1>
           <p data-i18n="heroBody">Dawn Studio builds focused apps for currency conversion, music, clipboard capture, portfolio tracking, live Q&amp;A, investment education and script conversion.</p>
           <div class="hero-actions">
-            <a class="button primary" href="#apps">
-              <span data-i18n="explore">Explore the apps</span>
+            <a class="button primary icon-only" href="#apps" aria-label="Explore the apps">
+              <span class="sr-only" data-i18n="explore">Explore the apps</span>
               <svg width="17" height="17" viewBox="0 0 17 17" aria-hidden="true"><path d="M8.5 2v12M3.5 9l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-            <a class="button secondary" href="#studio" data-i18n="principlesButton">Our principles</a>
+            <a class="button secondary icon-only" href="#studio" aria-label="Our principles"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M6 4.5h9M6 9h9M6 13.5h9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="2.8" cy="4.5" r="1.15" fill="currentColor"/><circle cx="2.8" cy="9" r="1.15" fill="currentColor"/><circle cx="2.8" cy="13.5" r="1.15" fill="currentColor"/></svg><span class="sr-only" data-i18n="principlesButton">Our principles</span></a>
           </div>
         </div>
         <div class="sun-stage" aria-hidden="true">
@@ -1168,7 +1178,7 @@
               <li data-i18n="musicTag1">Multi-source search</li><li data-i18n="musicTag2">15 languages</li><li data-i18n="musicTag3">Background play</li>
             </ul>
             <a class="project-link" href="https://openmusic.dawnstudio.app" target="_blank" rel="noopener">
-              <span data-i18n="openMusic">Open OpenMusic</span>
+              <span class="sr-only" data-i18n="openMusic">Open OpenMusic</span>
               <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
@@ -1186,7 +1196,7 @@
               <li data-i18n="ufoTag1">Case archive</li><li data-i18n="ufoTag2">REST API</li><li data-i18n="ufoTag3">MCP server</li>
             </ul>
             <a class="project-link" href="https://realufo.dawnstudio.app" target="_blank" rel="noopener">
-              <span data-i18n="openRealufo">Open RealUFO</span>
+              <span class="sr-only" data-i18n="openRealufo">Open RealUFO</span>
               <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
@@ -1207,7 +1217,7 @@
               <li data-i18n="moneyTag1">30 languages</li><li data-i18n="moneyTag2">Rate alerts</li><li data-i18n="moneyTag3">Batch + trip tools</li>
             </ul>
             <a class="project-link" href="https://moneyrate.dawnstudio.app" target="_blank" rel="noopener">
-              <span data-i18n="openMoney">Open MoneyRate</span>
+              <span class="sr-only" data-i18n="openMoney">Open MoneyRate</span>
               <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
@@ -1225,7 +1235,7 @@
               <li data-i18n="numerologyTag1">Bazi + Ziwei</li><li data-i18n="numerologyTag2">TL;DR summaries</li><li data-i18n="numerologyTag3">Luck timelines</li>
             </ul>
             <a class="project-link" href="https://numerology.dawnstudio.app" target="_blank" rel="noopener">
-              <span data-i18n="openNumerology">Open Numerology</span>
+              <span class="sr-only" data-i18n="openNumerology">Open Numerology</span>
               <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
@@ -1243,7 +1253,7 @@
               <li data-i18n="openqTag1">No signup to join</li><li data-i18n="openqTag2">Host controls</li><li data-i18n="openqTag3">Polls + export</li>
             </ul>
             <a class="project-link" href="https://openq.dawnstudio.app/" target="_blank" rel="noopener">
-              <span data-i18n="openQ">Open OpenQ</span>
+              <span class="sr-only" data-i18n="openQ">Open OpenQ</span>
               <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
@@ -1261,7 +1271,7 @@
               <li data-i18n="clipTag1">Text + images</li><li data-i18n="clipTag2">One-tap capture</li><li data-i18n="clipTag3">Fast retrieval</li>
             </ul>
             <a class="project-link" href="https://clipbin.dawnstudio.app" target="_blank" rel="noopener">
-              <span data-i18n="openClip">Open ClipBin</span>
+              <span class="sr-only" data-i18n="openClip">Open ClipBin</span>
               <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
@@ -1279,7 +1289,7 @@
               <li data-i18n="zhconvertTag1">Simplified &#8646; Traditional</li><li data-i18n="zhconvertTag2">Subtitle-safe</li><li data-i18n="zhconvertTag3">File upload</li>
             </ul>
             <a class="project-link" href="https://zhconvert.dawnstudio.app" target="_blank" rel="noopener">
-              <span data-i18n="openZhconvert">Open ZhConvert</span>
+              <span class="sr-only" data-i18n="openZhconvert">Open ZhConvert</span>
               <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
@@ -1297,7 +1307,7 @@
               <li data-i18n="holdrTag1">Broker sync</li><li data-i18n="holdrTag2">Performance history</li><li data-i18n="holdrTag3">Multi-currency</li>
             </ul>
             <a class="project-link" href="https://holdr.dawnstudio.app" target="_blank" rel="noopener">
-              <span data-i18n="openHoldr">Open Holdr</span>
+              <span class="sr-only" data-i18n="openHoldr">Open Holdr</span>
               <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
@@ -1383,15 +1393,15 @@
       </section>
 
       <section class="product-page" id="product-page" aria-labelledby="product-title" hidden>
-        <a class="product-back" href="#apps" data-i18n="backStudio">← Back to the app shelf</a>
+        <a class="product-back" href="#apps" aria-label="Back to the app shelf"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M11 3 5 9l6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr-only" data-i18n="backStudio">Back to the app shelf</span></a>
         <div class="product-hero">
           <div class="product-hero-copy">
             <h1 id="product-title"></h1>
             <p class="product-kicker" id="product-kicker"></p>
             <p class="product-pitch" id="product-pitch"></p>
             <div class="hero-actions">
-              <a class="button primary" id="product-open" target="_blank" rel="noopener"></a>
-              <a class="button secondary" id="product-tip" target="_blank" rel="noopener"></a>
+              <a class="button primary icon-only" id="product-open" target="_blank" rel="noopener"></a>
+              <a class="button secondary icon-only" id="product-tip" target="_blank" rel="noopener"></a>
               <span id="product-links" class="product-links"></span>
             </div>
           </div>
@@ -1415,7 +1425,7 @@
       <a class="footer-legal" href="/blog" data-i18n="blogLink">Blog</a>
       <a class="footer-legal" href="/canon" data-i18n="canonLink">Canon</a>
       <a class="footer-legal" href="/privacy.html" data-i18n="privacy">Privacy</a>
-      <a class="back-top" href="#top" data-i18n="backTop">Back to top ↑</a>
+      <a class="back-top" href="#top" aria-label="Back to top"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13V3M3.5 7 8 2.5 12.5 7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr-only" data-i18n="backTop">Back to top</span></a>
     </footer>
   </div>
 
@@ -1621,9 +1631,9 @@
         text.features.forEach(function (feature) {
           var li = document.createElement("li"); li.textContent = feature; featureList.appendChild(li);
         });
-        var open = document.getElementById("product-open"); open.href = product.url; open.textContent = text.open;
+        var open = document.getElementById("product-open"); open.href = product.url; open.setAttribute("aria-label", text.open); open.innerHTML = '<svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr-only"></span>'; open.querySelector(".sr-only").textContent = text.open;
         var tip = document.getElementById("product-tip");
-        if (product.tip) { tip.style.display = ""; tip.href = product.tip; tip.textContent = text.tipText; }
+        if (product.tip) { tip.style.display = ""; tip.href = product.tip; tip.setAttribute("aria-label", text.tipText); tip.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.8 5.1a5 5 0 0 0-7.1 0l-.7.7-.7-.7a5 5 0 1 0-7.1 7.1l7.8 7.8 7.8-7.8a5 5 0 0 0 0-7.1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span class="sr-only"></span>'; tip.querySelector(".sr-only").textContent = text.tipText; }
         else { tip.style.display = "none"; }
         var linksBox = document.getElementById("product-links");
         linksBox.innerHTML = "";
