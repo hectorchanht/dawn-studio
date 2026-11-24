@@ -37,7 +37,6 @@
     .back { font-weight: 600; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
     .topnav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
     .topnav a { font-weight: 600; text-decoration: none; color: var(--muted); }
-    .topnav a[aria-current="page"] { color: var(--ink); border-bottom: 2px solid var(--theme); padding-bottom: 2px; }
     .topnav a:hover { color: var(--theme); }
     footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; }
     footer p { margin: 0; color: var(--muted); }
@@ -69,8 +68,9 @@
       <a class="back" href="/">← Dawn Studio</a>
       <nav class="topnav" aria-label="Dawn Studio">
         <a href="/#apps">Apps</a>
-        <a href="/examples" aria-current="page">Examples</a>
+        <a href="/examples">Examples</a>
         <a href="/changelog">Changelog</a>
+        <a href="/blog">Blog</a>
       </nav>
     </div>
     <h1>Examples</h1>
@@ -162,9 +162,11 @@
       </article>
     </div>
     <footer>
-      <p>Dawn Studio · Independent software.</p>
+      <p>© 2026 Dawn Studio</p>
       <a href="/examples">Examples</a>
       <a href="/changelog">Changelog</a>
+      <a href="/blog">Blog</a>
+      <a href="/canon">Canon</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/">Home</a>
     </footer>

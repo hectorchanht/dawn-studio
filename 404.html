@@ -28,9 +28,23 @@
     [data-lang-block][hidden] { display: none; }
     ::selection { background: color-mix(in srgb, var(--theme) 28%, transparent); color: var(--ink); }
     :focus-visible { outline: 2px solid var(--theme); outline-offset: 3px; border-radius: 4px; }
-  </style>
+  
+      .topnav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+      .topnav a { font-weight: 600; text-decoration: none; color: var(--muted); }
+      .topnav a:hover { color: var(--theme); }
+      footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; }
+      footer p { margin: 0; color: var(--muted); }
+      footer a { font-weight: 600; text-decoration: none; color: var(--muted); }
+      footer a:hover { color: var(--theme); }
+    </style>
 </head>
 <body>
+    <nav class="topnav" aria-label="Dawn Studio">
+        <a href="/#apps">Apps</a>
+        <a href="/examples">Examples</a>
+        <a href="/changelog">Changelog</a>
+        <a href="/blog">Blog</a>
+      </nav>
   <main>
     <div class="lang-switch" role="group" aria-label="Language">
       <button type="button" data-lang="en" aria-pressed="true">EN</button>
@@ -69,5 +83,14 @@
       setLanguage(saved || (/^zh/i.test(navigator.language || "") ? "zh" : "en"));
     }());
   </script>
-</body>
+    <footer>
+      <p>© 2026 Dawn Studio</p>
+      <a href="/examples">Examples</a>
+      <a href="/changelog">Changelog</a>
+      <a href="/blog">Blog</a>
+      <a href="/canon">Canon</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/">Home</a>
+    </footer>
+  </body>
 </html>

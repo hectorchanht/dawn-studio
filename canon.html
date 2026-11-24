@@ -41,9 +41,23 @@
     .crystals p { margin: 0 0 10px; }
     .crystals strong { color: var(--ink); }
     ::selection { background: color-mix(in srgb, var(--theme) 28%, transparent); color: var(--ink); }
-  </style>
+  
+      .topnav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+      .topnav a { font-weight: 600; text-decoration: none; color: var(--muted); }
+      .topnav a:hover { color: var(--theme); }
+      footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; }
+      footer p { margin: 0; color: var(--muted); }
+      footer a { font-weight: 600; text-decoration: none; color: var(--muted); }
+      footer a:hover { color: var(--theme); }
+    </style>
 </head>
 <body>
+    <nav class="topnav" aria-label="Dawn Studio">
+        <a href="/#apps">Apps</a>
+        <a href="/examples">Examples</a>
+        <a href="/changelog">Changelog</a>
+        <a href="/blog">Blog</a>
+      </nav>
   <main>
     <a class="back" href="/">← Dawn Studio</a>
     <h1>天光 Canon</h1>
@@ -95,5 +109,14 @@
 
     <p style="margin-top:40px">本版為公開精華版。完整 canon（《成神之路 · The Method》）係呢份精華嘅源頭。Dawn Studio 由 Hector Chan 創辦 — <a href="mailto:hello@dawnstudio.app">hello@dawnstudio.app</a></p>
   </main>
-</body>
+    <footer>
+      <p>© 2026 Dawn Studio</p>
+      <a href="/examples">Examples</a>
+      <a href="/changelog">Changelog</a>
+      <a href="/blog">Blog</a>
+      <a href="/canon">Canon</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/">Home</a>
+    </footer>
+  </body>
 </html>

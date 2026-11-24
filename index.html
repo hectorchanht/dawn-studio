@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <title>Dawn Studio</title>
-  <meta name="description" content="Dawn Studio is an independent software studio building focused apps for music, currency conversion, clipboard capture, portfolio tracking, live Q&amp;A, investment education, Chinese fortune-telling and script conversion, plus open-source libraries." />
+  <meta name="description" content="Dawn Studio is an independent software studio building focused apps for UAP research, music, steal hunting, learning, numerology and currency conversion, plus open-source libraries." />
   <link rel="canonical" href="https://dawnstudio.app/" />
   <meta name="robots" content="index, follow" />
   <meta property="og:type" content="website" />
@@ -33,7 +33,7 @@
   <meta name="twitter:description" content="Small tools. Real life. Focused apps and open-source libraries from an independent software studio." />
   <meta name="twitter:image" content="https://dawnstudio.app/og.png" />
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"Dawn Studio","url":"https://dawnstudio.app/","logo":"https://dawnstudio.app/logo.png","description":"Dawn Studio is an independent software studio building focused apps for music, currency conversion, clipboard capture, portfolio tracking, live Q&A, investment education, Chinese fortune-telling and script conversion, plus open-source libraries."}
+  {"@context":"https://schema.org","@type":"Organization","name":"Dawn Studio","url":"https://dawnstudio.app/","logo":"https://dawnstudio.app/logo.png","description":"Dawn Studio is an independent software studio building focused apps for UAP research, music, steal hunting, learning, numerology and currency conversion, plus open-source libraries."}
   </script>
   <style>
     :root {
@@ -1084,7 +1084,15 @@
       .hero-ray { animation-duration: 7s !important; }
       .founder-wisp { animation-duration: var(--wisp-dur, 5s) !important; }
     }
-  </style>
+  
+      .topnav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+      .topnav a { font-weight: 600; text-decoration: none; color: var(--muted); }
+      .topnav a:hover { color: var(--theme); }
+      footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; }
+      footer p { margin: 0; color: var(--muted); }
+      footer a { font-weight: 600; text-decoration: none; color: var(--muted); }
+      footer a:hover { color: var(--theme); }
+    </style>
 </head>
 <body id="top">
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
@@ -1099,12 +1107,18 @@
         <button type="button" data-lang="zh" aria-pressed="false">繁中</button>
       </div>
     </header>
+    <nav class="topnav" aria-label="Dawn Studio">
+        <a href="/#apps">Apps</a>
+        <a href="/examples">Examples</a>
+        <a href="/changelog">Changelog</a>
+        <a href="/blog">Blog</a>
+      </nav>
 
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
           <h1 id="hero-title" data-i18n-html="heroTitle">Small tools.<br><span class="accent">Real life.</span></h1>
-          <p data-i18n="heroBody">Dawn Studio builds focused apps for currency conversion, music, clipboard capture, portfolio tracking, live Q&amp;A, investment education and script conversion.</p>
+          <p data-i18n="heroBody">Dawn Studio builds focused apps for UAP research, music, steal hunting, learning, numerology and currency conversion.</p>
           <div class="hero-actions">
             <a class="button primary icon-only" href="#apps" aria-label="Explore the apps">
               <span class="sr-only" data-i18n="explore">Explore the apps</span>
@@ -1428,13 +1442,13 @@
 
     <p class="sr-only" id="copy-status" aria-live="polite"></p>
     <footer>
-      <p data-i18n="footer">Dawn Studio · Independent software.</p>
-      <a class="footer-legal" href="/examples" data-i18n="examplesLink">Examples</a>
-      <a class="footer-legal" href="/changelog" data-i18n="changelogLink">Changelog</a>
-      <a class="footer-legal" href="/blog" data-i18n="blogLink">Blog</a>
-      <a class="footer-legal" href="/canon" data-i18n="canonLink">Canon</a>
-      <a class="footer-legal" href="/privacy.html" data-i18n="privacy">Privacy</a>
-      <a class="back-top" href="#top" aria-label="Back to top"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13V3M3.5 7 8 2.5 12.5 7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr-only" data-i18n="backTop">Back to top</span></a>
+      <p>© 2026 Dawn Studio</p>
+      <a href="/examples">Examples</a>
+      <a href="/changelog">Changelog</a>
+      <a href="/blog">Blog</a>
+      <a href="/canon">Canon</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/">Home</a>
     </footer>
   </div>
 
@@ -1444,7 +1458,7 @@
         en: {
           utility: "Independent software",
           heroTitle: "Small tools.<br><span class=\"accent\">Real life.</span>",
-          heroBody: "Dawn Studio builds focused apps for currency conversion, music, clipboard capture, portfolio tracking, live Q&A, investment education, Chinese fortune-telling and script conversion.",
+          heroBody: "Dawn Studio builds focused apps for UAP research, music, steal hunting, learning, numerology and currency conversion.",
           explore: "Explore the apps",
           principlesButton: "Our principles",
           backStudio: "← Back to the app shelf",
@@ -1503,7 +1517,7 @@
         zh: {
           utility: "獨立軟件工作室",
           heroTitle: "細小工具。<br><span class=\"accent\">真實生活。</span>",
-          heroBody: "Dawn Studio 製作專注實用的 app，涵蓋貨幣換算、音樂、剪貼板、投資組合追蹤、即場問答、投資教育、八字命理同繁簡轉換。",
+          heroBody: "Dawn Studio 製作專注實用的 app，涵蓋UAP 研究、音樂、獵平貨、學習、命理同貨幣換算。",
           explore: "探索全部 app",
           principlesButton: "我們的原則",
           backStudio: "← 返回 App 一覽",
@@ -1565,12 +1579,12 @@
 
 
       var products = {
-        moneyrate: {
+        moneyrate: { category: { en: "currency conversion", zh: "貨幣換算" }, flagship: 6,
           name: "MoneyRate", color: "var(--amber)", url: "https://moneyrate.dawnstudio.app", logo: "/project-logos/moneyrate.png", tip: "https://dawnlimited.gumroad.com/l/moneyrate-tip",
           en: { kicker: "Currency toolkit · Web", pitch: "Move between currencies without the friction.", detail: "Compare fiat, crypto and commodities in one focused toolkit, then move from a quick conversion to charts, alerts, trip planning and batch work without changing apps.", features: ["Fast currency conversion", "Charts and rate alerts", "Batch and trip tools"], open: "Open MoneyRate", tipText: "Support MoneyRate" },
           zh: { kicker: "貨幣工具 · Web", pitch: "簡單直接，處理每一次跨貨幣需要。", detail: "在同一套專注工具比較法幣、加密貨幣及商品，由即時換算延伸至走勢、提示、旅程規劃及批量處理。", features: ["快速貨幣換算", "走勢與匯率提示", "批量及旅程工具"], open: "開啟 MoneyRate", tipText: "支持 MoneyRate" }
         },
-        openmusic: {
+        openmusic: { category: { en: "music", zh: "音樂" }, flagship: 2,
           name: "OpenMusic", color: "var(--coral)", url: "https://openmusic.dawnstudio.app", logo: "/project-logos/openmusic.svg", tip: "https://dawnlimited.gumroad.com/l/openmusic-tip",
           en: { kicker: "Music player · Web + Android", pitch: "One player for music across sources.", detail: "Search Chinese and independent music sources together, play immediately, keep a library and move through regional charts, artist discographies and curated year packs.", features: ["Multi-source music search", "Library and background play", "Regional charts and discography packs"], open: "Open OpenMusic", tipText: "Support OpenMusic" },
           zh: { kicker: "音樂播放器 · Web + Android", pitch: "跨來源音樂，一個播放器就夠。", detail: "同時搜尋華語及獨立音樂來源，即時播放及建立收藏，再探索地區榜單、歌手完整作品與年度歌單包。", features: ["多來源音樂搜尋", "收藏及背景播放", "地區榜單與作品集"], open: "開啟 OpenMusic", tipText: "支持 OpenMusic" }
@@ -1595,7 +1609,7 @@
           en: { kicker: "Investment education · Web", pitch: "Learn portfolios by seeing how they fit together.", detail: "Explore themed model strategies in English or Traditional Chinese. Compare allocation and risk, follow simulated performance and add context to market news.", features: ["English and Traditional Chinese", "Themed model strategies", "Risk, allocation and news context"], open: "Open Pennyvest", tipText: "Support Pennyvest" },
           zh: { kicker: "投資教育 · Web", pitch: "由組合結構開始，真正理解投資。", detail: "以英文或繁中探索主題模擬策略，比較配置與風險、追蹤模擬表現，並補充市場新聞的背景脈絡。", features: ["英文與繁中", "主題模擬策略", "風險、配置與新聞脈絡"], open: "開啟 Pennyvest", tipText: "支持 Pennyvest" }
         },
-        realufo: {
+        realufo: { category: { en: "UAP research", zh: "UAP 研究" }, flagship: 1,
           name: "RealUFO", color: "#3ddc84", url: "https://realufo.dawnstudio.app", logo: "/project-logos/realufo.png",
           links: [
             { href: "https://realufo.org", en: "Case archive", zh: "案件檔案庫" },
@@ -1605,7 +1619,7 @@
           en: { kicker: "UFO case archive · Web + API + MCP", pitch: "Every declassified case, in one living archive.", detail: "Browse the timeline of declassified UFO cases, query the archive through the REST API, or let your AI assistant explore it via the realufo-mcp MCP server.", features: ["Declassified case archive", "REST API for developers", "MCP server: realufo-mcp on npm"], open: "Open RealUFO" },
           zh: { kicker: "UFO 案件檔案庫 · Web + API + MCP", pitch: "所有解密案件，一個持續更新嘅檔案庫。", detail: "瀏覽解密 UFO 案件時間線、用 REST API 查詢檔案，或者經 realufo-mcp MCP 伺服器等你嘅 AI 助手去探索。", features: ["解密案件檔案庫", "開發者 REST API", "MCP 伺服器：npm 上嘅 realufo-mcp"], open: "開啟 RealUFO" }
         },
-        numerology: {
+        numerology: { category: { en: "numerology", zh: "命理" }, flagship: 5,
           name: "Numerology", color: "var(--amber)", url: "https://numerology.dawnstudio.app", logo: "/project-logos/numerology.png",
           en: { kicker: "Chinese fortune-telling \u00b7 Web", pitch: "Two charts, one clear reading.", detail: "Cast Bazi and Ziwei charts from a single birth moment. AI-assisted interpretation with TL;DR summaries per section, element charts and decade-luck timelines.", features: ["Bazi + Ziwei chart casting", "TL;DR summaries and charts", "Decade luck timelines"], open: "Open Numerology", tipText: "Support Numerology" },
           zh: { kicker: "八字命理 \u00b7 Web", pitch: "兩個盤，一個清晰解讀。", detail: "輸入出生時刻，一次排出八字與紫微兩個盤。AI 合參解讀附每節 TL;DR、五行圖表與大運流年時間線。", features: ["八字紫微排盤", "TL;DR 重點與圖表", "大運流年時間線"], open: "開啟 Numerology", tipText: "支持 Numerology" }
@@ -1614,8 +1628,35 @@
           name: "ZhConvert", color: "#c9563c", url: "https://zhconvert.dawnstudio.app", logo: "/project-logos/zhconvert.png",
           en: { kicker: "Script converter \u00b7 Web", pitch: "Simplified \u21c6 Traditional, without mangled subtitles.", detail: "Paste text or drop a file and convert between Simplified and Traditional Chinese with phrase-aware accuracy. Subtitle formats convert dialogue only \u2014 timestamps and tags stay intact.", features: ["Simplified \u21c6 Traditional + auto-detect", "Subtitle-safe: SRT/VTT/LRC/ASS", "Txt, Markdown, JSON, CSV upload"], open: "Open ZhConvert" },
           zh: { kicker: "繁簡轉換 \u00b7 Web", pitch: "簡繁互轉，字幕唔會爛。", detail: "貼上文字或拖放檔案，用詞組級準確度轉換簡繁中文。字幕格式只轉對白——時間軸同標籤原封不動。", features: ["簡繁互轉 + 自動偵測", "字幕安全：SRT/VTT/LRC/ASS", "支援 Txt、Markdown、JSON、CSV 上載"], open: "開啟 ZhConvert" }
-        }
+        },
+        huntsteals: { name: "HuntSteals", category: { en: "steal hunting", zh: "獵平貨" }, flagship: 3, color: "#ffb020", url: "https://huntsteals.dawnstudio.app", logo: "/logo.png", en: { kicker: "Steal hunting · Web", pitch: "Every marketplace, one steal line.", detail: "HuntSteals watches the resale marketplaces and flags the listings that fall under a fair steal line — city-wide and worldwide — so a genuine bargain never slips past.", features: ["Marketplace-wide watching", "A dynamic steal line", "City Hunter + Global Hunter"], open: "Open HuntSteals" }, zh: { kicker: "獵平貨 · Web", pitch: "所有二手平台，一條平貨線。", detail: "HuntSteals 監察各大二手買賣平台，將跌穿合理平貨線嘅放售即刻標出 — 全城以至全球 — 真正嘅筍盤唔會走漏眼。", features: ["全平台監察", "動態平貨線", "City Hunter + Global Hunter"], open: "開啟 HuntSteals" } },
+    openteacher: { name: "OpenTeacher", category: { en: "learning", zh: "學習" }, flagship: 4, color: "#7dd0ff", url: "https://openteacher.dawnstudio.app", logo: "/logo.png", en: { kicker: "AI teacher · Web", pitch: "Everything you want to learn, handed to you.", detail: "OpenTeacher is a free AI teacher, not an answer machine. Name what you want to learn and it turns verified canon into a path you play — checked as you go, from age 3 to 90.", features: ["Paths built from canon", "Checks that feel like game beats", "For ages 3 to 90"], open: "Open OpenTeacher" }, zh: { kicker: "AI 老師 · Web", pitch: "所有你要學嘅嘢，全部交俾你。", detail: "OpenTeacher 係一位免費嘅 AI 老師，唔係答題機。講出你想學乜，佢就將查證過嘅 canon 變成一條玩得嘅路 — 一路行一路驗，3 歲到 90 歲都啱。", features: ["由 canon 砌出嘅學習路", "遊戲拍子式嘅檢查", "3 歲到 90 歲"], open: "開啟 OpenTeacher" } },
       };
+  /* Dynamic headline (2026-11-24): the hero list is generated from the
+     flagship entries of the products catalog above — the same catalog
+     data behind the app shelf's product pages. Add/remove/reorder a
+     flagship there and this headline follows; no separate edit. */
+  (function () {
+    var flagged = Object.keys(products).filter(function (slug) {
+      return products[slug].flagship && products[slug].category;
+    }).sort(function (a, b) { return products[a].flagship - products[b].flagship; });
+    if (!flagged.length) return;
+    function joinEn(items) {
+      if (items.length < 2) return items.join("");
+      return items.slice(0, -1).join(", ") + " and " + items[items.length - 1];
+    }
+    function joinZh(items) {
+      if (items.length < 2) return items.join("");
+      return items.slice(0, -1).join("、") + "同" + items[items.length - 1];
+    }
+    var enList = joinEn(flagged.map(function (s) { return products[s].category.en; }));
+    var zhList = joinZh(flagged.map(function (s) { return products[s].category.zh; }));
+    copy.en.heroBody = "Dawn Studio builds focused apps for " + enList + ".";
+    copy.zh.heroBody = "Dawn Studio 製作專注實用的 app，涵蓋" + zhList + "。";
+    var hero = document.querySelector('[data-i18n="heroBody"]');
+    if (hero && document.documentElement.lang !== "zh-Hant") hero.textContent = copy.en.heroBody;
+  })();
+
       var currentLanguage = "en";
 
       function renderProduct(slug, moveFocus) {
