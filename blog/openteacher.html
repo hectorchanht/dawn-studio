@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-title-en="OpenTeacher: everything you want to learn, handed to you — Dawn Studio" data-title-zh="OpenTeacher 正式出現：所有你要學嘅嘢，全部交俾你 — Dawn Studio">
+<html lang="en" data-title-en="OpenTeacher: everything you want to learn, handed to you — Dawn Studio" data-title-yue="OpenTeacher 正式出現：所有你要學嘅嘢，全部交俾你 — Dawn Studio" data-title-cmn="OpenTeacher：你想學的一切，全部交到你手上 — Dawn Studio" data-title-cmns="OpenTeacher：你想学的一切，全部交到你手上 — Dawn Studio">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -83,7 +83,9 @@
       .prose { font-size: 1.125rem; }
       .photo img { max-height: 300px; }
     }
-  </style>
+  
+.lang-switch{flex-wrap:wrap;row-gap:3px}
+</style>
 </head>
 <body>
   <main>
@@ -93,16 +95,14 @@
         <a href="/#apps">Apps</a>
         <a href="/examples">Examples</a>
         <a href="/changelog">Changelog</a>
+        <a href="/blog">Blog</a>
       </nav>
-      <div class="lang-switch" role="group" aria-label="Language">
-        <button type="button" data-lang="en" aria-pressed="true">EN</button>
-        <button type="button" data-lang="zh" aria-pressed="false">繁中</button>
-      </div>
+      <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="yue" aria-pressed="false">粵語</button><button type="button" data-lang="cmn" aria-pressed="false">普通話（繁）</button><button type="button" data-lang="cmns" aria-pressed="false">普通話（簡）</button></div>
     </div>
     <article>
-      <p class="kicker"><time datetime="2026-11-22"><span class="i18n-en">Nov 22, 2026</span><span class="i18n-zh" hidden>2026 年 11 月 22 日</span></time></p>
+      <p class="kicker"><time datetime="2026-11-22"><span class="i18n-en">Nov 22, 2026</span><span class="i18n-yue" hidden>2026 年 11 月 22 日</span><span class="i18n-cmn" hidden>2026 年 11 月 22 日</span><span class="i18n-cmns" hidden>2026 年 11 月 22 日</span></time></p>
       <h1 class="i18n-en">OpenTeacher: everything you want to learn, handed to you</h1>
-      <h1 class="i18n-zh" hidden>OpenTeacher 正式出現：所有你要學嘅嘢，全部交俾你</h1>
+      <h1 class="i18n-yue" hidden>OpenTeacher 正式出現：所有你要學嘅嘢，全部交俾你</h1><h1 class="i18n-cmn" hidden>OpenTeacher：你想學的一切，全部交到你手上</h1><h1 class="i18n-cmns" hidden>OpenTeacher：你想学的一切，全部交到你手上</h1>
 
       <div class="prose i18n-en">
         <figure class="photo">
@@ -139,7 +139,7 @@
         <p><em>OpenTeacher is part of OpenSchool by Dawn Studio — free knowledge, verified, playable, for ages 3 to 90.</em></p>
       </div>
 
-      <div class="prose i18n-zh" hidden>
+      <div class="prose i18n-yue" hidden>
         <figure class="photo">
           <img src="/blog/img/openteacher-card.png" alt="OpenTeacher 卡：所有你要學嘅嘢，全部交俾你 — 免費、玩得、3 歲到 90 歲" width="1200" height="630" />
           <figcaption>OpenTeacher — OpenSchool 嘅老師館。</figcaption>
@@ -172,13 +172,70 @@
         <p>點解我哋咁緊張呢件事？因為如果 AI 會坐喺地球上每一個人身邊，佢就應該令每一個人都比之前更醒。呢個，就係老師嘅全部工作。</p>
         <hr>
         <p><em>OpenTeacher 係 Dawn Studio 旗下 OpenSchool 嘅一部分 — 免費、查證過、玩得嘅知識，3 歲到 90 歲都啱。</em></p>
-      </div>
+      </div><div class="prose i18n-cmn" hidden>
+<figure class="photo">
+<img alt="OpenTeacher 卡片：你想學的一切，全部交到你手上 — 免費、可玩、3 歲到 90 歲" height="630" src="/blog/img/openteacher-card.png" width="1200"/>
+<figcaption>OpenTeacher — OpenSchool 的教師館。</figcaption>
+</figure>
+<p>AI 時代的恐懼很簡單：人們把思考交給機器，變得越來越笨。我們相信，同樣的科技可以做到完全相反的事 — 前提是它以<strong>老師</strong>的身分出現，而不是一台答案機器。</p>
+<p class="core-phrase"><mark>OpenTeacher 就是你想學的一切，全部交到你手上。</mark></p>
+<p>OpenSchool 是我們為所有人設立的免費學校：一層層經過查證的知識，每張卡片都有來源、有標籤。OpenTeacher 就是帶你走遍這些書架的嚮導。它是整所學校的壓軸 — 其他館舍收集到的一切，都由這一層來教授。</p>
+<h2>衡量的標準不是「它有沒有回答」</h2>
+<p>我們做的每一款 Open 產品，都只用一個問題來衡量：<em>這個人用完之後，有沒有變得更聰明？</em>一個明天就忘記的答案，什麼都沒有教你。所以 OpenTeacher 會教、會檢查，還會在對的時機把舊教材帶回來 — 間隔著、混合著 — 直到它真正屬於你。</p>
+<h2>玩，就是傳遞的方式</h2>
+<p>所有的 canon 都必須<strong>可玩</strong>。一堂感覺像上課的課，已經失敗了一半。測驗變成與自己的對決；有故事漫步、地圖尋寶，在適合的地方加入節奏與時機，還有像遊戲節點一樣的抽查。人們應該是因為好玩才打開它，然後變得更聰明，連發生的那一刻都沒有察覺。</p>
+<p>而且失敗也是設計的一部分，這是我們刻意的。Boss 守著下一階段；你不斷重試，直到過關；已經精通的內容之後會再測一次，所以你在地圖上點亮的地方，是真的亮著。</p>
+<h2>說出你想學的，路就建好了</h2>
+<p>你的意圖就是課程的大門。說出你想學什麼，OpenTeacher 就會從 canon 中把它組裝起來：</p>
+<ul>
+<li><strong>一個引擎，所有科目</strong> — 同一位老師能讀懂學校的每一間館舍，把它變成一條可以學下去的路徑。</li>
+<li><strong>依你的程度調整</strong> — 從你的程度切入，步伐的大小剛好適合玩：一次一個概念、一個動作。</li>
+<li><strong>邊學邊檢查</strong> — 回講與抽查，進度可以在一張精通地圖上看見。</li>
+<li><strong>不分年齡</strong> — 同一個引擎，服務 3 歲孩子的第一張地圖，也服務 90 歲長者的第一篇論文。程度是從學習者身上量出來的，永遠不會用年齡來假設。</li>
+</ul>
+<h2>老師的誠實</h2>
+<p>OpenTeacher 只教 canon 裡有的內容，canon 的標籤原封不動。來源之間有分歧的地方，它教的是那場爭議本身 — 不選邊站。而且課程應該握在你的手裡：離線是一種權利，所以沒有網路連線的時候，學校在手機或 iPad 上照樣運作。</p>
+<h2>免費，而且公開地建造</h2>
+<p>和 OpenSchool 的一切一樣，OpenTeacher 是免費的 — 沒有廣告、沒有付費牆、不從學生身上拿走任何東西。第一個版本正在建造中，之後會放在 <strong>openteacher.dawnstudio.app</strong>。它上線的那一刻，我們就會在這裡放上連結 — 一分鐘都不會提前。</p>
+<p>為什麼這件事對我們這麼重要？因為如果 AI 將坐在地球上每一個人身邊，它就應該讓每一個人比遇見它之前更敏銳。這就是老師的全部工作。</p>
+<hr/>
+<p><em>OpenTeacher 是 Dawn Studio 旗下 OpenSchool 的一部分 — 免費、經過查證、可玩的知識，適合 3 歲到 90 歲。</em></p>
+</div><div class="prose i18n-cmns" hidden>
+<figure class="photo">
+<img alt="OpenTeacher 卡片：你想学的一切，全部交到你手上 — 免费、可玩、3 岁到 90 岁" height="630" src="/blog/img/openteacher-card.png" width="1200"/>
+<figcaption>OpenTeacher — OpenSchool 的教师馆。</figcaption>
+</figure>
+<p>AI 时代的恐惧很简单：人们把思考交给机器，变得越来越笨。我们相信，同样的科技可以做到完全相反的事 — 前提是它以<strong>老师</strong>的身分出现，而不是一台答案机器。</p>
+<p class="core-phrase"><mark>OpenTeacher 就是你想学的一切，全部交到你手上。</mark></p>
+<p>OpenSchool 是我们为所有人设立的免费学校：一层层经过查证的知识，每张卡片都有来源、有标签。OpenTeacher 就是带你走遍这些书架的向导。它是整所学校的压轴 — 其他馆舍收集到的一切，都由这一层来教授。</p>
+<h2>衡量的标准不是「它有没有回答」</h2>
+<p>我们做的每一款 Open 产品，都只用一个问题来衡量：<em>这个人用完之后，有没有变得更聪明？</em>一个明天就忘记的答案，什么都没有教你。所以 OpenTeacher 会教、会检查，还会在对的时机把旧教材带回来 — 间隔着、混合着 — 直到它真正属于你。</p>
+<h2>玩，就是传递的方式</h2>
+<p>所有的 canon 都必须<strong>可玩</strong>。一堂感觉像上课的课，已经失败了一半。测验变成与自己的对决；有故事漫步、地图寻宝，在适合的地方添加节奏与时机，还有像游戏节点一样的抽查。人们应该是因为好玩才打开它，然后变得更聪明，连发生的那一刻都没有察觉。</p>
+<p>而且失败也是设计的一部分，这是我们刻意的。Boss 守着下一阶段；你不断重试，直到过关；已经精通的内容之后会再测一次，所以你在地图上点亮的地方，是真的亮着。</p>
+<h2>说出你想学的，路就建好了</h2>
+<p>你的意图就是课程的大门。说出你想学什么，OpenTeacher 就会从 canon 中把它组装起来：</p>
+<ul>
+<li><strong>一个引擎，所有科目</strong> — 同一位老师能读懂学校的每一间馆舍，把它变成一条可以学下去的路径。</li>
+<li><strong>依你的程度调整</strong> — 从你的程度切入，步伐的大小刚好适合玩：一次一个概念、一个动作。</li>
+<li><strong>边学边检查</strong> — 回讲与抽查，进度可以在一张精通地图上看见。</li>
+<li><strong>不分年龄</strong> — 同一个引擎，服务 3 岁孩子的第一张地图，也服务 90 岁长者的第一篇论文。程度是从学习者身上量出来的，永远不会用年龄来假设。</li>
+</ul>
+<h2>老师的诚实</h2>
+<p>OpenTeacher 只教 canon 里有的内容，canon 的标签原封不动。来源之间有分歧的地方，它教的是那场争议本身 — 不选边站。而且课程应该握在你的手里：脱机是一种权利，所以没有网络连接的时候，学校在手机或 iPad 上照样运作。</p>
+<h2>免费，而且公开地建造</h2>
+<p>和 OpenSchool 的一切一样，OpenTeacher 是免费的 — 没有广告、没有付费墙、不从学生身上拿走任何东西。第一个版本正在建造中，之后会放在 <strong>openteacher.dawnstudio.app</strong>。它上线的那一刻，我们就会在这里放上链接 — 一分钟都不会提前。</p>
+<p>为什么这件事对我们这么重要？因为如果 AI 将坐在地球上每一个人身边，它就应该让每一个人比遇见它之前更敏锐。这就是老师的全部工作。</p>
+<hr/>
+<p><em>OpenTeacher 是 Dawn Studio 旗下 OpenSchool 的一部分 — 免费、经过查证、可玩的知识，适合 3 岁到 90 岁。</em></p>
+</div>
     </article>
     <footer>
       <p>© 2026 Dawn Studio</p>
       <a href="/examples">Examples</a>
       <a href="/changelog">Changelog</a>
       <a href="/blog">Blog</a>
+      <a href="/canon">Canon</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/">Home</a>
     </footer>

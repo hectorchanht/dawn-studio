@@ -36,7 +36,6 @@
     .back { font-weight: 600; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
     .topnav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
     .topnav a { font-weight: 600; text-decoration: none; color: var(--muted); }
-    .topnav a[aria-current="page"] { color: var(--ink); border-bottom: 2px solid var(--theme); padding-bottom: 2px; }
     .topnav a:hover { color: var(--theme); }
     footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; }
     footer p { margin: 0; color: var(--muted); }
@@ -56,7 +55,9 @@
     [hidden] { display: none !important; }
     html[lang^="zh"] h1 { letter-spacing: -.01em; line-height: 1.15; }
     html[lang^="zh"] .prose h2 { letter-spacing: 0; }
-  </style>
+  
+.lang-switch{flex-wrap:wrap;row-gap:3px}
+</style>
 </head>
 <body>
   <main>
@@ -66,93 +67,91 @@
         <a href="/#apps">Apps</a>
         <a href="/examples">Examples</a>
         <a href="/changelog">Changelog</a>
-        <a href="/blog" aria-current="page">Blog</a>
+        <a href="/blog">Blog</a>
       </nav>
-      <div class="lang-switch" role="group" aria-label="Language">
-        <button type="button" data-lang="en" aria-pressed="true">EN</button>
-        <button type="button" data-lang="zh" aria-pressed="false">繁中</button>
-      </div>
+      <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="yue" aria-pressed="false">粵語</button><button type="button" data-lang="cmn" aria-pressed="false">普通話（繁）</button><button type="button" data-lang="cmns" aria-pressed="false">普通話（簡）</button></div>
     </div>
     <h1>Blog</h1>
     <p class="lede i18n-en">Notes on building in the open. Short posts, shipped when there’s something worth saying.</p>
-    <p class="lede i18n-zh" hidden>公開咁起嘢嘅筆記。短文，有嘢值得講先出。</p>
+    <p class="lede i18n-yue" hidden>公開咁起嘢嘅筆記。短文，有嘢值得講先出。</p><p class="lede i18n-cmn" hidden>公開打造產品的筆記。短文，有值得說的才發。</p><p class="lede i18n-cmns" hidden>公开打造产品的笔记。短文，有值得说的才发。</p>
     <article class="entry">
-      <time datetime="2026-11-22"><span class="i18n-en">Nov 22, 2026</span><span class="i18n-zh" hidden>2026 年 11 月 22 日</span></time>
+      <time datetime="2026-11-22"><span class="i18n-en">Nov 22, 2026</span><span class="i18n-yue" hidden>2026 年 11 月 22 日</span><span class="i18n-cmn" hidden>2026 年 11 月 22 日</span><span class="i18n-cmns" hidden>2026 年 11 月 22 日</span></time>
       <h2 class="i18n-en"><a href="/blog/human-ai-symbiosis" hreflang="zh-Hant">人機共生 — Human–AI symbiosis, from intern to god (in Cantonese)</a></h2>
-      <h2 class="i18n-zh" hidden><a href="/blog/human-ai-symbiosis">人機共生：AI 由實習生到「成神」，靠嘅係一個停唔到嘅 loop</a></h2>
+      <h2 class="i18n-yue" hidden><a href="/blog/human-ai-symbiosis">人機共生：AI 由實習生到「成神」，靠嘅係一個停唔到嘅 loop</a></h2><h2 class="i18n-cmn" hidden><a href="/blog/human-ai-symbiosis">人機共生：AI 從實習生到「成神」，靠的是一個停不下來的 loop</a></h2><h2 class="i18n-cmns" hidden><a href="/blog/human-ai-symbiosis">人机共生：AI 从实习生到「成神」，靠的是一个停不下来的 loop</a></h2>
       <p class="i18n-en">I pour water into the bucket and drink from the pipe beneath. Every AI starts as an intern; becoming a god is not magic inside the model — it is a loop that only turns upward. Written in Cantonese.</p>
-      <p class="i18n-zh" hidden>人倒水入桶，喺桶底飲水。每個 AI 都由實習生開始 — 「成神」唔係模型入面嘅魔法，係一個人同 AI 一齊轉、只會向上嘅 loop。</p>
+      <p class="i18n-yue" hidden>人倒水入桶，喺桶底飲水。每個 AI 都由實習生開始 — 「成神」唔係模型入面嘅魔法，係一個人同 AI 一齊轉、只會向上嘅 loop。</p><p class="i18n-cmn" hidden>人把水倒入桶裡，再從桶底的水管喝水。每個 AI 都從實習生開始 — 「成神」不是模型裡的魔法，而是一個人和 AI 一起轉動、只會向上的 loop。</p><p class="i18n-cmns" hidden>人把水倒入桶里，再从桶底的水管喝水。每个 AI 都从实习生开始 — 「成神」不是模型里的魔法，而是一个人和 AI 一起转动、只会向上的 loop。</p>
       <a class="open-link i18n-en" href="/blog/human-ai-symbiosis" hreflang="zh-Hant">Read (繁中) →</a>
-      <a class="open-link i18n-zh" href="/blog/human-ai-symbiosis" hidden>睇文 →</a>
+      <a class="open-link i18n-yue" href="/blog/human-ai-symbiosis" hidden>睇文 →</a><a class="open-link i18n-cmn" href="/blog/human-ai-symbiosis" hreflang="zh-Hant" hidden>閱讀 →</a><a class="open-link i18n-cmns" href="/blog/human-ai-symbiosis" hreflang="zh-Hant" hidden>阅读 →</a>
     </article>
     <article class="entry">
-      <time datetime="2026-11-22"><span class="i18n-en">Nov 22, 2026</span><span class="i18n-zh" hidden>2026 年 11 月 22 日</span></time>
+      <time datetime="2026-11-22"><span class="i18n-en">Nov 22, 2026</span><span class="i18n-yue" hidden>2026 年 11 月 22 日</span><span class="i18n-cmn" hidden>2026 年 11 月 22 日</span><span class="i18n-cmns" hidden>2026 年 11 月 22 日</span></time>
       <h2 class="i18n-en"><a href="/blog/openteacher">OpenTeacher: everything you want to learn, handed to you</a></h2>
-      <h2 class="i18n-zh" hidden><a href="/blog/openteacher">OpenTeacher 正式出現：所有你要學嘅嘢，全部交俾你</a></h2>
+      <h2 class="i18n-yue" hidden><a href="/blog/openteacher">OpenTeacher 正式出現：所有你要學嘅嘢，全部交俾你</a></h2><h2 class="i18n-cmn" hidden><a href="/blog/openteacher">OpenTeacher：你想學的一切，全部交到你手上</a></h2><h2 class="i18n-cmns" hidden><a href="/blog/openteacher">OpenTeacher：你想学的一切，全部交到你手上</a></h2>
       <p class="i18n-en">A free AI teacher, not an answer machine. Name what you want to learn and OpenTeacher turns verified canon into a path you play — from 3 to 90.</p>
-      <p class="i18n-zh" hidden>一位免費嘅 AI 老師，唔係答題機。講出你想學乜，OpenTeacher 就將查證過嘅 canon 變成一條玩得嘅路 — 3 歲到 90 歲都啱。</p>
+      <p class="i18n-yue" hidden>一位免費嘅 AI 老師，唔係答題機。講出你想學乜，OpenTeacher 就將查證過嘅 canon 變成一條玩得嘅路 — 3 歲到 90 歲都啱。</p><p class="i18n-cmn" hidden>一位免費的 AI 老師，不是一台答案機器。說出你想學什麼，OpenTeacher 就把經過查證的 canon 變成一條你可以玩著走的路徑 — 從 3 歲到 90 歲。</p><p class="i18n-cmns" hidden>一位免费的 AI 老师，不是一台答案机器。说出你想学什么，OpenTeacher 就把经过查证的 canon 变成一条你可以玩着走的路径 — 从 3 岁到 90 岁。</p>
       <a class="open-link i18n-en" href="/blog/openteacher">Read →</a>
-      <a class="open-link i18n-zh" href="/blog/openteacher" hidden>睇文 →</a>
+      <a class="open-link i18n-yue" href="/blog/openteacher" hidden>睇文 →</a><a class="open-link i18n-cmn" href="/blog/openteacher" hidden>閱讀 →</a><a class="open-link i18n-cmns" href="/blog/openteacher" hidden>阅读 →</a>
     </article>
     <article class="entry">
-      <time datetime="2026-11-18"><span class="i18n-en">Nov 18, 2026</span><span class="i18n-zh" hidden>2026 年 11 月 18 日</span></time>
+      <time datetime="2026-11-18"><span class="i18n-en">Nov 18, 2026</span><span class="i18n-yue" hidden>2026 年 11 月 18 日</span><span class="i18n-cmn" hidden>2026 年 11 月 18 日</span><span class="i18n-cmns" hidden>2026 年 11 月 18 日</span></time>
       <h2 class="i18n-en"><a href="/blog/why-im-in-canada">Why I'm in Canada</a></h2>
-      <h2 class="i18n-zh" hidden><a href="/blog/why-im-in-canada">我點解會喺加拿大</a></h2>
+      <h2 class="i18n-yue" hidden><a href="/blog/why-im-in-canada">我點解會喺加拿大</a></h2><h2 class="i18n-cmn" hidden><a href="/blog/why-im-in-canada">我為什麼在加拿大</a></h2><h2 class="i18n-cmns" hidden><a href="/blog/why-im-in-canada">我为什么在加拿大</a></h2>
       <p class="i18n-en">The Hong Kong Pathway is why the door existed. Chan Tong-kai is why the door had to exist at all. One programme, one man, and a chant Hong Kong has known by heart for years.</p>
-      <p class="i18n-zh" hidden>Pathway 係點解會有呢道門。陳同佳，係點解呢道門需要存在。一個 programme、一個人，同埋一段成個香港都識背嘅 chant。</p>
+      <p class="i18n-yue" hidden>Pathway 係點解會有呢道門。陳同佳，係點解呢道門需要存在。一個 programme、一個人，同埋一段成個香港都識背嘅 chant。</p><p class="i18n-cmn" hidden>Hong Kong Pathway，是這道門存在的原因；Chan Tong-kai，是這道門不得不存在的原因。一個計畫、一個人，以及一段香港人多年來早已熟記於心的 chant。</p><p class="i18n-cmns" hidden>Hong Kong Pathway，是这道门存在的原因；Chan Tong-kai，是这道门不得不存在的原因。一个计画、一个人，以及一段香港人多年来早已熟记于心的 chant。</p>
       <a class="open-link i18n-en" href="/blog/why-im-in-canada">Read →</a>
-      <a class="open-link i18n-zh" href="/blog/why-im-in-canada" hidden>睇文 →</a>
+      <a class="open-link i18n-yue" href="/blog/why-im-in-canada" hidden>睇文 →</a><a class="open-link i18n-cmn" href="/blog/why-im-in-canada" hidden>閱讀 →</a><a class="open-link i18n-cmns" href="/blog/why-im-in-canada" hidden>阅读 →</a>
     </article>
     <article class="entry">
-      <time datetime="2026-11-17"><span class="i18n-en">Nov 17, 2026</span><span class="i18n-zh" hidden>2026 年 11 月 17 日</span></time>
+      <time datetime="2026-11-17"><span class="i18n-en">Nov 17, 2026</span><span class="i18n-yue" hidden>2026 年 11 月 17 日</span><span class="i18n-cmn" hidden>2026 年 11 月 17 日</span><span class="i18n-cmns" hidden>2026 年 11 月 17 日</span></time>
       <h2 class="i18n-en"><a href="/blog/never-cap-the-sessions">Never cap the sessions</a></h2>
-      <h2 class="i18n-zh" hidden><a href="/blog/never-cap-the-sessions">Sessions 永遠唔封頂</a></h2>
+      <h2 class="i18n-yue" hidden><a href="/blog/never-cap-the-sessions">Sessions 永遠唔封頂</a></h2><h2 class="i18n-cmn" hidden><a href="/blog/never-cap-the-sessions">Sessions 永遠不設上限</a></h2><h2 class="i18n-cmns" hidden><a href="/blog/never-cap-the-sessions">Sessions 永远不设上限</a></h2>
       <p class="i18n-en">One architect, a wall of AI sessions, 52 GB of RAM gone. People say running that many AIs at once is hard. It is. The answer is not fewer sessions.</p>
-      <p class="i18n-zh" hidden>一個 architect、一牆 AI sessions、52 GB RAM 蒸發咗。人哋話同時行咁多 AI 好難。的確係難。但答案唔係開少啲 sessions。</p>
+      <p class="i18n-yue" hidden>一個 architect、一牆 AI sessions、52 GB RAM 蒸發咗。人哋話同時行咁多 AI 好難。的確係難。但答案唔係開少啲 sessions。</p><p class="i18n-cmn" hidden>一位架構師、一整面牆的 AI sessions、52 GB 的 RAM 就這樣用光。人們說同時跑這麼多 AI 很難。確實很難。但答案不是減少 sessions。</p><p class="i18n-cmns" hidden>一位架构师、一整面墙的 AI sessions、52 GB 的 RAM 就这样用光。人们说同时跑这么多 AI 很难。确实很难。但答案不是减少 sessions。</p>
       <a class="open-link i18n-en" href="/blog/never-cap-the-sessions">Read →</a>
-      <a class="open-link i18n-zh" href="/blog/never-cap-the-sessions" hidden>睇文 →</a>
+      <a class="open-link i18n-yue" href="/blog/never-cap-the-sessions" hidden>睇文 →</a><a class="open-link i18n-cmn" href="/blog/never-cap-the-sessions" hidden>閱讀 →</a><a class="open-link i18n-cmns" href="/blog/never-cap-the-sessions" hidden>阅读 →</a>
     </article>
     <article class="entry">
-      <time datetime="2026-11-16"><span class="i18n-en">Nov 16, 2026</span><span class="i18n-zh" hidden>2026 年 11 月 16 日</span></time>
+      <time datetime="2026-11-16"><span class="i18n-en">Nov 16, 2026</span><span class="i18n-yue" hidden>2026 年 11 月 16 日</span><span class="i18n-cmn" hidden>2026 年 11 月 16 日</span><span class="i18n-cmns" hidden>2026 年 11 月 16 日</span></time>
       <h2 class="i18n-en"><a href="/blog/the-scavenger-economy">The Scavenger Economy</a></h2>
-      <h2 class="i18n-zh" hidden><a href="/blog/the-scavenger-economy">拾荒經濟</a></h2>
+      <h2 class="i18n-yue" hidden><a href="/blog/the-scavenger-economy">拾荒經濟</a></h2><h2 class="i18n-cmn" hidden><a href="/blog/the-scavenger-economy">拾荒經濟</a></h2><h2 class="i18n-cmns" hidden><a href="/blog/the-scavenger-economy">拾荒经济</a></h2>
       <p class="i18n-en">Cyberpunk 2077 and Ready Player One end the same way: whoever owns the essentials sets the rent, and everyone else picks through scraps. The hedge is small and boring: own something.</p>
-      <p class="i18n-zh" hidden>Cyberpunk 2077 同 Ready Player One 結局一樣：邊個揸住必需品，邊個就定租金，其他人就只可以執垃圾。對沖方法細到悶：擁有啲嘢。</p>
+      <p class="i18n-yue" hidden>Cyberpunk 2077 同 Ready Player One 結局一樣：邊個揸住必需品，邊個就定租金，其他人就只可以執垃圾。對沖方法細到悶：擁有啲嘢。</p><p class="i18n-cmn" hidden>Cyberpunk 2077 和 Ready Player One 的結局相同：誰擁有必需品，誰就訂定租金，其他所有人都只能撿拾碎屑。避險做法小而無聊：擁有某樣東西。</p><p class="i18n-cmns" hidden>Cyberpunk 2077 和 Ready Player One 的结局相同：谁拥有必需品，谁就订定租金，其他所有人都只能捡拾碎屑。避险做法小而无聊：拥有某样东西。</p>
       <a class="open-link i18n-en" href="/blog/the-scavenger-economy">Read →</a>
-      <a class="open-link i18n-zh" href="/blog/the-scavenger-economy" hidden>睇文 →</a>
+      <a class="open-link i18n-yue" href="/blog/the-scavenger-economy" hidden>睇文 →</a><a class="open-link i18n-cmn" href="/blog/the-scavenger-economy" hidden>閱讀 →</a><a class="open-link i18n-cmns" href="/blog/the-scavenger-economy" hidden>阅读 →</a>
     </article>
     <article class="entry">
-      <time datetime="2026-10-07"><span class="i18n-en">Oct 7, 2026</span><span class="i18n-zh" hidden>2026 年 10 月 7 日</span></time>
+      <time datetime="2026-10-07"><span class="i18n-en">Oct 7, 2026</span><span class="i18n-yue" hidden>2026 年 10 月 7 日</span><span class="i18n-cmn" hidden>2026 年 10 月 7 日</span><span class="i18n-cmns" hidden>2026 年 10 月 7 日</span></time>
       <h2 class="i18n-en"><a href="/blog/muse-ai-review">Muse ships while I sleep</a></h2>
-      <h2 class="i18n-zh" hidden><a href="/blog/muse-ai-review">我瞓覺嗰陣，Muse 已經出咗貨</a></h2>
+      <h2 class="i18n-yue" hidden><a href="/blog/muse-ai-review">我瞓覺嗰陣，Muse 已經出咗貨</a></h2><h2 class="i18n-cmn" hidden><a href="/blog/muse-ai-review">Muse 在我睡覺時出貨</a></h2><h2 class="i18n-cmns" hidden><a href="/blog/muse-ai-review">Muse 在我睡觉时出货</a></h2>
       <p class="i18n-en">I handed all my repos to Muse AI — 1,256 real commits across 7 repos in 7 days, and I checked every one. Why end-to-end agentic beats the Claude Code plan-prove-click loop, and why it's the biggest steal in AI right now.</p>
-      <p class="i18n-zh" hidden>我將所有 repo 交晒畀 Muse AI — 7 日、7 個 repo、1,256 個真 commits，我逐個 check 過。點解 end-to-end agentic 贏過 Claude Code 嗰種 plan-prove-click 循環，同埋點解佢係而家 AI 界最大嘅 steal。</p>
+      <p class="i18n-yue" hidden>我將所有 repo 交晒畀 Muse AI — 7 日、7 個 repo、1,256 個真 commits，我逐個 check 過。點解 end-to-end agentic 贏過 Claude Code 嗰種 plan-prove-click 循環，同埋點解佢係而家 AI 界最大嘅 steal。</p><p class="i18n-cmn" hidden>我把所有儲存庫都交給了 Muse AI — 7 天內、7 個儲存庫、1,256 個真實 commits，而且我逐一檢查過。為什麼端到端的 agentic 模式勝過 Claude Code 那種 plan-prove-click 循環，又為什麼它是目前 AI 界最划算的一筆交易。</p><p class="i18n-cmns" hidden>我把所有存储库都交给了 Muse AI — 7 天内、7 个存储库、1,256 个真实 commits，而且我逐一检查过。为什么端到端的 agentic 模式胜过 Claude Code 那种 plan-prove-click 循环，又为什么它是目前 AI 界最划算的一笔交易。</p>
       <a class="open-link i18n-en" href="/blog/muse-ai-review">Read →</a>
-      <a class="open-link i18n-zh" href="/blog/muse-ai-review" hidden>睇文 →</a>
+      <a class="open-link i18n-yue" href="/blog/muse-ai-review" hidden>睇文 →</a><a class="open-link i18n-cmn" href="/blog/muse-ai-review" hidden>閱讀 →</a><a class="open-link i18n-cmns" href="/blog/muse-ai-review" hidden>阅读 →</a>
     </article>
     <article class="entry">
-      <time datetime="2026-10-06"><span class="i18n-en">Oct 6, 2026</span><span class="i18n-zh" hidden>2026 年 10 月 6 日</span></time>
+      <time datetime="2026-10-06"><span class="i18n-en">Oct 6, 2026</span><span class="i18n-yue" hidden>2026 年 10 月 6 日</span><span class="i18n-cmn" hidden>2026 年 10 月 6 日</span><span class="i18n-cmns" hidden>2026 年 10 月 6 日</span></time>
       <h2 class="i18n-en"><a href="/blog/openmusic">I built a free music streaming app — and I still can't believe it works</a></h2>
-      <h2 class="i18n-zh" hidden><a href="/blog/openmusic">我整咗個免費音樂串流 app — 到而家都唔敢相信佢真係得</a></h2>
+      <h2 class="i18n-yue" hidden><a href="/blog/openmusic">我整咗個免費音樂串流 app — 到而家都唔敢相信佢真係得</a></h2><h2 class="i18n-cmn" hidden><a href="/blog/openmusic">我做了一個免費音樂串流 app — 到現在還不敢相信它真的能用</a></h2><h2 class="i18n-cmns" hidden><a href="/blog/openmusic">我做了一个免费音乐串流 app — 到现在还不敢相信它真的能用</a></h2>
       <p class="i18n-en">openmusic: one search box across eight music catalogs. Type almost any song, it plays. Free, no account.</p>
-      <p class="i18n-zh" hidden>openmusic：一個搜尋框，八個音樂目錄。打歌名，佢就播。免費，唔使開戶口。</p>
+      <p class="i18n-yue" hidden>openmusic：一個搜尋框，八個音樂目錄。打歌名，佢就播。免費，唔使開戶口。</p><p class="i18n-cmn" hidden>openmusic：一個搜尋框，橫跨八個音樂目錄。輸入幾乎任何一首歌，它就播放。免費，不用帳號。</p><p class="i18n-cmns" hidden>openmusic：一个搜索框，横跨八个音乐目录。输入几乎任何一首歌，它就播放。免费，不用账号。</p>
       <a class="open-link i18n-en" href="/blog/openmusic">Read →</a>
-      <a class="open-link i18n-zh" href="/blog/openmusic" hidden>睇文 →</a>
+      <a class="open-link i18n-yue" href="/blog/openmusic" hidden>睇文 →</a><a class="open-link i18n-cmn" href="/blog/openmusic" hidden>閱讀 →</a><a class="open-link i18n-cmns" href="/blog/openmusic" hidden>阅读 →</a>
     </article>
     <article class="entry">
-      <time datetime="2026-10-05"><span class="i18n-en">Oct 5, 2026</span><span class="i18n-zh" hidden>2026 年 10 月 5 日</span></time>
+      <time datetime="2026-10-05"><span class="i18n-en">Oct 5, 2026</span><span class="i18n-yue" hidden>2026 年 10 月 5 日</span><span class="i18n-cmn" hidden>2026 年 10 月 5 日</span><span class="i18n-cmns" hidden>2026 年 10 月 5 日</span></time>
       <h2 class="i18n-en"><a href="/blog/hackathon">How I rebuilt RealUFO in 6 days with Claude</a></h2>
-      <h2 class="i18n-zh" hidden><a href="/blog/hackathon">我點樣用 Claude 6 日重建 RealUFO</a></h2>
+      <h2 class="i18n-yue" hidden><a href="/blog/hackathon">我點樣用 Claude 6 日重建 RealUFO</a></h2><h2 class="i18n-cmn" hidden><a href="/blog/hackathon">我如何用 Claude 在 6 天內重建 RealUFO</a></h2><h2 class="i18n-cmns" hidden><a href="/blog/hackathon">我如何用 Claude 在 6 天内重建 RealUFO</a></h2>
       <p class="i18n-en">I paused RealUFO for two months. Then a stranger posted in the discussion board — and I shipped 797 commits in 6 days.</p>
-      <p class="i18n-zh" hidden>RealUFO 我停咗兩個月。跟住有個陌生人喺討論區留咗言 — 然後我 6 日入面出咗 797 個 commits。</p>
+      <p class="i18n-yue" hidden>RealUFO 我停咗兩個月。跟住有個陌生人喺討論區留咗言 — 然後我 6 日入面出咗 797 個 commits。</p><p class="i18n-cmn" hidden>我把 RealUFO 停了兩個月。然後一個陌生人在討論區留了言 — 接著我在 6 天內交出了 797 個 commits。</p><p class="i18n-cmns" hidden>我把 RealUFO 停了两个月。然后一个陌生人在讨论区留了言 — 接着我在 6 天内交出了 797 个 commits。</p>
       <a class="open-link i18n-en" href="/blog/hackathon">Read →</a>
-      <a class="open-link i18n-zh" href="/blog/hackathon" hidden>睇文 →</a>
+      <a class="open-link i18n-yue" href="/blog/hackathon" hidden>睇文 →</a><a class="open-link i18n-cmn" href="/blog/hackathon" hidden>閱讀 →</a><a class="open-link i18n-cmns" href="/blog/hackathon" hidden>阅读 →</a>
     </article>
     <footer>
       <p>© 2026 Dawn Studio</p>
       <a href="/examples">Examples</a>
       <a href="/changelog">Changelog</a>
       <a href="/blog">Blog</a>
+      <a href="/canon">Canon</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/">Home</a>
     </footer>
