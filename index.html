@@ -953,7 +953,7 @@
     .product-features p { max-width: 650px; margin: 22px 0 0; color: var(--muted); font-size: 1rem; }
     .product-features ul { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-strong); }
     .product-features li { padding: 17px 0; border-bottom: 1px solid var(--line); font-weight: 600; }
-    body.product-route main > .hero, body.product-route #founder, body.product-route #activity, body.product-route #apps, body.product-route #npm, body.product-route #studio { display: none; }
+    body.product-route main > .hero, body.product-route #founder, body.product-route #activity, body.product-route #apps, body.product-route #npm, body.product-route #fleet, body.product-route #studio { display: none; }
     body.product-route .product-page { display: block; }
 
     .studio-note {
@@ -1092,6 +1092,50 @@
       footer p { margin: 0; color: var(--muted); }
       footer a { font-weight: 600; text-decoration: none; color: var(--muted); }
       footer a:hover { color: var(--theme); }
+
+    /* Built in the open \u2014 fleet strip (live-initialization sweep capstone, 2026-11-24) */
+    .fleet-counts {
+      margin: 16px 0 0;
+      font: 500 .78rem/1.5 "IBM Plex Mono", monospace;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+    }
+    html[lang^="zh"] .fleet-counts { text-transform: none; }
+    .fleet-group { margin-top: 34px; }
+    .fleet-group h3 {
+      display: flex; align-items: baseline; gap: 10px;
+      margin: 0 0 14px;
+      font: 600 .72rem/1.3 "IBM Plex Mono", monospace;
+      text-transform: uppercase; letter-spacing: .12em;
+      color: var(--muted);
+    }
+    html[lang^="zh"] .fleet-group h3 { text-transform: none; letter-spacing: .2em; }
+    .fleet-group-count { color: var(--theme); font-variant-numeric: tabular-nums; }
+    .fleet-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+    .fleet-chip {
+      display: inline-flex; align-items: center; gap: 9px;
+      height: 42px; max-width: 100%; padding: 0 14px;
+      border: 1px solid var(--line); border-radius: 999px;
+      background: var(--surface); color: var(--ink);
+      text-decoration: none;
+      transition: border-color .3s var(--ease), transform .3s var(--ease);
+    }
+    .fleet-chip:hover { border-color: var(--line-strong); transform: translateY(-1px); }
+    .fleet-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: .86rem; font-weight: 600; }
+    .fleet-status {
+      flex: none; display: inline-flex; align-items: center; gap: 6px;
+      font: 600 .62rem/1 "IBM Plex Mono", monospace;
+      letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
+    }
+    html[lang^="zh"] .fleet-status { text-transform: none; letter-spacing: .08em; }
+    .fleet-status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--amber); }
+    .fleet-chip[data-status="live"] .fleet-status::before { background: var(--green); }
+    @media (max-width: 620px) {
+      .fleet-chip { height: 40px; padding: 0 12px; }
+      .fleet-group { margin-top: 28px; }
+    }
     </style>
 </head>
 <body id="top">
@@ -1415,6 +1459,24 @@
         </ul>
       </section>
 
+      <section id="fleet" aria-labelledby="fleet-title">
+        <div class="catalog-head">
+          <div>
+            <h2 id="fleet-title" data-i18n="fleetTitle">Built in the open \u2014 one human, real time</h2>
+            <p data-i18n="fleetIntro">Every Dawn project \u2014 shipped or still a seed \u2014 has a public home from day one: its end goal, its roadmap, and where it stands right now. Nothing hidden; this is the whole fleet, building in real time.</p>
+            <p class="fleet-counts" id="fleet-counts">46 projects \u00b7 16 live \u00b7 30 initialized</p>
+          </div>
+        </div>
+        <div class="fleet-group">
+          <h3><span id="fleet-live-label">Live now</span><span class="fleet-group-count" id="fleet-live-count">16</span></h3>
+          <div class="fleet-grid" id="fleet-live-grid"></div>
+        </div>
+        <div class="fleet-group">
+          <h3><span id="fleet-landing-label">Initialized \u2014 goals + roadmap published</span><span class="fleet-group-count" id="fleet-landing-count">30</span></h3>
+          <div class="fleet-grid" id="fleet-landing-grid"></div>
+        </div>
+      </section>
+
       <section class="product-page" id="product-page" aria-labelledby="product-title" hidden>
         <a class="product-back" href="#apps" aria-label="Back to the app shelf"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M11 3 5 9l6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr-only" data-i18n="backStudio">Back to the app shelf</span></a>
         <div class="product-hero">
@@ -1473,6 +1535,8 @@
           smokeRoles: ["Coder", "Designer", "Researcher", "QA Tester", "Copywriter", "Translator", "Reviewer", "Planner", "Data Analyst", "Editor", "Illustrator", "Support"],
           appsTitle: "The app shelf",
           appsIntro: "Each app solves one clear problem. Open any of them in your browser and start using it.",
+          fleetTitle: "Built in the open \u2014 one human, real time",
+          fleetIntro: "Every Dawn project \u2014 shipped or still a seed \u2014 has a public home from day one: its end goal, its roadmap, and where it stands right now. Nothing hidden; this is the whole fleet, building in real time.",
           npmTitle: "Open-source libraries",
           npmIntro: "Small packages extracted from our apps, published for everyone. Install any of them with npm.",
           libAuthDesc: "Passwordless auth: magic link + 6-digit code + Google sign-in. Edge-safe, zero dependencies.",
@@ -1532,6 +1596,8 @@
           smokeRoles: ["程式設計", "設計師", "研究員", "測試員", "文案", "翻譯", "審稿", "策劃", "數據分析", "編輯", "插畫", "支援"],
           appsTitle: "App 一覽",
           appsIntro: "每款 app 都只專心解決一個清晰問題。打開瀏覽器，就可以直接開始用。",
+          fleetTitle: "公開建造中 — 一個人，即時進行",
+          fleetIntro: "每一個 Dawn 項目 — 不論已經出街，定係仍然係一粒種子 — 由第一日就有一個公開嘅家：佢嘅最終目標、佢嘅路線圖，同埋佢而家行到邊。冇嘢收埋 — 成個艦隊，即時建造中。",
           npmTitle: "開源函式庫",
           npmIntro: "由我哋嘅 app 抽出嚟嘅細小 package，公開畀所有人用。npm 一裝即用。",
           libAuthDesc: "免密碼登入：magic link + 6 位驗證碼 + Google 登入。Edge-safe，零依賴。",
@@ -1790,6 +1856,98 @@
       if (startLang === "zh") { setLanguage("zh"); } else { route(); }
     }());
   </script>
+<script>
+  /* Built in the open \u2014 fleet strip. ONE data array is the source: the
+     chips, the group counts and the counts line all compute from FLEET, so
+     adding a project or changing a status updates every number here \u2014
+     the same dynamic doctrine as the catalog-driven headline. */
+  (function () {
+    var FLEET = [
+      { name: "Dawn Studio", url: "https://dawnstudio.app/", status: "live" },
+      { name: "RealUFO", url: "https://realufo.org/", status: "live" },
+      { name: "OpenMusic", url: "https://openmusic.dawnstudio.app/", status: "live" },
+      { name: "OpenMovies", url: "https://openmovies.dawnstudio.app/", status: "live" },
+      { name: "OpenTeacher", url: "https://openteacher.dawnstudio.app/", status: "live" },
+      { name: "OpenQ", url: "https://openq.dawnstudio.app/", status: "live" },
+      { name: "HuntSteals", url: "https://huntsteals.dawnstudio.app/", status: "live" },
+      { name: "Numerology", url: "https://numerology.dawnstudio.app/", status: "live" },
+      { name: "MoneyRate", url: "https://moneyrate.dawnstudio.app/", status: "live" },
+      { name: "Holdr", url: "https://holdr.dawnstudio.app/", status: "live" },
+      { name: "PennyVest", url: "https://pennyvest.dawnstudio.app/", status: "live" },
+      { name: "ClipBin", url: "https://clipbin.dawnstudio.app/", status: "live" },
+      { name: "ZhConvert", url: "https://zhconvert.dawnstudio.app/", status: "live" },
+      { name: "JadeFall", url: "https://jadefall.dawnstudio.app/", status: "live" },
+      { name: "GlobalNewsShorts", url: "https://globalnewsshorts.dawnstudio.app/", status: "live" },
+      { name: "StrangeDocs", url: "https://strangedocs.dawnstudio.app/", status: "live" },
+      { name: "OpenAI / OpenLLM", url: "https://openai.dawnstudio.app/", status: "landing" },
+      { name: "OpenPaper", url: "https://openpaper.dawnstudio.app/", status: "landing" },
+      { name: "OpenBlog", url: "https://openblog.dawnstudio.app/", status: "landing" },
+      { name: "OpenSchool", url: "https://openschool.dawnstudio.app/", status: "landing" },
+      { name: "OpenLaw", url: "https://openlaw.dawnstudio.app/", status: "landing" },
+      { name: "OpenHealth", url: "https://openhealth.dawnstudio.app/", status: "landing" },
+      { name: "OpenBible", url: "https://openbible.dawnstudio.app/", status: "landing" },
+      { name: "OpenLanguage", url: "https://openlanguage.dawnstudio.app/", status: "landing" },
+      { name: "OpenBook", url: "https://openbook.dawnstudio.app/", status: "landing" },
+      { name: "OpenCanon", url: "https://opencanon.dawnstudio.app/", status: "landing" },
+      { name: "OpenClassics", url: "https://openclassics.dawnstudio.app/", status: "landing" },
+      { name: "OpenDeFi", url: "https://opendefi.dawnstudio.app/", status: "landing" },
+      { name: "OpenEarth", url: "https://openearth.dawnstudio.app/", status: "landing" },
+      { name: "OpenGoogle", url: "https://opengoogle.dawnstudio.app/", status: "landing" },
+      { name: "OpenInsurance", url: "https://openinsurance.dawnstudio.app/", status: "landing" },
+      { name: "OpenLove", url: "https://openlove.dawnstudio.app/", status: "landing" },
+      { name: "OpenMath", url: "https://openmath.dawnstudio.app/", status: "landing" },
+      { name: "OpenMetaphysics", url: "https://openmetaphysics.dawnstudio.app/", status: "landing" },
+      { name: "OpenMirror", url: "https://openmirror.dawnstudio.app/", status: "landing" },
+      { name: "OpenNews", url: "https://opennews.dawnstudio.app/", status: "landing" },
+      { name: "OpenOracle", url: "https://openoracle.dawnstudio.app/", status: "landing" },
+      { name: "OpenPodcast", url: "https://openpodcast.dawnstudio.app/", status: "landing" },
+      { name: "OpenQuantum", url: "https://openquantum.dawnstudio.app/", status: "landing" },
+      { name: "OpenRent", url: "https://openrent.dawnstudio.app/", status: "landing" },
+      { name: "OpenSecret", url: "https://opensecret.dawnstudio.app/", status: "landing" },
+      { name: "OpenShort", url: "https://openshort.dawnstudio.app/", status: "landing" },
+      { name: "OpenStory", url: "https://openstory.dawnstudio.app/", status: "landing" },
+      { name: "OpenT1", url: "https://opent1.dawnstudio.app/", status: "landing" },
+      { name: "OpenTriad", url: "https://opentriad.dawnstudio.app/", status: "landing" },
+      { name: "OpenVehicle", url: "https://openvehicle.dawnstudio.app/", status: "landing" }
+    ];
+    var STR = {
+      en: { live: "Live", landing: "Landing", liveGroup: "Live now", landingGroup: "Initialized \u2014 goals + roadmap published",
+            counts: function (t, l, i) { return t + " projects \u00b7 " + l + " live \u00b7 " + i + " initialized"; } },
+      zh: { live: "\u5df2\u4e0a\u7dda", landing: "\u5df2\u521d\u59cb\u5316", liveGroup: "\u5df2\u4e0a\u7dda", landingGroup: "\u5df2\u521d\u59cb\u5316 \u2014 \u76ee\u6a19 + \u8def\u7dda\u5716\u5df2\u516c\u958b",
+            counts: function (t, l, i) { return t + " \u500b\u9805\u76ee \u00b7 " + l + " \u500b\u5df2\u4e0a\u7dda \u00b7 " + i + " \u500b\u5df2\u521d\u59cb\u5316"; } }
+    };
+    function fleetLang() { return /^zh/i.test(document.documentElement.lang || "") ? "zh" : "en"; }
+    function chip(p, s) {
+      var a = document.createElement("a");
+      a.className = "fleet-chip"; a.href = p.url; a.target = "_blank"; a.rel = "noopener";
+      a.setAttribute("data-status", p.status);
+      var n = document.createElement("span"); n.className = "fleet-name"; n.textContent = p.name;
+      var st = document.createElement("span"); st.className = "fleet-status"; st.textContent = p.status === "live" ? s.live : s.landing;
+      a.appendChild(n); a.appendChild(st);
+      return a;
+    }
+    function renderFleet() {
+      var lg = document.getElementById("fleet-live-grid");
+      var ig = document.getElementById("fleet-landing-grid");
+      if (!lg || !ig) return;
+      var s = STR[fleetLang()] || STR.en;
+      var live = FLEET.filter(function (p) { return p.status === "live"; });
+      var landing = FLEET.filter(function (p) { return p.status !== "live"; });
+      lg.innerHTML = ""; ig.innerHTML = "";
+      live.forEach(function (p) { lg.appendChild(chip(p, s)); });
+      landing.forEach(function (p) { ig.appendChild(chip(p, s)); });
+      document.getElementById("fleet-live-label").textContent = s.liveGroup;
+      document.getElementById("fleet-landing-label").textContent = s.landingGroup;
+      document.getElementById("fleet-live-count").textContent = live.length;
+      document.getElementById("fleet-landing-count").textContent = landing.length;
+      document.getElementById("fleet-counts").textContent = s.counts(FLEET.length, live.length, landing.length);
+    }
+    renderFleet();
+    document.querySelectorAll("[data-lang]").forEach(function (b) {
+      b.addEventListener("click", function () { setTimeout(renderFleet, 0); });
+    });
+  }());
+</script>
 <script>
   (function () {
     var els = document.querySelectorAll(".project, .lib, .catalog-head, .studio-note");
